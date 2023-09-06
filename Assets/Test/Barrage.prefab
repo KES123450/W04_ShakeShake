@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6143836001469232629}
   - component: {fileID: 5469236859772887966}
+  - component: {fileID: 8029051629495437632}
   m_Layer: 0
   m_Name: Barrage
   m_TagString: Untagged
@@ -84,3 +85,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8029051629495437632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863773083442518401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a5007c2896b0b148836ff67bcf654f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeTime: 10
+  moveSpeed: 0.01
