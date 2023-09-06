@@ -8,13 +8,17 @@ public enum PlayerState { Idle, Roll, Action, Death }
 public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
 {
     [SerializeField] float rollInputBuffer;
+    [SerializeField] float actionInputBuffer;
 
     PlayerInputActions inputs;
     PlayerMove playerMove;
+    PlayerAction playerAction;
 
     Vector2 inputDirection;
     bool desiredRoll;
+    bool desiredAction;
     float rollInputBufferCounter;
+    float actionInputBufferCounter;
     public PlayerState CurrentState { get; private set; }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -31,6 +35,16 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
         }
     }
 
+    public void OnAction(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            desiredAction = true;
+            actionInputBufferCounter = actionInputBuffer;
+        }
+
+    }
+
     void Awake()
     {
         inputs = new();
@@ -38,6 +52,7 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
         inputs.Enable();
 
         playerMove = GetComponent<PlayerMove>();
+        playerAction = GetComponent<PlayerAction>();
     }
 
     void Start()
@@ -56,6 +71,14 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
                 desiredRoll = false;
             }
         }
+        if (desiredAction && actionInputBufferCounter > 0)
+        {
+            actionInputBufferCounter -= Time.deltaTime;
+            if (actionInputBufferCounter < 0)
+            {
+                desiredAction = false;
+            }
+        }
     }
     void FixedUpdate()
     {
@@ -66,34 +89,62 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
             case PlayerState.Action: FixedUpdateAction(); break;
             case PlayerState.Death: FixedUpdateDeath(); break;
         }
+        if (rollInputBuffer == 0) desiredRoll = false;
+        if (actionInputBuffer == 0) desiredAction = false;
     }
 
     void FixedUpdateIdle()
     {
         playerMove.SetDireciton(inputDirection);
 
-        if (desiredRoll)
-        {
-            CurrentState = PlayerState.Roll;
-            playerMove.StartRoll();
-            desiredRoll = false;
-        }
+        TryRoll();
+        TryAction();
     }
     void FixedUpdateRoll()
     {
         if (playerMove.IsRollEnded)
         {
-            CurrentState = PlayerState.Idle;
             playerMove.EndRoll();
+            CurrentState = PlayerState.Idle;
         }
     }
     void FixedUpdateAction()
     {
-
+        if (playerAction.IsActionEnded)
+        {
+            playerAction.EndAction();
+            CurrentState = PlayerState.Idle;
+        }
+        TryRoll();
     }
 
     void FixedUpdateDeath()
     {
         playerMove.CanMove = false;
+    }
+
+    bool TryRoll()
+    {
+        if (desiredRoll)
+        {
+            playerAction.EndAction();
+
+            playerMove.StartRoll();
+            desiredRoll = false;
+            CurrentState = PlayerState.Roll;
+            return true;
+        }
+        return false;
+    }
+    bool TryAction()
+    {
+        if (desiredAction)
+        {
+            CurrentState = PlayerState.Action;
+            playerAction.StartAction();
+            desiredAction = false;
+            return true;
+        }
+        return false;
     }
 }

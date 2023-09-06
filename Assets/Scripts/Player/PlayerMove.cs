@@ -12,14 +12,15 @@ public class PlayerMove : MonoBehaviour
 
     PlayerController player;
     Rigidbody2D playerRigidbody;
+
     Vector2 moveDirection;
     Vector2 rollDirection;
+    float rollStartTime;
 
     public bool CanMove { get; set; }
     public bool IsRollEnded { get; private set; }
     bool IsRolling { get { return player.CurrentState == PlayerState.Roll; } }
 
-    float rollStartTime;
 
     private void Awake()
     {
@@ -58,7 +59,7 @@ public class PlayerMove : MonoBehaviour
     }
     void FixedUpdateAction()
     {
-
+        playerRigidbody.velocity = Vector2.zero;
     }
     void FixedUpdateDeath()
     {
@@ -79,6 +80,7 @@ public class PlayerMove : MonoBehaviour
     }
     public void EndRoll()
     {
+        if (!IsRolling) { return; }
         IsRollEnded = false;
     }
 
