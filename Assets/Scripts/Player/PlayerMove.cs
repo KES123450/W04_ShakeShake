@@ -76,7 +76,7 @@ public class PlayerMove : MonoBehaviour
         rollDirection = moveDirection;
 
         var rollSpeed = rollDistance / rollDuration;
-        playerRigidbody.velocity = rollDirection * (rollSpeed);
+        playerRigidbody.velocity = rollDirection.normalized * (rollSpeed);
     }
     public void EndRoll()
     {
