@@ -5,13 +5,19 @@ using UnityEngine;
 public class Missile : MonoBehaviour
 {
 
-	[SerializeField] private float timer;
+	private float timer;
 	[SerializeField] private float destroyMissileTime;
 	[SerializeField] private float rotateSpeed;
 	[SerializeField] private float guideSpeed;
 	private Rigidbody2D rigid;
 	private GameObject player;
-	private void GuideToPlayer()
+
+    private void Start()
+    {
+		player = GameManager.instance.GetPlayer();
+		rigid = GetComponent<Rigidbody2D>();
+    }
+    private void GuideToPlayer()
 	{
 		if (timer <= destroyMissileTime)
 		{
