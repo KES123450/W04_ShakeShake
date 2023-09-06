@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6056426080643611659}
   - component: {fileID: 6056426080643611656}
   - component: {fileID: 6056426080643611657}
+  - component: {fileID: 4554772113128657472}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -136,3 +137,18 @@ MonoBehaviour:
   speed: 5
   rollDistance: 5
   rollDuration: 0.5
+--- !u!114 &4554772113128657472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6056426080643611662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86051d5b1ea67a946a28db87e1ad98f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rollColor: {r: 1, g: 0, b: 0, a: 1}
+  actionColor: {r: 0, g: 0, b: 1, a: 1}
+  deathColor: {r: 0, g: 0, b: 0, a: 0.5019608}
