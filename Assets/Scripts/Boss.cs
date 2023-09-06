@@ -54,7 +54,7 @@ public abstract class Boss : MonoBehaviour
 	{
 		patternIndex = GetNextPatternIndex(patternIndex);
 		currentPattern = patternList[patternIndex];
-		currentPattern.Act();
+		currentPattern.StartAct();
 	}
 	public void ShutdownAction()
 	{
