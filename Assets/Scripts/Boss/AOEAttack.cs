@@ -37,10 +37,11 @@ public class AOEAttack : MonoBehaviour
     {
         StartCoroutine(AttackPlay());
     }
-    public IEnumerator AttackPlay()
+    private IEnumerator AttackPlay()
     {
-        blinkSequence.Play();
+        
         cautionEffect.SetActive(true);
+        blinkSequence.Play();
         yield return waitCautionTime;
         cautionEffect.SetActive(false);
 
