@@ -4,21 +4,32 @@ using UnityEngine;
 
 public abstract class ActionInfo : MonoBehaviour
 {
+    [Header("General")]
     [SerializeField] protected float speedMuptiplier;
     [SerializeField] protected float actionDuration;
     [SerializeField] protected bool canRollCancelAction;
     [SerializeField] protected bool canActionCancelRoll;
 
-    PlayerController player;
+    protected PlayerController player;
 
     public float SpeedMultiplier => speedMuptiplier;
     public float ActionDuration => actionDuration;
     public bool CanRollCancelAction => canRollCancelAction;
     public bool CanActionCancelRoll => canActionCancelRoll;
 
-    public virtual void OnStartAction(PlayerController playerController)
+    public abstract bool CanAction { get; }
+
+    protected virtual void Awake()
     {
-        player = playerController;
+        player = transform.parent.GetComponent<PlayerController>();
+    }
+    protected virtual void Start()
+    {
+
+    }
+
+    public virtual void OnStartAction()
+    {
     }
     public virtual void OnUpdateAction()
     {

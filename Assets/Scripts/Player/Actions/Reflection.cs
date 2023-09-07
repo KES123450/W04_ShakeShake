@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Reflection : ActionInfo
 {
-
+    public override bool CanAction => true;
     public override void OnUpdateAction()
     {
         

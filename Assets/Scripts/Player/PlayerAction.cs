@@ -47,7 +47,7 @@ public class PlayerAction : MonoBehaviour
             return;
         }
         actionStartTime = Time.time;
-        currentAction.OnStartAction(player);
+        currentAction.OnStartAction();
     }
     public void EndAction()
     {

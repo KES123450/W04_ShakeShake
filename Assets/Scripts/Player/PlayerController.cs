@@ -138,6 +138,8 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
     }
     void FixedUpdateAction()
     {
+        playerMove.SetDireciton(inputDirection);
+
         if (playerAction.IsActionEnded)
         {
             playerAction.EndAction();
