@@ -26,7 +26,7 @@ public class TestBossPattern1 : BossPattern
         {
             float radian = angle * Mathf.Deg2Rad;
             Vector3 barragePos = new Vector3(Mathf.Cos(radian) * radius, Mathf.Sin(radian) * radius, 0);
-            Instantiate(barragePrefab, barragePos, Quaternion.identity);
+            Instantiate(barragePrefab, barragePos, Quaternion.Euler(0,0,angle));
             angle -= barrageSpace;
            
         }
