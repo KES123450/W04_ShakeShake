@@ -388,7 +388,8 @@ MonoBehaviour:
   animationStateName: 
   preDelaySeconds: 2
   postDelaySeconds: 2
-  attack: {fileID: 2013645438}
+  attack: []
+  attackInterval: 0
 --- !u!1 &947479322
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,6 +795,10 @@ PrefabInstance:
       propertyPath: currentAction
       value: 
       objectReference: {fileID: 1716318750}
+    - target: {fileID: 5078915318715876413, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6056426080643611653, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
       propertyPath: m_RootOrder
       value: 3

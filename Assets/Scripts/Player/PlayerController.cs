@@ -10,22 +10,27 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
     [SerializeField] float rollInputBuffer;
     [SerializeField] float actionInputBuffer;
 
+    PlayerInput inputManager;
     PlayerInputActions inputs;
     PlayerMove playerMove;
     PlayerAction playerAction;
+    AimIndicator aimIndicator;
 
     Vector2 inputDirection;
+    Vector2 lookDirection;
     bool desiredRoll;
     bool desiredAction;
     float rollInputBufferCounter;
     float actionInputBufferCounter;
+
     public PlayerState CurrentState { get; private set; }
+
+    bool IsKeyboardAndMouse => inputManager.currentControlScheme.Equals("Keyboard&Mouse");
 
     public void OnMove(InputAction.CallbackContext context)
     {
         inputDirection = context.ReadValue<Vector2>();
     }
-
     public void OnRoll(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -34,7 +39,6 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
             rollInputBufferCounter = rollInputBuffer;
         }
     }
-
     public void OnAction(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -44,6 +48,23 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
         }
 
     }
+    public void OnAim(InputAction.CallbackContext context)
+    {
+        var inputVector = context.ReadValue<Vector2>();
+        if (!IsKeyboardAndMouse)
+        {
+            if (inputVector != Vector2.zero)
+            {
+                lookDirection = inputVector.normalized;
+            }
+        }
+        else
+        {
+            var mousePosition = (Vector2)Camera.main.ScreenToWorldPoint(inputVector);
+            lookDirection = (mousePosition - (Vector2)transform.position).normalized;
+        }
+        aimIndicator.SetDirection(lookDirection);
+    }
 
     void Awake()
     {
@@ -51,8 +72,10 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
         inputs.Player.SetCallbacks(this);
         inputs.Enable();
 
+        inputManager = FindObjectOfType<PlayerInput>();
         playerMove = GetComponent<PlayerMove>();
         playerAction = GetComponent<PlayerAction>();
+        aimIndicator = GetComponentInChildren<AimIndicator>();
     }
 
     void Start()
