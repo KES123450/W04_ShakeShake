@@ -53,13 +53,14 @@ public abstract class BossPattern : MonoBehaviour
 	protected virtual void Awake()
 	{
 		TryGetComponent(out main);
+		anim = main.GetAnimator();
+		waitpreDelay = new WaitForSeconds(preDelaySeconds);
+		waitpostDelay = new WaitForSeconds(postDelaySeconds);
 
 	}
 	private void Start()
 	{
-		anim = main.GetAnimator();
-		waitpreDelay = new WaitForSeconds(preDelaySeconds);
-		waitpostDelay = new WaitForSeconds(postDelaySeconds);
+		
 	}
 	protected virtual void OnEnable()
 	{
