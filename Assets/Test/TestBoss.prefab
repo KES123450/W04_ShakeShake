@@ -12,6 +12,10 @@ GameObject:
   - component: {fileID: 3094788854620111985}
   - component: {fileID: 3094788854620111984}
   - component: {fileID: 3094788854620111991}
+  - component: {fileID: 648634174}
+  - component: {fileID: 648634169}
+  - component: {fileID: 648634175}
+  - component: {fileID: 648634176}
   m_Layer: 0
   m_Name: TestBoss
   m_TagString: Untagged
@@ -76,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -102,11 +106,12 @@ MonoBehaviour:
   respawnPoint: {x: 0, y: 0}
   hpCurrent: 5
   hpMax: 5
-  startPattern: {fileID: 3094788854620111991}
+  startPattern: {fileID: 648634175}
   patternList:
-  - {fileID: 3094788854620111991}
-  - {fileID: 3094788854620111991}
-  patternIndex: 0
+  - {fileID: 648634176}
+  - {fileID: 648634175}
+  - {fileID: 648634175}
+  patternIndex: -1
   currentPattern: {fileID: 0}
 --- !u!114 &3094788854620111991
 MonoBehaviour:
@@ -129,3 +134,80 @@ MonoBehaviour:
   barrageCount: 5
   startAngle: 120
   endAngle: 180
+--- !u!50 &648634174
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3094788854620111990}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &648634169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3094788854620111990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7682ee06645ca694e8b0b957ae37386b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  main: {fileID: 0}
+  animationStateName: 
+  preDelaySeconds: 2
+  postDelaySeconds: 2
+  attack: []
+  attackInterval: 0
+--- !u!114 &648634175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3094788854620111990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f61bde47306f03d448c8b337fc401c0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  main: {fileID: 0}
+  animationStateName: 
+  preDelaySeconds: 1
+  postDelaySeconds: 4
+  moveSpeed: 0.005
+  moveTime: 3
+  maxSpeed: 3
+  isAct: 0
+--- !u!114 &648634176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3094788854620111990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83c894d577d50ac42abab2e6327b2f12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  main: {fileID: 0}
+  animationStateName: 
+  preDelaySeconds: 1
+  postDelaySeconds: 1
+  dashForce: 1
+  rigid: {fileID: 648634174}
