@@ -20,6 +20,7 @@ public class PlayerMove : MonoBehaviour
 
     public bool CanMove { get; set; }
     public bool IsRollEnded { get; private set; }
+    public bool IsMoving => playerRigidbody.velocity.magnitude > 0;
     bool IsRolling { get { return player.CurrentState == PlayerState.Roll; } }
 
 
@@ -67,11 +68,10 @@ public class PlayerMove : MonoBehaviour
     void FixedUpdateDeath()
     {
     }
-
     public void SetDireciton(Vector2 direction)
     {
         moveDirection = direction;
-        if (!direction.Equals(Vector2.zero)) rollDirection = direction;
+        if (!direction.Equals(Vector2.zero)) { rollDirection = direction; }
     }
 
     public void StartRoll(Vector2 _direction)
