@@ -68,14 +68,15 @@ public class PlayerMove : MonoBehaviour
     public void SetDireciton(Vector2 direction)
     {
         moveDirection = direction;
+        if (!direction.Equals(Vector2.zero)) rollDirection = direction;
     }
 
     public void StartRoll(Vector2 _direction)
     {
         rollStartTime = Time.time;
-        rollDirection = _direction.normalized;
+        var direction = (_direction.Equals(Vector2.zero) ? rollDirection : _direction).normalized;
         var rollSpeed = rollDistance / rollDuration;
-        playerRigidbody.velocity = rollDirection * (rollSpeed);
+        playerRigidbody.velocity = direction * (rollSpeed);
     }
     public void EndRoll()
     {
