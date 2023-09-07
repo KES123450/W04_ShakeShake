@@ -107,6 +107,7 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
             playerMove.EndRoll();
             CurrentState = PlayerState.Idle;
         }
+        TryAction();
     }
     void FixedUpdateAction()
     {
@@ -127,11 +128,14 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
     {
         if (desiredRoll)
         {
-            playerAction.EndAction();
+            if (CurrentState == PlayerState.Action)
+            {
+                playerAction.EndAction();
+            }
 
             playerMove.StartRoll(inputDirection);
-            desiredRoll = false;
             CurrentState = PlayerState.Roll;
+            desiredRoll = false;
             return true;
         }
         return false;
@@ -140,8 +144,13 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
     {
         if (desiredAction)
         {
-            CurrentState = PlayerState.Action;
+            if (CurrentState == PlayerState.Roll)
+            {
+                playerMove.EndRoll();
+            }
+
             playerAction.StartAction();
+            CurrentState = PlayerState.Action;
             desiredAction = false;
             return true;
         }
