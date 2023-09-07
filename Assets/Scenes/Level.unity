@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 1378478522}
   - component: {fileID: 1378478521}
   m_Layer: 0
-  m_Name: Triangle
+  m_Name: Missile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -413,9 +413,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d458584498235bd459864984a5dbd1aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyMissileTime: 5
-  rotateSpeed: 0.3
-  guideSpeed: 0.02
+  destroyMissileTime: 20
+  rotateSpeed: 1
+  guideSpeed: 2
 --- !u!212 &1378478523
 SpriteRenderer:
   m_ObjectHideFlags: 0
