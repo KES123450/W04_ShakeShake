@@ -70,13 +70,12 @@ public class PlayerMove : MonoBehaviour
         moveDirection = direction;
     }
 
-    public void StartRoll()
+    public void StartRoll(Vector2 _direction)
     {
         rollStartTime = Time.time;
-        rollDirection = moveDirection;
-
+        rollDirection = _direction.normalized;
         var rollSpeed = rollDistance / rollDuration;
-        playerRigidbody.velocity = rollDirection.normalized * (rollSpeed);
+        playerRigidbody.velocity = rollDirection * (rollSpeed);
     }
     public void EndRoll()
     {

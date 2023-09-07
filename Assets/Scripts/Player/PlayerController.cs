@@ -129,7 +129,7 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
         {
             playerAction.EndAction();
 
-            playerMove.StartRoll();
+            playerMove.StartRoll(inputDirection);
             desiredRoll = false;
             CurrentState = PlayerState.Roll;
             return true;
