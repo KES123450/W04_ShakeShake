@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
             playerMove.EndRoll();
             CurrentState = PlayerState.Idle;
         }
-        if (playerAction.CanActionCancelRoll)
+        if (playerAction.CurrentAction.CanActionCancelRoll)
         {
             playerMove.EndRoll();
             TryAction();
@@ -120,7 +120,7 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
             playerAction.EndAction();
             CurrentState = PlayerState.Idle;
         }
-        if (playerAction.CanRollCancelAction)
+        if (playerAction.CurrentAction.CanRollCancelAction)
         {
             playerAction.EndAction();
             TryRoll();

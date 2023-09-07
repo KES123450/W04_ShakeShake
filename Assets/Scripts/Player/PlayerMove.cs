@@ -11,6 +11,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] float rollDuration;
 
     PlayerController player;
+    PlayerAction action;
     Rigidbody2D playerRigidbody;
 
     Vector2 moveDirection;
@@ -25,6 +26,7 @@ public class PlayerMove : MonoBehaviour
     private void Awake()
     {
         player = GetComponent<PlayerController>();
+        action = GetComponent<PlayerAction>();
         playerRigidbody = GetComponent<Rigidbody2D>();    
     }
     private void Start()
@@ -59,7 +61,8 @@ public class PlayerMove : MonoBehaviour
     }
     void FixedUpdateAction()
     {
-        playerRigidbody.velocity = Vector2.zero;
+        var muliplier = action.CurrentAction.SpeedMultiplier;
+        playerRigidbody.velocity = moveDirection * speed * muliplier;
     }
     void FixedUpdateDeath()
     {

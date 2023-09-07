@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class PlayerAction : MonoBehaviour
 {
-    [SerializeField] float actionDuration;
-    [SerializeField] PlayerActionPreset preset;
+    [SerializeField] ActionInfo currentAction;
 
     PlayerController player;
 
     float actionStartTime;
 
     public bool IsActionEnded { get; private set; }
-    public bool CanRollCancelAction { get; private set; }
-    public bool CanActionCancelRoll { get; private set; }
-    bool IsActioning { get { return player.CurrentState == PlayerState.Action; } }
+    public ActionInfo CurrentAction => currentAction;
+
+    bool IsActioning => player.CurrentState == PlayerState.Action;
 
     void Awake()
     {
@@ -23,34 +22,50 @@ public class PlayerAction : MonoBehaviour
     private void Start()
     {
         IsActionEnded = false;
-        LoadPreset();
+        LoadAction();
     }
     private void Update()
     {
         if (IsActioning)
         {
-            if (Time.time > actionStartTime + actionDuration)
+            currentAction.OnUpdateAction();
+            if (Time.time > actionStartTime + currentAction.ActionDuration)
             {
                 IsActionEnded = true;
             }
         }
+        else
+        {
+            currentAction.OnUpdateNotAction();
+        }
     }
     public void StartAction()
     {
+        if (currentAction == null)
+        {
+            Debug.LogWarning("Player has no action!");
+            return;
+        }
         actionStartTime = Time.time;
+        currentAction.OnStartAction(player);
     }
     public void EndAction()
     {
         if (!IsActioning) { return; }
         IsActionEnded = false;
+        currentAction.OnEndAction();
     }
 
-    void LoadPreset(PlayerActionPreset preset = null)
+    void LoadAction(ActionInfo currentAction = null)
     {
-        if (preset == null) { preset = this.preset; }
-
-        CanRollCancelAction = preset.CanRollCancelAction;
-        CanActionCancelRoll = preset.CanActionCancelRoll;
+        if (currentAction == null) 
+        { 
+            currentAction = this.currentAction; 
+        }
+        else
+        {
+            this.currentAction = currentAction;
+        }
     }
 
 }
