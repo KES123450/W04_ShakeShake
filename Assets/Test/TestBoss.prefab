@@ -209,5 +209,5 @@ MonoBehaviour:
   animationStateName: 
   preDelaySeconds: 1
   postDelaySeconds: 1
-  dashForce: 1
+  dashForce: 10
   rigid: {fileID: 648634174}

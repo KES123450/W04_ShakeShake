@@ -20,7 +20,7 @@ public class DashToPlayerPattern : BossPattern
 
     private void Dash()
     {
-        Vector3 playerDirection = GameManager.instance.GetPlayer().transform.position - transform.position;
+        Vector3 playerDirection = (GameManager.instance.GetPlayer().transform.position - transform.position).normalized;
         rigid.AddForce(playerDirection * dashForce, ForceMode2D.Impulse);
     }
 }
