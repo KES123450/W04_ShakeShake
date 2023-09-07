@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionDuration: 0.5
+  preset: {fileID: 11400000, guid: 6fc5a6d52369e5f4e8d95fb175946aad, type: 2}
 --- !u!114 &4554772113128657472
 MonoBehaviour:
   m_ObjectHideFlags: 0
