@@ -46,7 +46,6 @@ public abstract class Boss : MonoBehaviour
 	}
 	public void PatternStart()
 	{
-		Debug.Log("start");
 		currentPattern = startPattern;
 		currentPattern.StartAct();
 	}

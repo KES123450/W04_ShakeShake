@@ -37,7 +37,6 @@ public abstract class BossPattern : MonoBehaviour
 		PostProcessing();
 
 		CallNextAction();
-		Debug.Log("callNext");
 	}
 	public void CallNextAction()
 	{
