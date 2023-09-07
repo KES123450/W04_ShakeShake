@@ -107,7 +107,11 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
             playerMove.EndRoll();
             CurrentState = PlayerState.Idle;
         }
-        TryAction();
+        if (playerAction.CanActionCancelRoll)
+        {
+            playerMove.EndRoll();
+            TryAction();
+        }
     }
     void FixedUpdateAction()
     {
@@ -116,7 +120,11 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
             playerAction.EndAction();
             CurrentState = PlayerState.Idle;
         }
-        TryRoll();
+        if (playerAction.CanRollCancelAction)
+        {
+            playerAction.EndAction();
+            TryRoll();
+        }
     }
 
     void FixedUpdateDeath()
@@ -128,11 +136,6 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
     {
         if (desiredRoll)
         {
-            if (CurrentState == PlayerState.Action)
-            {
-                playerAction.EndAction();
-            }
-
             playerMove.StartRoll(inputDirection);
             CurrentState = PlayerState.Roll;
             desiredRoll = false;
@@ -144,11 +147,6 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
     {
         if (desiredAction)
         {
-            if (CurrentState == PlayerState.Roll)
-            {
-                playerMove.EndRoll();
-            }
-
             playerAction.StartAction();
             CurrentState = PlayerState.Action;
             desiredAction = false;

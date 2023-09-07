@@ -5,12 +5,15 @@ using UnityEngine;
 public class PlayerAction : MonoBehaviour
 {
     [SerializeField] float actionDuration;
+    [SerializeField] PlayerActionPreset preset;
 
     PlayerController player;
 
     float actionStartTime;
 
     public bool IsActionEnded { get; private set; }
+    public bool CanRollCancelAction { get; private set; }
+    public bool CanActionCancelRoll { get; private set; }
     bool IsActioning { get { return player.CurrentState == PlayerState.Action; } }
 
     void Awake()
@@ -20,6 +23,7 @@ public class PlayerAction : MonoBehaviour
     private void Start()
     {
         IsActionEnded = false;
+        LoadPreset();
     }
     private void Update()
     {
@@ -40,4 +44,13 @@ public class PlayerAction : MonoBehaviour
         if (!IsActioning) { return; }
         IsActionEnded = false;
     }
+
+    void LoadPreset(PlayerActionPreset preset = null)
+    {
+        if (preset == null) { preset = this.preset; }
+
+        CanRollCancelAction = preset.CanRollCancelAction;
+        CanActionCancelRoll = preset.CanActionCancelRoll;
+    }
+
 }
