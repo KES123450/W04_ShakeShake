@@ -58,12 +58,6 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
                 lookDirection = inputVector.normalized;
             }
         }
-        else
-        {
-            var mousePosition = (Vector2)Camera.main.ScreenToWorldPoint(inputVector);
-            lookDirection = (mousePosition - (Vector2)transform.position).normalized;
-        }
-        aimIndicator.SetDirection(lookDirection);
     }
 
     void Awake()
@@ -86,6 +80,13 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
 
     void Update()
     {
+        if (IsKeyboardAndMouse)
+        {
+            var mousePosition = (Vector2)Camera.main.ScreenToWorldPoint((Vector2)Input.mousePosition);
+            lookDirection = (mousePosition - (Vector2)transform.position).normalized;
+        }
+        aimIndicator.SetDirection(lookDirection);
+
         if (desiredRoll && rollInputBufferCounter > 0)
         {
             rollInputBufferCounter -= Time.deltaTime;
