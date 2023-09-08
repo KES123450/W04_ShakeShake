@@ -10,36 +10,53 @@ public class CokeAttack : ActionInfo
     [SerializeField] float gaugeCostPerSecond;
     [SerializeField] float maxGauge;
     [SerializeField] float minimumGaugeToShoot;
+    [Header("Coke Geyser")]
+    [SerializeField] float maxLength;
+    [SerializeField] LayerMask targetLayer;
 
+    CokeGeyser geyser;
 
     float _currentGauge;
+    float geyserStartGauge;
+
+    public override bool CanAction => (CurrentGauge >= minimumGaugeToShoot);
     float CurrentGauge
     {
         get { return _currentGauge; }
         set { _currentGauge = Mathf.Clamp(value, 0, maxGauge); }
     }
 
-    public override bool CanAction => (CurrentGauge >= minimumGaugeToShoot);
-
     void OnGUI()
     {
-        GUI.Box(new Rect(0, 0, Screen.width * (CurrentGauge / maxGauge), Screen.height), "");
+        GUI.Box(new Rect(0, 0, Screen.width * (CurrentGauge / maxGauge), Screen.height / 10), "");
     }
     bool IsRolling => player.CurrentState == PlayerState.Roll;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        geyser = GetComponentInChildren<CokeGeyser>();
+    }
     protected override void Start()
     {
         base.Start();
+        geyser.SetActive(false);
         CurrentGauge = 0;
     }
     public override void OnStartAction()
     {
         base.OnStartAction();
+        geyserStartGauge = CurrentGauge;
+        geyser.StartGeyser(targetLayer, transform.position);
     }
     public override void OnUpdateAction()
     {
         if (CurrentGauge > 0)
         {
             CurrentGauge -= gaugeCostPerSecond * Time.deltaTime;
+            var usedGauge = geyserStartGauge - CurrentGauge;
+            var length = maxLength * usedGauge / maxGauge;
+            geyser.UpdatePoint(transform.position, aimDirection * length);
         }
         if (CurrentGauge == 0)
         {
@@ -54,6 +71,7 @@ public class CokeAttack : ActionInfo
     public override void OnEndAction()
     {
         base.OnEndAction();
+        geyser.EndGeyser();
     }
 
 }

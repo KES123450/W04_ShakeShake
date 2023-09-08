@@ -10,6 +10,7 @@ public abstract class ActionInfo : MonoBehaviour
     [SerializeField] protected bool canActionCancelRoll;
 
     protected PlayerController player;
+    protected Vector2 aimDirection;
 
     public float SpeedMultiplier => speedMuptiplier;
     public bool CanRollCancelAction => canRollCancelAction;
@@ -26,13 +27,27 @@ public abstract class ActionInfo : MonoBehaviour
     {
 
     }
-
+    public void SetAimDirection(Vector2 direction)
+    {
+        aimDirection = direction;
+    }
     public virtual void Initialize()
     {
     }
     public virtual void OnStartAction()
     {
 
+    }
+    public void OnUpdate(bool isActioning)
+    {
+        if (isActioning)
+        {
+            OnUpdateAction();
+        }
+        else
+        {
+            OnUpdateNotAction();
+        }
     }
     public abstract void OnUpdateAction();
     public abstract void OnUpdateNotAction();

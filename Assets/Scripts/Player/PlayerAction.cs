@@ -8,6 +8,7 @@ public class PlayerAction : MonoBehaviour
 
     PlayerController player;
 
+    Vector2 aimDirection;
 
     public ActionInfo CurrentAction => currentAction;
     public bool CanAction => currentAction.CanAction;
@@ -25,15 +26,10 @@ public class PlayerAction : MonoBehaviour
     }
     private void Update()
     {
-        if (IsActioning)
-        {
-            currentAction.OnUpdateAction();
-        }
-        else
-        {
-            currentAction.OnUpdateNotAction();
-        }
+        SetActionDirection();
+        currentAction.OnUpdate(IsActioning);
     }
+
     public void StartAction()
     {
         if (currentAction == null)
@@ -41,12 +37,17 @@ public class PlayerAction : MonoBehaviour
             Debug.LogWarning("Player has no action!");
             return;
         }
+        SetActionDirection();
         currentAction.OnStartAction();
     }
     public void EndAction()
     {
         if (!IsActioning) { return; }
         currentAction.OnEndAction();
+    }
+    void SetActionDirection()
+    {
+        currentAction.SetAimDirection(player.AimDirection);
     }
 
     void LoadAction(ActionInfo currentAction = null)
