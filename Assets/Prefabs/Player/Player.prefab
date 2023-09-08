@@ -163,6 +163,7 @@ GameObject:
   - component: {fileID: 4554772113128657472}
   - component: {fileID: 6056426082286253244}
   - component: {fileID: 4188169426853658201}
+  - component: {fileID: 4257093092030869253}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -355,6 +356,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4257093092030869253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6056426080643611662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04aef4d9df87d854d9c815135dbb8dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
 --- !u!1001 &6055131982085263053
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -409,6 +423,14 @@ PrefabInstance:
     - target: {fileID: 5852489646950858671, guid: 18ae36ab4801a104d8e58a245e04c83c, type: 3}
       propertyPath: m_Name
       value: CokeAttackAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 7734861240999682259, guid: 18ae36ab4801a104d8e58a245e04c83c, type: 3}
+      propertyPath: gaugeRegen
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7734861240999682259, guid: 18ae36ab4801a104d8e58a245e04c83c, type: 3}
+      propertyPath: gaugeLossOnStop
+      value: 2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ae36ab4801a104d8e58a245e04c83c, type: 3}

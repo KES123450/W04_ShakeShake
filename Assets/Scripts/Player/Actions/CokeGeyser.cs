@@ -5,7 +5,7 @@ using UnityEngine;
 public class CokeGeyser : MonoBehaviour
 {
     LineRenderer lineRenderer;
-    BoxCollider2D collider;
+    new BoxCollider2D collider;
 
     LayerMask targetLayer;
     List<IDamageable> damaged;

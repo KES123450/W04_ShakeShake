@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
     PlayerInputActions inputs;
     PlayerMove playerMove;
     PlayerAction playerAction;
+    PlayerHealth playerHealth;
     AimIndicator aimIndicator;
 
     Vector2 moveDirection;
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
     public Vector2 MoveDirection => moveDirection.normalized;
     public Vector2 AimDirection => aimDirection.normalized;
     public PlayerState CurrentState { get; private set; }
+    public PlayerMove MoveComponent => playerMove;
 
     bool IsKeyboardAndMouse => inputManager.currentControlScheme.Equals("Keyboard&Mouse");
 
@@ -71,6 +73,7 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
         inputManager = FindObjectOfType<PlayerInput>();
         playerMove = GetComponent<PlayerMove>();
         playerAction = GetComponent<PlayerAction>();
+        playerHealth = GetComponent<PlayerHealth>();
         aimIndicator = GetComponentInChildren<AimIndicator>();
     }
 
@@ -134,6 +137,10 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
         }
         if (rollInputBuffer == 0) desiredRoll = false;
         if (actionInputBuffer == 0) desiredAction = false;
+        if (!playerHealth.IsAlive && CurrentState != PlayerState.Death)
+        {
+            OnDeath();
+        }
     }
 
     void FixedUpdateIdle()
@@ -200,5 +207,10 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
             return true;
         }
         return false;
+    }
+    void OnDeath()
+    {
+        CurrentState = PlayerState.Death;
+        playerMove.CanMove = false;
     }
 }
