@@ -13,6 +13,7 @@ public class CokeAttack : ActionInfo
     [SerializeField] float minimumGaugeToShoot;
     [Header("Coke Geyser")]
     [SerializeField] float maxLength;
+    [SerializeField] float maxAngularSpeed;
     [SerializeField] LayerMask targetLayer;
 
     CokeGeyser geyser;
@@ -49,7 +50,7 @@ public class CokeAttack : ActionInfo
     {
         base.OnStartAction();
         geyserStartGauge = CurrentGauge;
-        geyser.StartGeyser(targetLayer, transform.position);
+        geyser.StartGeyser(targetLayer, transform.position, aimDirection, maxAngularSpeed);
     }
     public override void OnUpdateAction()
     {

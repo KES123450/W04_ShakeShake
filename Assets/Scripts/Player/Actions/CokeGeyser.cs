@@ -10,7 +10,10 @@ public class CokeGeyser : MonoBehaviour
 
     LayerMask targetLayer;
     List<IDamageable> damaged;
+    Vector3 currentDirection;
+    float maxAngularSpeed;
 
+    public Quaternion CurrentRotation => Quaternion.FromToRotation(Vector2.right, currentDirection);
     private void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
@@ -21,10 +24,12 @@ public class CokeGeyser : MonoBehaviour
     {
         gameObject.SetActive(value);
     }
-    public void StartGeyser(LayerMask targetLayer, Vector2 startPoint)
+    public void StartGeyser(LayerMask targetLayer, Vector2 startPoint, Vector2 aimDirection, float angularSpeed)
     {
         lineRenderer.SetPositions(new Vector3[]{ startPoint, startPoint });
         this.targetLayer = targetLayer;
+        maxAngularSpeed = angularSpeed;
+        currentDirection = aimDirection;
         damaged.Clear();
         SetActive(true);
     }
@@ -37,12 +42,13 @@ public class CokeGeyser : MonoBehaviour
         var direction = targetVector.normalized;
         var length = targetVector.magnitude;
 
-        transform.rotation = Quaternion.FromToRotation(Vector2.right, direction);
+        currentDirection = Vector3.RotateTowards(currentDirection, direction, maxAngularSpeed * Mathf.Deg2Rad * Time.deltaTime, 0) ;
+        transform.rotation = CurrentRotation;
 
         collider.offset = Vector2.right * length / 2;
         collider.size = Vector2.right * length + Vector2.up;
 
-        lineRenderer.SetPositions(new Vector3[] { startPoint, startPoint + targetVector });
+        lineRenderer.SetPositions(new Vector3[] { startPoint, startPoint + (Vector2)currentDirection * length });
 
         var filter = new ContactFilter2D();
         filter.useTriggers = true;
@@ -58,19 +64,5 @@ public class CokeGeyser : MonoBehaviour
             d.OnDamage();
             damaged.Add(d);
         });
-
     }
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (targetLayer.Contains(collision.gameObject.layer) && collision.transform.TryGetComponent<IDamageable>(out var damageable))
-    //    {
-    //        if (!damaged.Contains(damageable))
-    //        {
-    //            damageable.OnDamage();
-    //            damaged.Add(damageable);
-    //        }
-    //    }
-    //}
-
 }
