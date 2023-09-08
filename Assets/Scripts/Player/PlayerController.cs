@@ -16,8 +16,8 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
     PlayerAction playerAction;
     AimIndicator aimIndicator;
 
-    Vector2 inputDirection;
-    Vector2 lookDirection;
+    Vector2 moveDirection;
+    Vector2 aimDirection;
     bool desiredRoll;
     bool desiredAction;
     float rollInputBufferCounter;
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        inputDirection = context.ReadValue<Vector2>();
+        moveDirection = context.ReadValue<Vector2>();
     }
     public void OnRoll(InputAction.CallbackContext context)
     {
@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
         {
             if (inputVector != Vector2.zero)
             {
-                lookDirection = inputVector.normalized;
+                aimDirection = inputVector.normalized;
             }
         }
     }
@@ -76,6 +76,23 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
     {
         playerMove.CanMove = true;
         CurrentState = PlayerState.Idle;
+
+
+    //    InputSystem.onActionChange +=
+    //(obj, change) =>
+    //{
+    //    // obj can be either an InputAction or an InputActionMap
+    //    // depending on the specific change.
+    //    switch (change)
+    //    {
+    //        case InputActionChange.ActionStarted:
+    //        case InputActionChange.ActionPerformed:
+    //        case InputActionChange.ActionCanceled:
+    //            Debug.Log($"{((InputAction)obj).name} {change}");
+    //            break;
+    //    }
+    //};
+
     }
 
     void Update()
@@ -83,9 +100,9 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
         if (IsKeyboardAndMouse)
         {
             var mousePosition = (Vector2)Camera.main.ScreenToWorldPoint((Vector2)Input.mousePosition);
-            lookDirection = (mousePosition - (Vector2)transform.position).normalized;
+            aimDirection = (mousePosition - (Vector2)transform.position).normalized;
         }
-        aimIndicator.SetDirection(lookDirection);
+        aimIndicator.SetDirection(aimDirection);
 
         if (desiredRoll && rollInputBufferCounter > 0)
         {
@@ -119,7 +136,7 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
 
     void FixedUpdateIdle()
     {
-        playerMove.SetDireciton(inputDirection);
+        playerMove.SetDireciton(moveDirection);
 
         TryRoll();
         TryAction();
@@ -139,7 +156,7 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
     }
     void FixedUpdateAction()
     {
-        playerMove.SetDireciton(inputDirection);
+        playerMove.SetDireciton(moveDirection);
 
         if (playerAction.IsActionEnded)
         {
@@ -162,7 +179,7 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
     {
         if (desiredRoll)
         {
-            playerMove.StartRoll(inputDirection);
+            playerMove.StartRoll(moveDirection);
             CurrentState = PlayerState.Roll;
             desiredRoll = false;
             return true;
