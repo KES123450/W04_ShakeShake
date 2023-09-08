@@ -45,6 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedMuptiplier: 0.5
-  actionDuration: 1
   canRollCancelAction: 0
   canActionCancelRoll: 0
+  gaugeRegen: 3
+  regenRollMuliplier: 1
+  gaugeCostPerSecond: 10
+  maxGauge: 10
+  minimumGaugeToShoot: 2
