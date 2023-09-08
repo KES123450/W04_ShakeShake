@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
     public Vector2 MoveDirection => moveDirection.normalized;
     public Vector2 AimDirection => aimDirection.normalized;
     public PlayerState CurrentState { get; private set; }
+    public PlayerMove MoveComponent => playerMove;
 
     bool IsKeyboardAndMouse => inputManager.currentControlScheme.Equals("Keyboard&Mouse");
 

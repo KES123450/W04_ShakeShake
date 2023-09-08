@@ -17,13 +17,14 @@ public class PlayerMove : MonoBehaviour
     Vector2 moveDirection;
     Vector2 rollDirection;
     float rollStartTime;
-    float speedModifier;
 
     public bool CanMove { get; set; }
     public bool IsRollEnded { get; private set; }
+    public float SpeedModifier { get; private set; }
     public bool IsMoving => playerRigidbody.velocity.magnitude > 0;
-    bool IsRolling => player.CurrentState == PlayerState.Roll;
-    float FinalSpeed => speed * speedModifier;
+    public bool IsRolling => player.CurrentState == PlayerState.Roll;
+    
+    float FinalSpeed => speed * SpeedModifier;
 
 
     private void Awake()
@@ -35,7 +36,7 @@ public class PlayerMove : MonoBehaviour
     private void Start()
     {
         IsRollEnded = false;
-        speedModifier = 1;
+        SpeedModifier = 1;
     }
     private void FixedUpdate()
     {
@@ -78,14 +79,14 @@ public class PlayerMove : MonoBehaviour
     }
     public void SetSpeedModifier(float value)
     {
-        speedModifier = value;
+        SpeedModifier = value;
     }
 
     public void StartRoll(Vector2 _direction)
     {
         rollStartTime = Time.time;
         var direction = (_direction.Equals(Vector2.zero) ? rollDirection : _direction).normalized;
-        var rollSpeed = speedModifier * rollDistance / rollDuration;
+        var rollSpeed = SpeedModifier * rollDistance / rollDuration;
         playerRigidbody.velocity = direction * (rollSpeed);
     }
     public void EndRoll()

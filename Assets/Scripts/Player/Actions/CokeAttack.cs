@@ -6,6 +6,7 @@ public class CokeAttack : ActionInfo
 {
     [Header("Coke Gauge")]
     [SerializeField] float gaugeRegen;
+    [SerializeField] float gaugeLossOnStop;
     [SerializeField] float regenRollMuliplier;
     [SerializeField] float gaugeCostPerSecond;
     [SerializeField] float maxGauge;
@@ -19,6 +20,7 @@ public class CokeAttack : ActionInfo
     float _currentGauge;
     float geyserStartGauge;
 
+    PlayerMove playerMove => player.MoveComponent;
     public override bool CanAction => (CurrentGauge >= minimumGaugeToShoot);
     float CurrentGauge
     {
@@ -65,8 +67,15 @@ public class CokeAttack : ActionInfo
     }
     public override void OnUpdateNotAction()
     {
-        var multiplier = IsRolling ? regenRollMuliplier : 1;
-        CurrentGauge += gaugeRegen * multiplier * Time.deltaTime;
+        if (playerMove.IsMoving)
+        {
+            var multiplier = (IsRolling ? regenRollMuliplier : 1) * playerMove.SpeedModifier;
+            CurrentGauge += gaugeRegen * multiplier * Time.deltaTime;
+        }
+        else
+        {
+            CurrentGauge -= gaugeLossOnStop * Time.deltaTime;
+        }
     }
     public override void OnEndAction()
     {
