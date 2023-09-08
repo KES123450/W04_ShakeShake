@@ -5,14 +5,14 @@ using UnityEngine;
 public abstract class ActionInfo : MonoBehaviour
 {
     [Header("General")]
-    [SerializeField] protected float speedMuptiplier;
+    [SerializeField] protected float moveSpeedMultiplier;
     [SerializeField] protected bool canRollCancelAction;
     [SerializeField] protected bool canActionCancelRoll;
 
     protected PlayerController player;
     protected Vector2 aimDirection;
 
-    public float SpeedMultiplier => speedMuptiplier;
+    public float MoveSpeedMultiplier => moveSpeedMultiplier;
     public bool CanRollCancelAction => canRollCancelAction;
     public bool CanActionCancelRoll => canActionCancelRoll;
     public bool IsActionEnded { get; protected set; }

@@ -66,7 +66,7 @@ public class PlayerMove : MonoBehaviour
     }
     void FixedUpdateAction()
     {
-        var actionMuliplier = action.CurrentAction.SpeedMultiplier;
+        var actionMuliplier = action.CurrentAction.MoveSpeedMultiplier;
         playerRigidbody.velocity = moveDirection * FinalSpeed * actionMuliplier;
     }
     void FixedUpdateDeath()
