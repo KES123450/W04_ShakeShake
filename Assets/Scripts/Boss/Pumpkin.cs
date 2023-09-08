@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Pumpkin : MonoBehaviour,IDamageable
 {
@@ -14,6 +15,8 @@ public class Pumpkin : MonoBehaviour,IDamageable
     }
     public void OnDamage(int damage = 1)
     {
+        gameObject.SetActive(false);
+        DOTween.Complete(transform);
         Destroy(gameObject);
     }
 

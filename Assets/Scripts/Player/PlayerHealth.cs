@@ -13,11 +13,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     public int CurrentHealth
     {
         get { return _currentHealth; }
-        set { 
-            _currentHealth = value;
-            if (_currentHealth < 0) _currentHealth = 0;
-            else if (_currentHealth > maxHealth) _currentHealth = maxHealth;
-        }
+        set { _currentHealth = Mathf.Clamp(value, 0, maxHealth); }
     }
     public bool IsAlive => _currentHealth > 0;
     
@@ -26,7 +22,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         var style = new GUIStyle();
         style.fontSize = 100;
         style.normal.textColor = Color.white;
-        GUI.Label(new Rect(0, Screen.height / 10, Screen.width / 2, 2 * Screen.height / 10), $"Health : {CurrentHealth} / {maxHealth}", style);
+        GUI.Label(new Rect(0, Screen.height / 10, Screen.width / 2, 2 * Screen.height / 10), $"Player : {CurrentHealth} / {maxHealth}", style);
     }
 
     void Awake()

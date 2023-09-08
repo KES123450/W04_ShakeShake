@@ -4,7 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using System.ComponentModel;
 
-public abstract class Boss : MonoBehaviour
+public abstract class Boss : MonoBehaviour, IDamageable
 {
 	#region PublicVariables
 	public string bossName;
@@ -35,10 +35,14 @@ public abstract class Boss : MonoBehaviour
 	}
 	public virtual void Hit(int _damage, GameObject _source)
 	{
-
 		hitSeq.Restart();
 		hpCurrent = Mathf.Clamp(hpCurrent - _damage, 0, hpMax);
 	}
+	public virtual void OnDamage(int damage = 1)
+	{
+		hitSeq.Restart();
+		hpCurrent = Mathf.Clamp(hpCurrent - damage, 0, hpMax);
+    }
 	public virtual void BossKilled()
 	{
 		anim.Play("Die");
@@ -84,7 +88,7 @@ public abstract class Boss : MonoBehaviour
 	private int GetNextPatternIndex(int _currentIndex)
 	{
 		int result = _currentIndex;
-		if(result >= patternList.Count - 1)
+		if (result >= patternList.Count - 1)
 		{
 			result = 0;
 		}
@@ -94,6 +98,14 @@ public abstract class Boss : MonoBehaviour
 		}
 		return result;
 	}
+	void OnGUI()
+	{
+		var style = new GUIStyle();
+		style.fontSize = 100;
+		style.normal.textColor = Color.white;
+		GUI.Label(new Rect(Screen.width / 2, Screen.height / 10, Screen.width, 2 * Screen.height / 10), $"Boss : {hpCurrent} / {hpMax}", style);
+	}
+
 
 	#endregion
 }

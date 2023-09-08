@@ -19,7 +19,7 @@ public class DropPumpkinPattern : BossPattern
     private IEnumerator DropPumpkin()
     {
         Vector3 playerPos = GameManager.instance.GetPlayer().transform.position;
-        GameObject pupkinShadow = Instantiate(pumpkinShadowPrefab, playerPos, Quaternion.identity);
+        GameObject pumpkinShadow = Instantiate(pumpkinShadowPrefab, playerPos, Quaternion.identity);
         yield return new WaitForSeconds(delayAttackTime);
 
         Vector3 pumpkinDefaultPos = playerPos;
@@ -31,7 +31,7 @@ public class DropPumpkinPattern : BossPattern
             .OnComplete(() =>
             {
                 pumpkinComponent.EnableCollider();
-                Destroy(pumpkinShadowPrefab);
+                Destroy(pumpkinShadow);
             });
 
     }

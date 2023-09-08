@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 648634175}
   - component: {fileID: 648634176}
   - component: {fileID: 648634165}
+  - component: {fileID: 4611541364159823673}
   m_Layer: 6
   m_Name: TestBoss
   m_TagString: Untagged
@@ -231,3 +232,19 @@ MonoBehaviour:
   honeyPrefab: {fileID: 7372263424199001342, guid: d962358dbf6c2ad4fa019fd74e5faed7, type: 3}
   honeyBarrage: {fileID: 0}
   barrageSpeed: 2
+--- !u!58 &4611541364159823673
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3094788854620111990}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
