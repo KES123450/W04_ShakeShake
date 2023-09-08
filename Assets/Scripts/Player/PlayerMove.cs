@@ -17,11 +17,13 @@ public class PlayerMove : MonoBehaviour
     Vector2 moveDirection;
     Vector2 rollDirection;
     float rollStartTime;
+    float speedModifier;
 
     public bool CanMove { get; set; }
     public bool IsRollEnded { get; private set; }
     public bool IsMoving => playerRigidbody.velocity.magnitude > 0;
-    bool IsRolling { get { return player.CurrentState == PlayerState.Roll; } }
+    bool IsRolling => player.CurrentState == PlayerState.Roll;
+    float FinalSpeed => speed * speedModifier;
 
 
     private void Awake()
@@ -33,6 +35,7 @@ public class PlayerMove : MonoBehaviour
     private void Start()
     {
         IsRollEnded = false;
+        speedModifier = 1;
     }
     private void FixedUpdate()
     {
@@ -51,7 +54,7 @@ public class PlayerMove : MonoBehaviour
     }
     void FixedUpdateIdle()
     {
-        playerRigidbody.velocity = moveDirection * speed;
+        playerRigidbody.velocity = moveDirection * FinalSpeed;
     }
     void FixedUpdateRoll()
     {
@@ -62,8 +65,8 @@ public class PlayerMove : MonoBehaviour
     }
     void FixedUpdateAction()
     {
-        var muliplier = action.CurrentAction.SpeedMultiplier;
-        playerRigidbody.velocity = moveDirection * speed * muliplier;
+        var actionMuliplier = action.CurrentAction.SpeedMultiplier;
+        playerRigidbody.velocity = moveDirection * FinalSpeed * actionMuliplier;
     }
     void FixedUpdateDeath()
     {
@@ -73,12 +76,16 @@ public class PlayerMove : MonoBehaviour
         moveDirection = direction;
         if (!direction.Equals(Vector2.zero)) { rollDirection = direction; }
     }
+    public void SetSpeedModifier(float value)
+    {
+        speedModifier = value;
+    }
 
     public void StartRoll(Vector2 _direction)
     {
         rollStartTime = Time.time;
         var direction = (_direction.Equals(Vector2.zero) ? rollDirection : _direction).normalized;
-        var rollSpeed = rollDistance / rollDuration;
+        var rollSpeed = speedModifier * rollDistance / rollDuration;
         playerRigidbody.velocity = direction * (rollSpeed);
     }
     public void EndRoll()
