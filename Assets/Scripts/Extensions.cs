@@ -14,4 +14,19 @@ public static class Extensions
     {
         return mask == (mask | (1 << layer));
     }
+
+    public static void ForEach<T>(this IEnumerable<T> items, System.Action<T> action)
+    {
+        if (items is List<T> list)
+        {
+            list.ForEach(action);
+        }
+        else
+        {
+            foreach (var item in items)
+            {
+                action?.Invoke(item);
+            }
+        }
+    }
 }

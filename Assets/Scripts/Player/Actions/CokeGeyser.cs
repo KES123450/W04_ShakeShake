@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class CokeGeyser : MonoBehaviour
@@ -14,6 +15,7 @@ public class CokeGeyser : MonoBehaviour
     {
         lineRenderer = GetComponent<LineRenderer>();
         collider = GetComponent<BoxCollider2D>();
+        damaged = new();
     }
     public void SetActive(bool value)
     {
@@ -23,6 +25,7 @@ public class CokeGeyser : MonoBehaviour
     {
         lineRenderer.SetPositions(new Vector3[]{ startPoint, startPoint });
         this.targetLayer = targetLayer;
+        damaged.Clear();
         SetActive(true);
     }
     public void EndGeyser()
@@ -40,18 +43,34 @@ public class CokeGeyser : MonoBehaviour
         collider.size = Vector2.right * length + Vector2.up;
 
         lineRenderer.SetPositions(new Vector3[] { startPoint, startPoint + targetVector });
+
+        var filter = new ContactFilter2D();
+        filter.useTriggers = true;
+        filter.SetLayerMask(targetLayer);
+        var overlapResult = new List<Collider2D>();
+        collider.OverlapCollider(filter, overlapResult); 
+
+        overlapResult.
+            Select(c => c.GetComponent<IDamageable>()).
+            Where(d => !damaged.Contains(d)).
+            ForEach((d) => 
+        {
+            d.OnDamage();
+            damaged.Add(d);
+        });
+
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (targetLayer.Contains(collision.gameObject.layer) && collision.transform.TryGetComponent<IDamageable>(out var damageable))
-        {
-            if (!damaged.Contains(damageable))
-            {
-                damageable.OnDamage();
-                damaged.Add(damageable);
-            }
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (targetLayer.Contains(collision.gameObject.layer) && collision.transform.TryGetComponent<IDamageable>(out var damageable))
+    //    {
+    //        if (!damaged.Contains(damageable))
+    //        {
+    //            damageable.OnDamage();
+    //            damaged.Add(damageable);
+    //        }
+    //    }
+    //}
 
 }
