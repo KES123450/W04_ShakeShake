@@ -8,10 +8,10 @@ public class PlayerAction : MonoBehaviour
 
     PlayerController player;
 
-    float actionStartTime;
 
-    public bool IsActionEnded { get; private set; }
     public ActionInfo CurrentAction => currentAction;
+    public bool CanAction => currentAction.CanAction;
+    public bool IsActionEnded => currentAction.IsActionEnded;
 
     bool IsActioning => player.CurrentState == PlayerState.Action;
 
@@ -21,7 +21,6 @@ public class PlayerAction : MonoBehaviour
     }
     private void Start()
     {
-        IsActionEnded = false;
         LoadAction();
     }
     private void Update()
@@ -29,10 +28,6 @@ public class PlayerAction : MonoBehaviour
         if (IsActioning)
         {
             currentAction.OnUpdateAction();
-            if (Time.time > actionStartTime + currentAction.ActionDuration)
-            {
-                IsActionEnded = true;
-            }
         }
         else
         {
@@ -46,13 +41,11 @@ public class PlayerAction : MonoBehaviour
             Debug.LogWarning("Player has no action!");
             return;
         }
-        actionStartTime = Time.time;
         currentAction.OnStartAction();
     }
     public void EndAction()
     {
         if (!IsActioning) { return; }
-        IsActionEnded = false;
         currentAction.OnEndAction();
     }
 
@@ -66,6 +59,7 @@ public class PlayerAction : MonoBehaviour
         {
             this.currentAction = currentAction;
         }
+        currentAction.Initialize();
     }
 
 }

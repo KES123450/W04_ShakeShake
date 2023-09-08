@@ -6,16 +6,15 @@ public abstract class ActionInfo : MonoBehaviour
 {
     [Header("General")]
     [SerializeField] protected float speedMuptiplier;
-    [SerializeField] protected float actionDuration;
     [SerializeField] protected bool canRollCancelAction;
     [SerializeField] protected bool canActionCancelRoll;
 
     protected PlayerController player;
 
     public float SpeedMultiplier => speedMuptiplier;
-    public float ActionDuration => actionDuration;
     public bool CanRollCancelAction => canRollCancelAction;
     public bool CanActionCancelRoll => canActionCancelRoll;
+    public bool IsActionEnded { get; protected set; }
 
     public abstract bool CanAction { get; }
 
@@ -28,19 +27,17 @@ public abstract class ActionInfo : MonoBehaviour
 
     }
 
+    public virtual void Initialize()
+    {
+    }
     public virtual void OnStartAction()
     {
-    }
-    public virtual void OnUpdateAction()
-    {
 
     }
-    public virtual void OnUpdateNotAction()
-    {
-
-    }
+    public abstract void OnUpdateAction();
+    public abstract void OnUpdateNotAction();
     public virtual void OnEndAction()
     {
-
+        IsActionEnded = false;
     }
 }
