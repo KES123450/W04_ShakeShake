@@ -226,6 +226,7 @@ MonoBehaviour:
   maxGauge: 10
   minimumGaugeToShoot: 5
   maxLength: 10
+  maxAngularSpeed: 90
   targetLayer:
     serializedVersion: 2
     m_Bits: 0
