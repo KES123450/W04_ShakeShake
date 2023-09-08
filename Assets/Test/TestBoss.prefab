@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 648634169}
   - component: {fileID: 648634175}
   - component: {fileID: 648634176}
+  - component: {fileID: 648634165}
   m_Layer: 0
   m_Name: TestBoss
   m_TagString: Untagged
@@ -108,8 +109,8 @@ MonoBehaviour:
   hpMax: 5
   startPattern: {fileID: 648634175}
   patternList:
+  - {fileID: 648634165}
   - {fileID: 648634176}
-  - {fileID: 648634175}
   - {fileID: 648634175}
   patternIndex: -1
   currentPattern: {fileID: 0}
@@ -211,3 +212,22 @@ MonoBehaviour:
   postDelaySeconds: 1
   dashForce: 10
   rigid: {fileID: 648634174}
+--- !u!114 &648634165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3094788854620111990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aefdbb5d15b22c47961b61dff5af4fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  main: {fileID: 0}
+  animationStateName: 
+  preDelaySeconds: 1
+  postDelaySeconds: 1
+  honeyPrefab: {fileID: 7372263424199001342, guid: d962358dbf6c2ad4fa019fd74e5faed7, type: 3}
+  honeyBarrage: {fileID: 0}
+  barrageSpeed: 2
