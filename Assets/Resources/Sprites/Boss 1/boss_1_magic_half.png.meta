@@ -112,8 +112,8 @@ TextureImporter:
         y: 0
         width: 263
         height: 196
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.36419538, y: 0.2639323}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -129,12 +129,12 @@ TextureImporter:
       name: boss_1_magic_half_1
       rect:
         serializedVersion: 2
-        x: 419
-        y: 0
+        x: 420
+        y: 1
         width: 230
         height: 194
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.43294308, y: 0.28660402}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -154,8 +154,8 @@ TextureImporter:
         y: 0
         width: 246
         height: 189
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.52309835, y: 0.29384345}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -175,8 +175,8 @@ TextureImporter:
         y: 0
         width: 264
         height: 188
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.567645, y: 0.3143357}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
