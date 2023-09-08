@@ -35,6 +35,9 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     }
     public void OnDamage(int value = 1)
     {
-        CurrentHealth -= value;
+        if (IsAlive)
+        {
+            CurrentHealth -= value;
+        }
     }
 }
