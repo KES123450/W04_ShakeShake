@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5078915318715876413}
   - component: {fileID: 9083567666812862794}
   - component: {fileID: 1192505666502174677}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Aim Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6056426080643611653}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!120 &9083567666812862794
 LineRenderer:
@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 6056426082286253244}
   - component: {fileID: 4188169426853658201}
   - component: {fileID: 4257093092030869253}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -183,8 +183,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5315761828625055897}
   - {fileID: 5078915318715876413}
+  - {fileID: 5315761828625055897}
   - {fileID: 8604631217258718232}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -376,6 +376,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6056426080643611653}
     m_Modifications:
+    - target: {fileID: 2430492986640678611, guid: 18ae36ab4801a104d8e58a245e04c83c, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2549579398860630741, guid: 18ae36ab4801a104d8e58a245e04c83c, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -424,6 +428,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CokeAttackAction
       objectReference: {fileID: 0}
+    - target: {fileID: 5852489646950858671, guid: 18ae36ab4801a104d8e58a245e04c83c, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7734861240999682259, guid: 18ae36ab4801a104d8e58a245e04c83c, type: 3}
       propertyPath: gaugeRegen
       value: 5
@@ -461,9 +469,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Reflection
       objectReference: {fileID: 0}
+    - target: {fileID: 1098836930480552249, guid: faabbcc902d98324c9935252a56f1933, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2146491161755005458, guid: faabbcc902d98324c9935252a56f1933, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2146491161755005458, guid: faabbcc902d98324c9935252a56f1933, type: 3}
       propertyPath: m_LocalPosition.x

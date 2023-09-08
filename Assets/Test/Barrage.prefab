@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6143836001469232629}
   - component: {fileID: 5469236859772887966}
   - component: {fileID: 8029051629495437632}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Barrage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
