@@ -173,6 +173,8 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
     {
         if (desiredAction)
         {
+            if (!playerAction.CanAction) { return false; }
+
             playerAction.StartAction();
             CurrentState = PlayerState.Action;
             desiredAction = false;
