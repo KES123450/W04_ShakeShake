@@ -155,7 +155,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.61, y: 0}
@@ -216,16 +216,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a8ac1d863b87ac4bb23572d551e53cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMuptiplier: 0
+  moveSpeedMultiplier: 0
   canRollCancelAction: 0
   canActionCancelRoll: 0
-  gaugeRegen: 3
-  gaugeLossOnStop: 0
-  regenRollMuliplier: 0.5
-  gaugeCostPerSecond: 20
+  gaugeRegen: 2
+  gaugeLossOnStop: 2
+  regenRollMuliplier: 0.25
+  gaugeCostPerSecond: 15
   maxGauge: 10
   minimumGaugeToShoot: 5
-  maxLength: 10
+  maxLength: 20
   maxAngularSpeed: 90
   targetLayer:
     serializedVersion: 2
