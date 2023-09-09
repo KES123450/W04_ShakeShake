@@ -18,6 +18,9 @@ GameObject:
   - component: {fileID: 648634175}
   - component: {fileID: 648634176}
   - component: {fileID: 648634165}
+  - component: {fileID: 5713985142923504564}
+  - component: {fileID: 4111235724777403576}
+  - component: {fileID: 4731822538048507324}
   m_Layer: 6
   m_Name: TestBoss
   m_TagString: Untagged
@@ -34,7 +37,7 @@ Transform:
   m_GameObject: {fileID: 3094788854620111990}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5998, y: 2.5998, z: 2.5998}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -248,3 +251,66 @@ MonoBehaviour:
   honeyPrefab: {fileID: 7372263424199001342, guid: d962358dbf6c2ad4fa019fd74e5faed7, type: 3}
   honeyBarrage: {fileID: 0}
   barrageSpeed: 2
+--- !u!114 &5713985142923504564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3094788854620111990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6229ab9146ea5234ab949107aded3cd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  main: {fileID: 0}
+  animationStateName: 
+  preDelaySeconds: 1
+  postDelaySeconds: 1
+  pumpkinPrefab: {fileID: 8263120087888483618, guid: 91d5201ea6e0c8a438d684aeecc88c6b, type: 3}
+  pumpkinShadowPrefab: {fileID: 7337524906094783226, guid: e455ce6855799cc478e58acb148326bd, type: 3}
+  pumpkinOffsetY: 10
+  dropDuration: 1
+  delayAttackTime: 1
+--- !u!114 &4111235724777403576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3094788854620111990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e7e14a386f05ea4fbe39f0c5150cb95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  main: {fileID: 0}
+  animationStateName: 
+  preDelaySeconds: 1
+  postDelaySeconds: 1
+  potatoPrefab: {fileID: 3594427172382117781, guid: 2143f3afcddd0354aaeaceb286ad7a50, type: 3}
+  potatoCount: 20
+  potatoSpeed: 0.05
+  delayTime: 1
+  mapSize: 60
+--- !u!114 &4731822538048507324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3094788854620111990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40591521b4f89c649b6cb1890fb2497a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  main: {fileID: 0}
+  animationStateName: 
+  preDelaySeconds: 1
+  postDelaySeconds: 4
+  walnutNum: 24
+  walnutRadius: 20
+  walnutAngularSpeed: 30
+  shadowPrefab: {fileID: 7337524906094783226, guid: e455ce6855799cc478e58acb148326bd, type: 3}
+  walnutPrefab: {fileID: 9215953359181705187, guid: 7e170d628cfdb3d4c829c73f50b22759, type: 3}
