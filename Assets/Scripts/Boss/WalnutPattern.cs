@@ -42,6 +42,7 @@ public class WalnutPattern : BossPattern
         base.PostProcessing();
         foreach (var w in spawnedWalnuts.ToList())
         {
+            spawnedWalnuts.Remove(w);
             w.EndRotate();
         }
     }
