@@ -101,7 +101,7 @@ MonoBehaviour:
   radius: 1
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
 --- !u!70 &-6786756827729376141
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

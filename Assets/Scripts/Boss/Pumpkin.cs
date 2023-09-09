@@ -11,23 +11,35 @@ public class Pumpkin : MonoBehaviour,IDamageable
 
     void Start()
     {
-        collider= GetComponent<Collider2D>();
+        collider = GetComponent<Collider2D>();
+        collider.enabled = false;
     }
     public void OnDamage(int damage = 1)
     {
-        gameObject.SetActive(false);
-        DOTween.Complete(transform);
-        Destroy(gameObject);
+        if (collider.enabled)
+        {
+            gameObject.SetActive(false);
+            DOTween.Complete(transform);
+            Destroy(gameObject);
+        }
     }
 
     public void EnableCollider()
     {
         collider.enabled = true;
-        Collider2D col = Physics2D.OverlapCircle((Vector2)transform.position, radius,playerLayer);
-        if (col != null)
+        var result = new List<Collider2D>();
+        var filter = new ContactFilter2D();
+        filter.SetLayerMask(playerLayer);
+
+        collider.OverlapCollider(filter, result);
+        Debug.Log(result.Count);
+        result.ForEach(c =>
         {
-            // 플레이어의 OnDamage() 호출
-        }
+            if (c.gameObject.TryGetComponent<IDamageable>(out var player))
+            {
+                player.OnDamage();
+            }
+        });
     }
 
 }
