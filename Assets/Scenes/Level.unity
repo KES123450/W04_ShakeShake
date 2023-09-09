@@ -351,15 +351,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 648634164}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8747e63b505800f409365b6bf6c9acf2, type: 3}
+  m_Script: {fileID: 11500000, guid: cc0743af5f30e57489f012c3e5cd5e36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   main: {fileID: 0}
   animationStateName: 
   preDelaySeconds: 1
-  postDelaySeconds: 2
-  spawnDistance: 7
-  cabbagePrefab: {fileID: 4518503157364571349, guid: 6bbd805db83ed134d958f023a708f5ff, type: 3}
+  postDelaySeconds: 1
+  pepperPrefab: {fileID: 5275283874063579994, guid: 9ce63b157b81cff448cbdef8c2f4e911, type: 3}
 --- !u!1 &947479322
 GameObject:
   m_ObjectHideFlags: 0
