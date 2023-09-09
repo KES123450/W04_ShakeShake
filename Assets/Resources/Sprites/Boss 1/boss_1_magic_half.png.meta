@@ -112,15 +112,15 @@ TextureImporter:
         y: 0
         width: 263
         height: 196
-      alignment: 9
-      pivot: {x: 0.36419538, y: 0.2639323}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10f633674f3378f46a35e0428cbf1fe7
-      internalID: -1660826001
+      spriteID: fe2eaf06597ccbe44b702ea1b09ede61
+      internalID: 1097873801
       vertices: []
       indices: 
       edges: []
@@ -129,19 +129,19 @@ TextureImporter:
       name: boss_1_magic_half_1
       rect:
         serializedVersion: 2
-        x: 420
-        y: 1
+        x: 419
+        y: 0
         width: 230
         height: 194
-      alignment: 9
-      pivot: {x: 0.43294308, y: 0.28660402}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48b97dc22ac5e1943896ed8756bdea0a
-      internalID: -618513380
+      spriteID: fd0ad863a93175244a01387af2f86a12
+      internalID: -1897150222
       vertices: []
       indices: 
       edges: []
@@ -154,15 +154,15 @@ TextureImporter:
         y: 0
         width: 246
         height: 189
-      alignment: 9
-      pivot: {x: 0.52309835, y: 0.29384345}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5784bee4749d6fe479b3d4837796ccf9
-      internalID: 579609314
+      spriteID: 1a594067443e9ce488070782e38088d1
+      internalID: 1535624327
       vertices: []
       indices: 
       edges: []
@@ -175,15 +175,15 @@ TextureImporter:
         y: 0
         width: 264
         height: 188
-      alignment: 9
-      pivot: {x: 0.567645, y: 0.3143357}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3389b07e82be0a241b747cf6b50e7a37
-      internalID: 1380824385
+      spriteID: 94b767efb88ce4449b4fc64ff88f6301
+      internalID: 1881148060
       vertices: []
       indices: 
       edges: []
@@ -199,10 +199,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      boss_1_magic_half_0: -1660826001
-      boss_1_magic_half_1: -618513380
-      boss_1_magic_half_2: 579609314
-      boss_1_magic_half_3: 1380824385
+      boss_1_magic_half_0: 1097873801
+      boss_1_magic_half_1: -1897150222
+      boss_1_magic_half_2: 1535624327
+      boss_1_magic_half_3: 1881148060
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
