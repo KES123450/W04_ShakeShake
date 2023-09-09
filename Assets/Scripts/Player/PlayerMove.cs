@@ -72,6 +72,8 @@ public class PlayerMove : MonoBehaviour
     void FixedUpdateDeath()
     {
     }
+
+
     public void SetDireciton(Vector2 direction)
     {
         moveDirection = direction;
@@ -93,6 +95,11 @@ public class PlayerMove : MonoBehaviour
     {
         if (!IsRolling) { return; }
         IsRollEnded = false;
+    }
+    public void OnDeath()
+    {
+        CanMove = false;
+        playerRigidbody.velocity = Vector2.zero;
     }
 
 }

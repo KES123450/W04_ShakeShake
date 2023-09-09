@@ -211,6 +211,6 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
     void OnDeath()
     {
         CurrentState = PlayerState.Death;
-        playerMove.CanMove = false;
+        playerMove.OnDeath();
     }
 }
