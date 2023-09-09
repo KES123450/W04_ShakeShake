@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5078915318715876413}
   - component: {fileID: 9083567666812862794}
   - component: {fileID: 1192505666502174677}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Aim Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,10 +376,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6056426080643611653}
     m_Modifications:
-    - target: {fileID: 2430492986640678611, guid: 18ae36ab4801a104d8e58a245e04c83c, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2549579398860630741, guid: 18ae36ab4801a104d8e58a245e04c83c, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -428,14 +424,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CokeAttackAction
       objectReference: {fileID: 0}
-    - target: {fileID: 5852489646950858671, guid: 18ae36ab4801a104d8e58a245e04c83c, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7734861240999682259, guid: 18ae36ab4801a104d8e58a245e04c83c, type: 3}
-      propertyPath: targetLayer.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ae36ab4801a104d8e58a245e04c83c, type: 3}
 --- !u!114 &4566536934003158558 stripped
@@ -464,10 +452,6 @@ PrefabInstance:
     - target: {fileID: 1098836930480552249, guid: faabbcc902d98324c9935252a56f1933, type: 3}
       propertyPath: m_Name
       value: Reflection
-      objectReference: {fileID: 0}
-    - target: {fileID: 1098836930480552249, guid: faabbcc902d98324c9935252a56f1933, type: 3}
-      propertyPath: m_Layer
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2146491161755005458, guid: faabbcc902d98324c9935252a56f1933, type: 3}
       propertyPath: m_RootOrder
