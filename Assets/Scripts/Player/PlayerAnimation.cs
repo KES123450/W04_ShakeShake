@@ -113,12 +113,14 @@ public class PlayerAnimation : MonoBehaviour
 
         var blinkDuration = invunerableDuration / invunerableBlinkNum;
         var interpolatedValue = ((invunerableDuration - invunerableTimer) % blinkDuration) / blinkDuration;
-        if (interpolatedValue > 0.5f)
-        {
-            interpolatedValue = 1 - interpolatedValue;
-        }
-        var easedValue = DOVirtual.EasedValue(0, 1, interpolatedValue * 2, invunerableBlinkEaseFunction);
-        spriteRenderer.color = Color.Lerp(defaultColor, invunerableColor, easedValue);
+        //if (interpolatedValue > 0.5f)
+        //{
+        //    interpolatedValue = 1 - interpolatedValue;
+        //}
+        //var easedValue = DOVirtual.EasedValue(0, 1, interpolatedValue * 2, invunerableBlinkEaseFunction);
+        //spriteRenderer.color = Color.Lerp(defaultColor, invunerableColor, easedValue);
 
+        var result = Color.HSVToRGB(interpolatedValue, 1, 1);
+        spriteRenderer.color = result;
     }
 }
