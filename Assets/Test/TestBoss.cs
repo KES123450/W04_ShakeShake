@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class TestBoss : Boss
 {
-    protected override void OnEnable()
+    protected override void Start()
     {
+        base.Start();
         base.PatternStart();
     }
 
