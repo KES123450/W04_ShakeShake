@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2511833304930613938}
   - component: {fileID: 7490254499276916598}
   m_Layer: 6
-  m_Name: PumpkinShadow
+  m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

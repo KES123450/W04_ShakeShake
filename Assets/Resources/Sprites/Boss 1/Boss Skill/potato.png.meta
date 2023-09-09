@@ -108,9 +108,9 @@ TextureImporter:
       name: potato_0
       rect:
         serializedVersion: 2
-        x: 24
+        x: 22
         y: 377
-        width: 259
+        width: 261
         height: 265
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -119,8 +119,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1487142e51fe9534dbd4ecdb926b1112
-      internalID: -633576152
+      spriteID: ab38eadb5e1b10b42a108342b4a5031d
+      internalID: 1498215230
       vertices: []
       indices: 
       edges: []
@@ -129,9 +129,9 @@ TextureImporter:
       name: potato_1
       rect:
         serializedVersion: 2
-        x: 354
+        x: 351
         y: 375
-        width: 260
+        width: 263
         height: 268
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 002937db966342f48aafacb1cec8a113
-      internalID: -613717707
+      spriteID: f88b30cd77d9ddb41a6e2737cc5ca694
+      internalID: 1666561677
       vertices: []
       indices: 
       edges: []
@@ -150,9 +150,9 @@ TextureImporter:
       name: potato_2
       rect:
         serializedVersion: 2
-        x: 685
+        x: 677
         y: 375
-        width: 226
+        width: 234
         height: 263
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -161,8 +161,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edc07e3319519064ea4887903f6bdb94
-      internalID: 1946771826
+      spriteID: 15af1542108a9284fbf80d82716af4db
+      internalID: -580959840
       vertices: []
       indices: 
       edges: []
@@ -173,8 +173,8 @@ TextureImporter:
         serializedVersion: 2
         x: 1020
         y: 386
-        width: 200
-        height: 246
+        width: 207
+        height: 251
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,8 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6f8c435c3c25c544b9c8e3a59178193
-      internalID: -1003774764
+      spriteID: 4eaf686a170ae704ea563591bc6373c4
+      internalID: 908346888
       vertices: []
       indices: 
       edges: []
@@ -192,9 +192,9 @@ TextureImporter:
       name: potato_4
       rect:
         serializedVersion: 2
-        x: 1329
+        x: 1325
         y: 401
-        width: 211
+        width: 215
         height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -203,8 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3ad820cd42949146a27a51107f9753e
-      internalID: 1039622981
+      spriteID: 9e9671f43a39dc14793a9071bb93d1c2
+      internalID: 493433838
       vertices: []
       indices: 
       edges: []
@@ -216,7 +216,7 @@ TextureImporter:
         x: 0
         y: 12
         width: 252
-        height: 250
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,8 +224,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 792bfad4c970af9439f4bb6a00884cac
-      internalID: 447621496
+      spriteID: bc9af351553d3484f95242afa279bf57
+      internalID: 492404035
       vertices: []
       indices: 
       edges: []
@@ -234,10 +234,10 @@ TextureImporter:
       name: potato_6
       rect:
         serializedVersion: 2
-        x: 354
+        x: 350
         y: 3
-        width: 227
-        height: 259
+        width: 231
+        height: 262
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,8 +245,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eae37093818db3e4a9474f37e98baa7e
-      internalID: 376817506
+      spriteID: 27b68cb82bde4f34bbac74a5cdbb1ed0
+      internalID: 569133339
       vertices: []
       indices: 
       edges: []
@@ -257,8 +257,8 @@ TextureImporter:
         serializedVersion: 2
         x: 683
         y: 4
-        width: 199
-        height: 258
+        width: 206
+        height: 264
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,8 +266,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 915d418a22ec45a4482d7df5e3c7b69b
-      internalID: 1973686541
+      spriteID: 9a82608742f70e142a21c94f9179e92e
+      internalID: -211946934
       vertices: []
       indices: 
       edges: []
@@ -276,10 +276,10 @@ TextureImporter:
       name: potato_8
       rect:
         serializedVersion: 2
-        x: 1037
+        x: 1030
         y: 0
-        width: 214
-        height: 262
+        width: 221
+        height: 269
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -287,8 +287,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16886aba5e9c798449f1ba69a0c29667
-      internalID: 1326347846
+      spriteID: b9321abc1e7eac848ba88d440942881c
+      internalID: 1084366358
       vertices: []
       indices: 
       edges: []
@@ -304,15 +304,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      potato_0: -633576152
-      potato_1: -613717707
-      potato_2: 1946771826
-      potato_3: -1003774764
-      potato_4: 1039622981
-      potato_5: 447621496
-      potato_6: 376817506
-      potato_7: 1973686541
-      potato_8: 1326347846
+      potato_0: 1498215230
+      potato_1: 1666561677
+      potato_2: -580959840
+      potato_3: 908346888
+      potato_4: 493433838
+      potato_5: 492404035
+      potato_6: 569133339
+      potato_7: -211946934
+      potato_8: 1084366358
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
