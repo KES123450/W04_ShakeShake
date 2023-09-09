@@ -269,12 +269,24 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3094788854620111986, guid: 45280c93710b31c41ab0f3b12615ebe5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094788854620111986, guid: 45280c93710b31c41ab0f3b12615ebe5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094788854620111986, guid: 45280c93710b31c41ab0f3b12615ebe5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094788854620111986, guid: 45280c93710b31c41ab0f3b12615ebe5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3094788854620111986, guid: 45280c93710b31c41ab0f3b12615ebe5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3094788854620111986, guid: 45280c93710b31c41ab0f3b12615ebe5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -357,7 +369,7 @@ MonoBehaviour:
   preDelaySeconds: 1
   postDelaySeconds: 4
   walnutNum: 12
-  walnutRadius: 3
+  walnutRadius: 20
   walnutAngularSpeed: 30
   shadowPrefab: {fileID: 7337524906094783226, guid: e455ce6855799cc478e58acb148326bd, type: 3}
   walnutPrefab: {fileID: 9215953359181705187, guid: 7e170d628cfdb3d4c829c73f50b22759, type: 3}
@@ -841,11 +853,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6056426080643611653, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6056426080643611653, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.75
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 6056426080643611653, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
       propertyPath: m_LocalPosition.z
