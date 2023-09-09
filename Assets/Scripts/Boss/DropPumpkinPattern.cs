@@ -33,8 +33,5 @@ public class DropPumpkinPattern : BossPattern
                 pumpkinComponent.EnableCollider();
                 Destroy(pumpkinShadow);
             });
-
     }
-
-
 }

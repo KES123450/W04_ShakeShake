@@ -320,6 +320,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestBoss
       objectReference: {fileID: 0}
+    - target: {fileID: 4111235724777403576, guid: 45280c93710b31c41ab0f3b12615ebe5, type: 3}
+      propertyPath: potatoSpeed
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45280c93710b31c41ab0f3b12615ebe5, type: 3}
 --- !u!1 &648634164 stripped
@@ -338,11 +342,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e7e14a386f05ea4fbe39f0c5150cb95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &648634197
+--- !u!114 &648634197 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 2304406504082888813, guid: 45280c93710b31c41ab0f3b12615ebe5, type: 3}
+  m_PrefabInstance: {fileID: 648634163}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 648634164}
   m_Enabled: 1
@@ -350,11 +353,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc0743af5f30e57489f012c3e5cd5e36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  main: {fileID: 0}
-  animationStateName: 
-  preDelaySeconds: 1
-  postDelaySeconds: 1
-  pepperPrefab: {fileID: 5275283874063579994, guid: 9ce63b157b81cff448cbdef8c2f4e911, type: 3}
 --- !u!1 &947479322
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,6 +827,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4566536934003158558, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
+      propertyPath: gaugeLossOnStop
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4566536934003158558, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
+      propertyPath: minimumGaugeToShoot
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6056426080643611653, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -891,6 +897,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7527608592850091540, guid: b340a988536de5e408fe516c6918cffd, type: 3}
+      propertyPath: m_NotificationBehavior
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7527608592850091541, guid: b340a988536de5e408fe516c6918cffd, type: 3}
       propertyPath: m_Name
       value: Input Manager

@@ -34,7 +34,7 @@ public class Potato : MonoBehaviour, IDamageable
             if (RaycastCollision())
             {
                 // 뛰는 애니메이션 실행
-                Debug.Log($"Potato(ID={transform.GetInstanceID()}) get jumped!");
+                //Debug.Log($"Potato(ID={transform.GetInstanceID()}) get jumped!");
                 return;
             }
         }
