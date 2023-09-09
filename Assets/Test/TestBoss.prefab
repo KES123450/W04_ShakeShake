@@ -113,11 +113,13 @@ MonoBehaviour:
   respawnPoint: {x: 0, y: 0}
   hpCurrent: 5
   hpMax: 5
-  startPattern: {fileID: 648634175}
+  startPattern: {fileID: 2304406504082888813}
   patternList:
-  - {fileID: 648634165}
-  - {fileID: 648634176}
-  - {fileID: 648634175}
+  - {fileID: 5713985142923504564}
+  - {fileID: 2304406504082888813}
+  - {fileID: 8635953095320662202}
+  - {fileID: 4731822538048507324}
+  - {fileID: 4111235724777403576}
   patternIndex: -1
   currentPattern: {fileID: 0}
 --- !u!114 &3094788854620111991
@@ -292,7 +294,7 @@ MonoBehaviour:
   postDelaySeconds: 1
   potatoPrefab: {fileID: 3594427172382117781, guid: 2143f3afcddd0354aaeaceb286ad7a50, type: 3}
   potatoCount: 20
-  potatoSpeed: 0.05
+  potatoSpeed: 10
   delayTime: 1
 --- !u!114 &4731822538048507324
 MonoBehaviour:

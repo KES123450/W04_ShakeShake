@@ -220,11 +220,11 @@ MonoBehaviour:
   canRollCancelAction: 0
   canActionCancelRoll: 0
   gaugeRegen: 2
-  gaugeLossOnStop: 2
+  gaugeLossOnStop: 0.5
   regenRollMuliplier: 0.25
   gaugeCostPerSecond: 15
   maxGauge: 10
-  minimumGaugeToShoot: 5
+  minimumGaugeToShoot: 1
   maxLength: 20
   maxAngularSpeed: 90
   targetLayer:

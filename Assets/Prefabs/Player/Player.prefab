@@ -319,6 +319,9 @@ MonoBehaviour:
   rollColor: {r: 1, g: 0, b: 0, a: 1}
   actionColor: {r: 0, g: 0, b: 1, a: 1}
   deathColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+  invunerableColor: {r: 1, g: 1, b: 1, a: 0.2509804}
+  invunerableBlinkNum: 2
+  invunerableBlinkEaseFunction: 4
 --- !u!58 &6056426082286253244
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -369,6 +372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 3
+  invunerableDuration: 2
 --- !u!1001 &6055131982085263053
 PrefabInstance:
   m_ObjectHideFlags: 0
