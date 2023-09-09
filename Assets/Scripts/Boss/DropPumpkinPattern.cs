@@ -8,7 +8,7 @@ public class DropPumpkinPattern : BossPattern
     [SerializeField] private GameObject pumpkinPrefab;
     [SerializeField] private GameObject pumpkinShadowPrefab;
     [SerializeField] private float pumpkinOffsetY;
-    [SerializeField] private float dropSpeed;
+    [SerializeField] private float dropDuration;
     [SerializeField] private float delayAttackTime;
 
     protected override void ActionContext()
@@ -27,7 +27,7 @@ public class DropPumpkinPattern : BossPattern
         GameObject pumpkin = Instantiate(pumpkinPrefab, pumpkinDefaultPos, Quaternion.identity);
         Pumpkin pumpkinComponent = pumpkin.GetComponent<Pumpkin>();
 
-        pumpkin.transform.DOMoveY(playerPos.y, dropSpeed)
+        pumpkin.transform.DOMoveY(playerPos.y, dropDuration)
             .OnComplete(() =>
             {
                 pumpkinComponent.EnableCollider();
