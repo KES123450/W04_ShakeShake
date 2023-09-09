@@ -22,6 +22,11 @@ public class Pepper : MonoBehaviour
     {
 		if (timer <= activeTime)
 		{
+			if(Physics2D.OverlapCircle(transform.position, radius, playerLayer) != null)
+            {
+				Debug.Log("CollisionPlayer");
+				ExplosionPapper();
+            }
 			Vector2 dir = transform.right;
 			Vector2 targetDir = GameManager.instance.GetPlayer().transform.position - transform.position;
 			Vector3 crossVec = Vector3.Cross(dir, targetDir);
@@ -49,11 +54,6 @@ public class Pepper : MonoBehaviour
 			//보스의 OnDamage 호출
         }
 
-		Collider2D playerCollider = Physics2D.OverlapCircle(transform.position, radius, playerLayer);
-		if (playerCollider != null)
-		{
-			playerCollider.GetComponent<PlayerHealth>().OnDamage();
-		}
 
 		Instantiate(firePrefab, transform.position, Quaternion.identity);
 		Destroy(gameObject);

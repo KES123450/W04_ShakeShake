@@ -147,13 +147,13 @@ MonoBehaviour:
   activeTime: 10
   rotateSpeed: 1
   guideSpeed: 8
-  radius: 2
+  radius: 1
   bossLayer:
     serializedVersion: 2
     m_Bits: 0
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
 --- !u!50 &3906904387032817428
 Rigidbody2D:
   serializedVersion: 4
