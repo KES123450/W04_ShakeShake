@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class PapperPattern : BossPattern
+public class PepperPattern : BossPattern
 {
     [SerializeField] private GameObject pepperPrefab;
 

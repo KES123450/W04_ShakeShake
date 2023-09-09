@@ -5,7 +5,6 @@ using UnityEngine;
 public class Cabbage : MonoBehaviour, IDamageable
 {
     [SerializeField] float speed;
-
     Rigidbody2D rigidbody;
     float colliderRadius;
     bool canAttackBoss;

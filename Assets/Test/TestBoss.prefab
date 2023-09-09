@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 5713985142923504564}
   - component: {fileID: 4111235724777403576}
   - component: {fileID: 4731822538048507324}
+  - component: {fileID: 2304406504082888813}
+  - component: {fileID: 8635953095320662202}
   m_Layer: 6
   m_Name: TestBoss
   m_TagString: Untagged
@@ -292,7 +294,6 @@ MonoBehaviour:
   potatoCount: 20
   potatoSpeed: 0.05
   delayTime: 1
-  mapSize: 60
 --- !u!114 &4731822538048507324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,3 +315,38 @@ MonoBehaviour:
   walnutAngularSpeed: 30
   shadowPrefab: {fileID: 7337524906094783226, guid: e455ce6855799cc478e58acb148326bd, type: 3}
   walnutPrefab: {fileID: 9215953359181705187, guid: 7e170d628cfdb3d4c829c73f50b22759, type: 3}
+--- !u!114 &2304406504082888813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3094788854620111990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc0743af5f30e57489f012c3e5cd5e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  main: {fileID: 0}
+  animationStateName: 
+  preDelaySeconds: 1
+  postDelaySeconds: 1
+  pepperPrefab: {fileID: 5275283874063579994, guid: 9ce63b157b81cff448cbdef8c2f4e911, type: 3}
+--- !u!114 &8635953095320662202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3094788854620111990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8747e63b505800f409365b6bf6c9acf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  main: {fileID: 0}
+  animationStateName: 
+  preDelaySeconds: 1
+  postDelaySeconds: 1
+  spawnDistance: 7
+  cabbagePrefab: {fileID: 4518503157364571349, guid: 6bbd805db83ed134d958f023a708f5ff, type: 3}
