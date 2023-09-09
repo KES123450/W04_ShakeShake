@@ -5,10 +5,11 @@ using UnityEngine;
 public class Potato : MonoBehaviour, IDamageable
 {
     [SerializeField] private LayerMask potatoLayer;
+    [SerializeField] private LayerMask playerLayer;
     [SerializeField] private float raycastDistance;
     [SerializeField] private float moveSpeed;
-    private bool isMove=false;
-    private Vector2 direction=Vector2.right;
+    private bool isMove = false;
+    private Vector2 direction = Vector2.right;
 
 
     public void InitPotato(Vector2 dir, float speed)
@@ -28,11 +29,12 @@ public class Potato : MonoBehaviour, IDamageable
     {
         if (isMove)
         {
-            transform.Translate(direction * moveSpeed);
+            transform.Translate(direction * moveSpeed * Time.deltaTime);
 
             if (RaycastCollision())
             {
                 // 뛰는 애니메이션 실행
+                //Debug.Log($"Potato(ID={transform.GetInstanceID()}) get jumped!");
                 return;
             }
         }
@@ -42,7 +44,7 @@ public class Potato : MonoBehaviour, IDamageable
     private bool RaycastCollision()
     {
         Vector2 playerPos = transform.position;
-        RaycastHit2D hit = Physics2D.Raycast(playerPos, Vector2.right, raycastDistance, potatoLayer);
+        RaycastHit2D hit = Physics2D.Raycast(playerPos, direction, raycastDistance, potatoLayer);
 
         if (hit.collider != null)
         {
@@ -54,5 +56,17 @@ public class Potato : MonoBehaviour, IDamageable
     private void Update()
     {
         MoveForward();
+        if (Mathf.Max(Mathf.Abs(transform.position.x), Mathf.Abs(transform.position.y)) > GameManager.MapSize / 2)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (isMove && collision.gameObject.TryGetComponent<PlayerHealth>(out var player))
+        {
+            player.OnDamage();
+        }
     }
 }
