@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 394450e7824a8dc46a408af0e1251d43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMuptiplier: 0
-  actionDuration: 0.5
+  moveSpeedMultiplier: 0
   canRollCancelAction: 1
   canActionCancelRoll: 1
+  actionDuration: 0.5
