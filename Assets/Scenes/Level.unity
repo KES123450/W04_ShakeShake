@@ -255,7 +255,7 @@ PrefabInstance:
     - target: {fileID: 3094788854620111984, guid: 45280c93710b31c41ab0f3b12615ebe5, type: 3}
       propertyPath: startPattern
       value: 
-      objectReference: {fileID: 648634185}
+      objectReference: {fileID: 648634197}
     - target: {fileID: 3094788854620111984, guid: 45280c93710b31c41ab0f3b12615ebe5, type: 3}
       propertyPath: patternList.Array.size
       value: 1
@@ -263,7 +263,7 @@ PrefabInstance:
     - target: {fileID: 3094788854620111984, guid: 45280c93710b31c41ab0f3b12615ebe5, type: 3}
       propertyPath: patternList.Array.data[0]
       value: 
-      objectReference: {fileID: 648634196}
+      objectReference: {fileID: 648634197}
     - target: {fileID: 3094788854620111984, guid: 45280c93710b31c41ab0f3b12615ebe5, type: 3}
       propertyPath: patternList.Array.data[1]
       value: 
@@ -338,17 +338,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e7e14a386f05ea4fbe39f0c5150cb95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &648634196 stripped
+--- !u!114 &648634197
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4731822538048507324, guid: 45280c93710b31c41ab0f3b12615ebe5, type: 3}
-  m_PrefabInstance: {fileID: 648634163}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 648634164}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40591521b4f89c649b6cb1890fb2497a, type: 3}
+  m_Script: {fileID: 11500000, guid: cc0743af5f30e57489f012c3e5cd5e36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 0}
+  animationStateName: 
+  preDelaySeconds: 1
+  postDelaySeconds: 1
+  pepperPrefab: {fileID: 5275283874063579994, guid: 9ce63b157b81cff448cbdef8c2f4e911, type: 3}
 --- !u!1 &947479322
 GameObject:
   m_ObjectHideFlags: 0
