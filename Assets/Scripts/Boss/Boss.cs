@@ -14,7 +14,7 @@ public abstract class Boss : MonoBehaviour, IDamageable
 	protected Animator anim;
 	private GameObject rend;
 	private Sequence hitSeq;
-	private bool isDeal;
+	protected bool isDeal;
 	private bool isWeak;
 
 	[SerializeField] private Vector2 respawnPoint;
@@ -33,8 +33,8 @@ public abstract class Boss : MonoBehaviour, IDamageable
 	public int GetMaxHp() => hpMax;
 	public virtual void Initialize()
 	{
-		hpCurrent = hpMax;
 		patternIndex = -1;
+		PatternStart();
 	}
 	public virtual void Hit(int _damage, GameObject _source)
 	{
@@ -42,13 +42,9 @@ public abstract class Boss : MonoBehaviour, IDamageable
 		hpCurrent = Mathf.Clamp(hpCurrent - _damage, 0, hpMax);
 	}
 
-	public void OnDamage(int damage = 1)
+	public virtual void OnDamage(int damage = 1)
 	{
-        if (isDeal)
-
-        {
-			Debug.Log("다음 페이즈 실행");
-        }
+        
 	}
 
 	public void OnWeak(GameObject source)
