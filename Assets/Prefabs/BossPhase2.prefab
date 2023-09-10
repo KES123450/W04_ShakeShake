@@ -642,5 +642,5 @@ MonoBehaviour:
   preDelaySeconds: 1
   postDelaySeconds: 3
   honeyPrefab: {fileID: 7372263424199001342, guid: d962358dbf6c2ad4fa019fd74e5faed7, type: 3}
-  honeyBarrage: {fileID: 0}
+  honeyBarragePrefab: {fileID: 3657929078897670333, guid: d16f787498f331143b25e16289c083d6, type: 3}
   barrageSpeed: 2
