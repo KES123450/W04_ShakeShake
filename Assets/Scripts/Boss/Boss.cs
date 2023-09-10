@@ -57,6 +57,7 @@ public abstract class Boss : MonoBehaviour, IDamageable
 	{
 
 
+
 		patternIndex = GetNextPatternIndex(patternIndex);
 		currentPattern = patternList[patternIndex];
 		currentPattern.StartAct();

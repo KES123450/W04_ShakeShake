@@ -14,7 +14,7 @@ public class MoveToPlayerPattern : BossPattern
 
     private void Start()
     {
-        rigid = GetComponent<Rigidbody2D>();
+        rigid = main.GetComponent<Rigidbody2D>();
     }
     protected override void ActionContext()
     {

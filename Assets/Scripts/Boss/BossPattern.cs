@@ -9,7 +9,7 @@ public abstract class BossPattern : MonoBehaviour
 	#endregion
 
 	#region PrivateVariables
-	[SerializeField]private Boss main;
+	[SerializeField]protected Boss main;
 	protected Animator anim;
 	[SerializeField] protected string animationStateName;
 	[SerializeField] protected int preDelaySeconds;
@@ -30,7 +30,6 @@ public abstract class BossPattern : MonoBehaviour
 	{
 		PreProcessing();
 		PlayAnimation();
-		
 		yield return waitpreDelay;
 		ActionContext();
 		yield return waitpostDelay;
@@ -52,7 +51,7 @@ public abstract class BossPattern : MonoBehaviour
 	#region PrivateMethod
 	protected virtual void Awake()
 	{
-		TryGetComponent(out main);
+		transform.parent.TryGetComponent(out main);
 		anim = main.GetAnimator();
 		waitpreDelay = new WaitForSeconds(preDelaySeconds);
 		waitpostDelay = new WaitForSeconds(postDelaySeconds);
@@ -79,7 +78,7 @@ public abstract class BossPattern : MonoBehaviour
 	{
 		if (animationStateName != "")
 		{
-			anim = GetComponent<Animator>();
+			anim = main.GetComponent<Animator>();
 			Debug.Log(animationStateName);
 			Debug.Log(anim);
 			

@@ -248,7 +248,7 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 648634165, guid: 45280c93710b31c41ab0f3b12615ebe5, type: 3}
+    - target: {fileID: 1732299154, guid: 45280c93710b31c41ab0f3b12615ebe5, type: 3}
       propertyPath: honeyBarrage
       value: 
       objectReference: {fileID: 1347368179}
