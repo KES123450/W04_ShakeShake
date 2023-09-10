@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7246091055011351275}
   - component: {fileID: 3374104826257813987}
   - component: {fileID: -2599273488236594168}
+  - component: {fileID: -4032451630023879041}
   m_Layer: 6
   m_Name: Fire
   m_TagString: Untagged
@@ -114,3 +115,24 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.9, y: 1.36}
   m_Direction: 0
+--- !u!95 &-4032451630023879041
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2702050608365179428}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6ca62ac8caff31141a9a814884d1dbb4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
