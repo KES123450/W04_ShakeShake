@@ -46,7 +46,7 @@ public class Cabbage : MonoBehaviour, IDamageable
         }
         if (canAttackBoss && collision.gameObject.TryGetComponent<Boss>(out var boss))
         {
-            boss.OnDamage();
+            boss.OnWeak(gameObject);
         }
 
     }

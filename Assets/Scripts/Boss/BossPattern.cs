@@ -16,8 +16,6 @@ public abstract class BossPattern : MonoBehaviour
 	[SerializeField] protected int postDelaySeconds;
 	private WaitForSeconds waitpreDelay;
 	private WaitForSeconds waitpostDelay;
-	protected CancellationTokenSource preDelaySource = new CancellationTokenSource();
-	protected CancellationTokenSource postDelaySource = new CancellationTokenSource();
 	#endregion
 
 	#region PublicMethod
@@ -43,8 +41,7 @@ public abstract class BossPattern : MonoBehaviour
 	}
 	public void ShutdownAction()
 	{
-		preDelaySource.Cancel();
-		postDelaySource.Cancel();
+		StopCoroutine(nameof(Act));
 	}
 	#endregion
 
@@ -61,15 +58,7 @@ public abstract class BossPattern : MonoBehaviour
 	{
 		
 	}
-	protected virtual void OnEnable()
-	{
-		if (preDelaySource != null)
-			preDelaySource.Dispose();
-		preDelaySource = new CancellationTokenSource();
-		if(postDelaySource != null)
-			postDelaySource.Dispose();
-		postDelaySource = new CancellationTokenSource();
-	}
+	
 	protected virtual void OnDisable()
 	{
 		ShutdownAction();
@@ -79,8 +68,6 @@ public abstract class BossPattern : MonoBehaviour
 		if (animationStateName != "")
 		{
 			anim = main.GetComponent<Animator>();
-			Debug.Log(animationStateName);
-			Debug.Log(anim);
 			
 			anim.Play(animationStateName);
 		}

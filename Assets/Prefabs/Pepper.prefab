@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1441443216266095819}
   - component: {fileID: 4220186490604152075}
   - component: {fileID: 4831100552592892227}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PepperRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 6093749936937041770}
   - component: {fileID: 5415683719982817798}
   - component: {fileID: 3906904387032817428}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pepper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ MonoBehaviour:
   radius: 1
   bossLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   playerLayer:
     serializedVersion: 2
     m_Bits: 8

@@ -14,12 +14,15 @@ public abstract class Boss : MonoBehaviour, IDamageable
 	protected Animator anim;
 	private GameObject rend;
 	private Sequence hitSeq;
+	private bool isDeal;
+	private bool isWeak;
 
 	[SerializeField] private Vector2 respawnPoint;
 	[SerializeField] protected int hpCurrent;
 	[SerializeField] protected int hpMax;
 	[SerializeField] protected BossPattern startPattern;
 	[SerializeField] protected List<BossPattern> patternList = new List<BossPattern>();
+	[SerializeField] protected List<BossPattern> dealTimePatternList = new List<BossPattern>();
 
 	[SerializeField] protected int patternIndex;
 	[SerializeField] protected BossPattern currentPattern;
@@ -38,16 +41,32 @@ public abstract class Boss : MonoBehaviour, IDamageable
 		hitSeq.Restart();
 		hpCurrent = Mathf.Clamp(hpCurrent - _damage, 0, hpMax);
 	}
-	public virtual void OnDamage(int damage = 1)
+
+	public void OnDamage(int damage = 1)
 	{
-		hitSeq.Restart();
-		hpCurrent = Mathf.Clamp(hpCurrent - damage, 0, hpMax);
+        if (isDeal)
+
+        {
+			Debug.Log("다음 페이즈 실행");
+        }
+	}
+
+	public void OnWeak(GameObject source)
+    {
+		Debug.Log("weak");
+		isDeal = true;
+		patternIndex = 0;
+		ShutdownAction();
+		PatternNext();
     }
+
 	public virtual void BossKilled()
 	{
 		anim.Play("Die");
 		ShutdownAction();
 	}
+
+	
 	public void PatternStart()
 	{
 		currentPattern = startPattern;
@@ -55,13 +74,12 @@ public abstract class Boss : MonoBehaviour, IDamageable
 	}
 	public void PatternNext()
 	{
-
-
-
-		patternIndex = GetNextPatternIndex(patternIndex);
-		currentPattern = patternList[patternIndex];
+		var targetList = isDeal ? dealTimePatternList : patternList;
+		patternIndex = isDeal? GetNextDealPatternIndex(patternIndex) : GetNextPatternIndex(patternIndex);
+		currentPattern = targetList[patternIndex];
 		currentPattern.StartAct();
 	}
+
 	public void ShutdownAction()
 	{
 		currentPattern.ShutdownAction();
@@ -100,6 +118,23 @@ public abstract class Boss : MonoBehaviour, IDamageable
 		}
 		return result;
 	}
+
+	private int GetNextDealPatternIndex(int _currentIndex)
+	{
+		int result = _currentIndex;
+		if (result >= dealTimePatternList.Count - 1)
+		{
+			isDeal = false;
+			patternIndex = 0;
+			ShutdownAction();
+			PatternNext();
+		}
+		else
+		{
+			++result;
+		}
+		return result;
+	}
 	void OnGUI()
 	{
 		var style = new GUIStyle();
@@ -109,5 +144,5 @@ public abstract class Boss : MonoBehaviour, IDamageable
 	}
 
 
-	#endregion
+    #endregion
 }
