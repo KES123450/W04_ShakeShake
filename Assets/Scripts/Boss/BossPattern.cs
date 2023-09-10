@@ -12,8 +12,8 @@ public abstract class BossPattern : MonoBehaviour
 	[SerializeField]protected Boss main;
 	protected Animator anim;
 	[SerializeField] protected string animationStateName;
-	[SerializeField] protected int preDelaySeconds;
-	[SerializeField] protected int postDelaySeconds;
+	[SerializeField] protected float preDelaySeconds;
+	[SerializeField] protected float postDelaySeconds;
 	private WaitForSeconds waitpreDelay;
 	private WaitForSeconds waitpostDelay;
 	#endregion
