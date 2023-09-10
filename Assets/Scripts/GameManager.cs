@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public const float MapSize = 60;
+    public const float MapSize = 40;
 
     public static GameManager instance;
     [SerializeField] GameObject player;
