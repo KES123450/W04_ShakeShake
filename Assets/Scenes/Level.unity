@@ -293,6 +293,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestBoss
       objectReference: {fileID: 0}
+    - target: {fileID: 3094788854620111990, guid: 45280c93710b31c41ab0f3b12615ebe5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45280c93710b31c41ab0f3b12615ebe5, type: 3}
 --- !u!1 &648634164 stripped
@@ -1094,12 +1098,8 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4566536934003158558, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
-      propertyPath: gaugeRegen
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566536934003158558, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
-      propertyPath: gaugeLossOnStop
-      value: -2
+      propertyPath: geyserDuration
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6056426080643611653, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
       propertyPath: m_RootOrder
@@ -1152,6 +1152,10 @@ PrefabInstance:
     - target: {fileID: 6056426080643611662, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6056426080643611662, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
