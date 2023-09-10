@@ -29,7 +29,7 @@ public abstract class BossPattern : MonoBehaviour
 	public IEnumerator Act()
 	{
 		PreProcessing();
-		//PlayAnimation();
+		PlayAnimation();
 		
 		yield return waitpreDelay;
 		ActionContext();
@@ -79,7 +79,10 @@ public abstract class BossPattern : MonoBehaviour
 	{
 		if (animationStateName != "")
 		{
-			transform.Find("renderer").TryGetComponent(out anim);
+			anim = GetComponent<Animator>();
+			Debug.Log(animationStateName);
+			Debug.Log(anim);
+			
 			anim.Play(animationStateName);
 		}
 	}

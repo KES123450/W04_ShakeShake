@@ -11,10 +11,8 @@ GameObject:
   - component: {fileID: 3094788854620111986}
   - component: {fileID: 3094788854620111985}
   - component: {fileID: 3094788854620111984}
-  - component: {fileID: 3094788854620111991}
   - component: {fileID: 648634174}
   - component: {fileID: 4611541364159823673}
-  - component: {fileID: 648634169}
   - component: {fileID: 648634175}
   - component: {fileID: 648634176}
   - component: {fileID: 648634165}
@@ -23,6 +21,7 @@ GameObject:
   - component: {fileID: 4731822538048507324}
   - component: {fileID: 2304406504082888813}
   - component: {fileID: 8635953095320662202}
+  - component: {fileID: 648634200}
   m_Layer: 6
   m_Name: TestBoss
   m_TagString: Untagged
@@ -39,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 3094788854620111990}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -113,36 +112,12 @@ MonoBehaviour:
   respawnPoint: {x: 0, y: 0}
   hpCurrent: 5
   hpMax: 5
-  startPattern: {fileID: 2304406504082888813}
+  startPattern: {fileID: 4111235724777403576}
   patternList:
-  - {fileID: 5713985142923504564}
-  - {fileID: 2304406504082888813}
-  - {fileID: 8635953095320662202}
-  - {fileID: 4731822538048507324}
-  - {fileID: 4111235724777403576}
+  - {fileID: 648634176}
+  - {fileID: 648634165}
   patternIndex: -1
   currentPattern: {fileID: 0}
---- !u!114 &3094788854620111991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3094788854620111990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2ea061a185e7dc40ab78ee0c1913eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  main: {fileID: 0}
-  animationStateName: 
-  preDelaySeconds: 1
-  postDelaySeconds: 3
-  barragePrefab: {fileID: 1863773083442518401, guid: 6065efb4f04712147b2e22a15dbd7550, type: 3}
-  radius: 3
-  barrageCount: 5
-  startAngle: 120
-  endAngle: 180
 --- !u!50 &648634174
 Rigidbody2D:
   serializedVersion: 4
@@ -180,24 +155,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &648634169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3094788854620111990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7682ee06645ca694e8b0b957ae37386b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  main: {fileID: 0}
-  animationStateName: 
-  preDelaySeconds: 2
-  postDelaySeconds: 2
-  attack: []
-  attackInterval: 0
 --- !u!114 &648634175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   main: {fileID: 0}
-  animationStateName: 
+  animationStateName: Boss_run_dash
   preDelaySeconds: 1
   postDelaySeconds: 4
   moveSpeed: 0.005
@@ -231,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   main: {fileID: 0}
-  animationStateName: 
+  animationStateName: Boss_run_dash
   preDelaySeconds: 1
   postDelaySeconds: 1
   dashForce: 10
@@ -249,7 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   main: {fileID: 0}
-  animationStateName: 
+  animationStateName: Boss_run_dash
   preDelaySeconds: 1
   postDelaySeconds: 1
   honeyPrefab: {fileID: 7372263424199001342, guid: d962358dbf6c2ad4fa019fd74e5faed7, type: 3}
@@ -268,7 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   main: {fileID: 0}
-  animationStateName: 
+  animationStateName: Boss_magic_in
   preDelaySeconds: 1
   postDelaySeconds: 1
   pumpkinPrefab: {fileID: 8263120087888483618, guid: 91d5201ea6e0c8a438d684aeecc88c6b, type: 3}
@@ -289,7 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   main: {fileID: 0}
-  animationStateName: 
+  animationStateName: Boss_magic_half
   preDelaySeconds: 1
   postDelaySeconds: 1
   potatoPrefab: {fileID: 3594427172382117781, guid: 2143f3afcddd0354aaeaceb286ad7a50, type: 3}
@@ -309,7 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   main: {fileID: 0}
-  animationStateName: 
+  animationStateName: Boss_magic
   preDelaySeconds: 1
   postDelaySeconds: 4
   walnutNum: 24
@@ -330,7 +287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   main: {fileID: 0}
-  animationStateName: 
+  animationStateName: Boss_magic_half
   preDelaySeconds: 1
   postDelaySeconds: 1
   pepperPrefab: {fileID: 5275283874063579994, guid: 9ce63b157b81cff448cbdef8c2f4e911, type: 3}
@@ -347,8 +304,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   main: {fileID: 0}
-  animationStateName: 
+  animationStateName: Boss_magic_half
   preDelaySeconds: 1
   postDelaySeconds: 1
   spawnDistance: 7
   cabbagePrefab: {fileID: 4518503157364571349, guid: 6bbd805db83ed134d958f023a708f5ff, type: 3}
+--- !u!95 &648634200
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3094788854620111990}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bd81b715adc4a704aa32310f91517e3a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -72,6 +72,7 @@ public abstract class Boss : MonoBehaviour, IDamageable
 	{
 		//rend = transform.Find("renderer").gameObject;
 		//transform.Find("renderer").TryGetComponent(out anim);
+		anim =GetComponent<Animator>();
 	}
 	protected virtual void OnEnable()
 	{
