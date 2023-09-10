@@ -12,13 +12,18 @@ public class CokeAttack : ActionInfo
     [SerializeField] float maxGauge;
     [SerializeField] float minimumGaugeToShoot;
     [Header("Coke Geyser")]
+    [SerializeField] float geyserWidth;
     [SerializeField] float maxLength;
     [SerializeField] float maxAngularSpeed;
+    [SerializeField] float geyserDuartionMultiplier;
+    [SerializeField] AnimationCurve geyserDurationCurve;
+    [SerializeField] AnimationCurve geyserLaunchCurve;
     [SerializeField] LayerMask targetLayer;
 
     CokeGeyser geyser;
 
     float _currentGauge;
+    float geyserDuration;
     float geyserStartGauge;
 
     PlayerMove playerMove => player.MoveComponent;
@@ -50,15 +55,16 @@ public class CokeAttack : ActionInfo
     {
         base.OnStartAction();
         geyserStartGauge = CurrentGauge;
-        geyser.StartGeyser(targetLayer, transform.position, aimDirection, maxAngularSpeed);
+        geyserDuration = geyserDurationCurve.Evaluate(CurrentGauge / maxGauge);
+        geyser.StartGeyser(targetLayer, transform.position, aimDirection, maxAngularSpeed, geyserWidth);
     }
     public override void OnUpdateAction()
     {
         if (CurrentGauge > 0)
         {
-            CurrentGauge -= gaugeCostPerSecond * Time.deltaTime;
-            var usedGauge = geyserStartGauge - CurrentGauge;
-            var length = maxLength * usedGauge / maxGauge;
+            CurrentGauge -= (geyserStartGauge / geyserDuration) * Time.deltaTime;
+            var gaugeT = (geyserStartGauge - CurrentGauge) / geyserStartGauge;
+            var length = geyserLaunchCurve.Evaluate(gaugeT) * maxLength * geyserStartGauge / maxGauge;
             geyser.UpdatePoint(transform.position, aimDirection * length);
         }
         if (CurrentGauge == 0)
