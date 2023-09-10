@@ -58,7 +58,7 @@ public class CokeGeyser : MonoBehaviour
 
         overlapResult.
             Select(c => c.GetComponent<IDamageable>()).
-            Where(d => !damaged.Contains(d)).
+            Where(d => d != null && !damaged.Contains(d)).
             ForEach((d) => 
         {
             d.OnDamage();
