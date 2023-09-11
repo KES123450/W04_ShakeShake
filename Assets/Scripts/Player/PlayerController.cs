@@ -202,7 +202,8 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
         CurrentState = PlayerState.Death;
         playerMove.OnDeath();
         playerAction.OnDeath();
-        GameManager.instance.GetBoss().GetComponent<Boss>().ShutdownAction();
         UIManager.Instance.EnableGameOverUI();
+        GameManager.instance.GetBoss().GetComponent<Boss>().ShutdownAction();
+        
     }
 }

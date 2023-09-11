@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         playerAni.Play("Dance");
         bossSprite.DOFade(0f, 3f);
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         SceneManager.LoadScene(endingSceneName);
 
     }
