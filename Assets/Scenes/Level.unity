@@ -1290,86 +1290,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4566536934003158558, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
-      propertyPath: geyserLaunchCurve.m_Curve.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566536934003158558, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
-      propertyPath: geyserLaunchCurve.m_Curve.Array.data[1].time
-      value: 0.095
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566536934003158558, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
-      propertyPath: geyserLaunchCurve.m_Curve.Array.data[2].time
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566536934003158558, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
-      propertyPath: geyserLaunchCurve.m_Curve.Array.data[3].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566536934003158558, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
-      propertyPath: geyserLaunchCurve.m_Curve.Array.data[1].value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566536934003158558, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
-      propertyPath: geyserLaunchCurve.m_Curve.Array.data[2].value
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566536934003158558, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
-      propertyPath: geyserLaunchCurve.m_Curve.Array.data[3].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566536934003158558, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
-      propertyPath: geyserLaunchCurve.m_Curve.Array.data[0].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566536934003158558, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
-      propertyPath: geyserLaunchCurve.m_Curve.Array.data[1].inSlope
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566536934003158558, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
-      propertyPath: geyserLaunchCurve.m_Curve.Array.data[2].inSlope
-      value: 0.44198906
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566536934003158558, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
-      propertyPath: geyserLaunchCurve.m_Curve.Array.data[3].inSlope
-      value: 0.040800814
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566536934003158558, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
-      propertyPath: geyserLaunchCurve.m_Curve.Array.data[0].outSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566536934003158558, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
-      propertyPath: geyserLaunchCurve.m_Curve.Array.data[1].outSlope
-      value: 11.459665
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566536934003158558, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
-      propertyPath: geyserLaunchCurve.m_Curve.Array.data[2].inWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566536934003158558, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
-      propertyPath: geyserLaunchCurve.m_Curve.Array.data[2].outSlope
-      value: 0.44198906
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566536934003158558, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
-      propertyPath: geyserLaunchCurve.m_Curve.Array.data[3].inWeight
-      value: 0.07614374
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566536934003158558, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
-      propertyPath: geyserLaunchCurve.m_Curve.Array.data[3].outSlope
-      value: 0.040800814
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566536934003158558, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
-      propertyPath: geyserLaunchCurve.m_Curve.Array.data[2].outWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566536934003158558, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
-      propertyPath: geyserLaunchCurve.m_Curve.Array.data[1].tangentMode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566536934003158558, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
-      propertyPath: geyserLaunchCurve.m_Curve.Array.data[2].tangentMode
-      value: 136
-      objectReference: {fileID: 0}
     - target: {fileID: 6056426080643611653, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1602,16 +1522,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7910549142185476368, guid: ec365700b2ba47c49bae9795dd1d03d9, type: 3}
-      propertyPath: smoothTime
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7910549142185476368, guid: ec365700b2ba47c49bae9795dd1d03d9, type: 3}
       propertyPath: interpolateValue
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7910549142185476368, guid: ec365700b2ba47c49bae9795dd1d03d9, type: 3}
-      propertyPath: extraBoundarySize
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8931208118232212001, guid: ec365700b2ba47c49bae9795dd1d03d9, type: 3}
       propertyPath: m_RootOrder
