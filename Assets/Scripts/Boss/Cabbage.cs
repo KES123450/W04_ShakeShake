@@ -38,7 +38,7 @@ public class Cabbage : MonoBehaviour, IDamageable
         rigidbody.velocity = direction * speed;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent<PlayerHealth>(out var player))
         {
@@ -47,6 +47,7 @@ public class Cabbage : MonoBehaviour, IDamageable
         if (canAttackBoss && collision.gameObject.TryGetComponent<Boss>(out var boss))
         {
             boss.OnWeak(gameObject);
+            canAttackBoss = false;
         }
 
     }

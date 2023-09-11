@@ -34,6 +34,7 @@ public class CokeGeyser : MonoBehaviour
         this.targetLayer = targetLayer;
         maxAngularSpeed = angularSpeed;
         currentDirection = aimDirection;
+        transform.localScale = Vector3.zero;
         damaged.Clear();
         SetActive(true);
     }

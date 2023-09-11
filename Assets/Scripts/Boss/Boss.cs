@@ -26,6 +26,9 @@ public abstract class Boss : MonoBehaviour, IDamageable
 
 	[SerializeField] protected int patternIndex;
 	[SerializeField] protected BossPattern currentPattern;
+
+	[SerializeField] private float angryDelay;
+	[SerializeField] private float comeOutDelay;
 	#endregion
 
 	#region PublicMethod
@@ -47,18 +50,24 @@ public abstract class Boss : MonoBehaviour, IDamageable
         
 	}
 
-	public void OnWeak(GameObject source)
+
+	public IEnumerator OnWeak(GameObject source)
     {
-		Debug.Log("weak");
+		ShutdownAction();
+		anim.Play("Boss_magic_half_angry");
+		yield return new WaitForSeconds(angryDelay);
+		anim.Play("Boss_come_out");
+		yield return new WaitForSeconds(comeOutDelay);
+
 		isDeal = true;
 		patternIndex = 0;
-		ShutdownAction();
+		
+
 		PatternNext();
     }
 
 	public virtual void BossKilled()
 	{
-		anim.Play("Die");
 		ShutdownAction();
 	}
 

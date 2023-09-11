@@ -286,7 +286,7 @@ MonoBehaviour:
   animationStateName: Boss_magic_half
   preDelaySeconds: 1
   postDelaySeconds: 3
-  spawnDistance: 7
+  spawnDistance: 1.5
   cabbagePrefab: {fileID: 4518503157364571349, guid: 6bbd805db83ed134d958f023a708f5ff, type: 3}
 --- !u!1 &4410888255617921081
 GameObject:
