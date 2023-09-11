@@ -1602,16 +1602,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7910549142185476368, guid: ec365700b2ba47c49bae9795dd1d03d9, type: 3}
-      propertyPath: smoothTime
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7910549142185476368, guid: ec365700b2ba47c49bae9795dd1d03d9, type: 3}
       propertyPath: interpolateValue
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7910549142185476368, guid: ec365700b2ba47c49bae9795dd1d03d9, type: 3}
-      propertyPath: extraBoundarySize
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8931208118232212001, guid: ec365700b2ba47c49bae9795dd1d03d9, type: 3}
       propertyPath: m_RootOrder
