@@ -37,14 +37,13 @@ public class BossPhase0 : Boss
     {
         if (isDeal)
         {
-            isDeal = false;
+            ResetStatusOnNextPhase();
             UIManager.Instance.SetBossHP(nowBossHP);
             GameManager.instance.SetBoss(nextBossPhase.gameObject);
             ShutdownAction();
             anim.Play(animationName);
-            Vector3 center = Vector3.zero;
-            spriteRenderer.color = Color.white;
             yield return new WaitForSeconds(delay);
+            Vector3 center = Vector3.zero;
             transform.DOMove(center, moveToCenterSpeed)
                 .OnComplete(() =>
                 {

@@ -99,9 +99,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 5
-  damage: 2
+  damage: 3
   defaultSpeed: 1
-  downSpeed: 0.3
+  downSpeed: 0.5
   honeyTime: 3
 --- !u!70 &3179613529781891149
 CapsuleCollider2D:

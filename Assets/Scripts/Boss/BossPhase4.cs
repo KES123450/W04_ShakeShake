@@ -15,6 +15,7 @@ public class BossPhase4 : Boss
     {
         if (isDeal)
         {
+            ResetStatusOnNextPhase();
             UIManager.Instance.SetBossHP(nowBossHP);
             ShutdownAction();
             anim.Play(deadAnimationName);

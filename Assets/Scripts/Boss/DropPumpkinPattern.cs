@@ -5,6 +5,7 @@ using DG.Tweening;
 
 public class DropPumpkinPattern : BossPattern
 {
+    [SerializeField] bool withOpposite = false;
     [SerializeField] private GameObject pumpkinPrefab;
     [SerializeField] private GameObject pumpkinShadowPrefab;
     [SerializeField] private float pumpkinOffsetY;
@@ -13,12 +14,16 @@ public class DropPumpkinPattern : BossPattern
 
     protected override void ActionContext()
     {
-        StartCoroutine(nameof(DropPumpkin));
+        StartCoroutine(DropPumpkin(false));
+        if (withOpposite)
+        {
+            StartCoroutine(DropPumpkin(true));
+        }
     }
 
-    private IEnumerator DropPumpkin()
+    private IEnumerator DropPumpkin(bool onOpposite = false)
     {
-        Vector3 playerPos = GameManager.instance.GetPlayer().transform.position;
+        Vector3 playerPos = GameManager.instance.GetPlayer().transform.position * (onOpposite ? -1 : 1);
         GameObject pumpkinShadow = Instantiate(pumpkinShadowPrefab, playerPos, Quaternion.identity);
         yield return new WaitForSeconds(delayAttackTime);
 

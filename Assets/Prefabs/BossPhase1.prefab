@@ -70,7 +70,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &194630136524795132
 Transform:
   m_ObjectHideFlags: 0
@@ -232,11 +232,18 @@ MonoBehaviour:
   - {fileID: 2900759078379335396}
   - {fileID: 2900759077224372502}
   - {fileID: 2900759077224372502}
+  - {fileID: 2900759077224372502}
   - {fileID: 2900759078318824508}
   - {fileID: 2900759077922948225}
   dealTimePatternList:
-  - {fileID: 2900759078220440493}
-  - {fileID: 2900759078059491467}
+  - {fileID: 2900759078280117074}
+  - {fileID: 2900759078280117074}
+  - {fileID: 2900759078938468636}
+  - {fileID: 2900759078280117074}
+  - {fileID: 2900759078280117074}
+  - {fileID: 2900759078280117074}
+  - {fileID: 2900759078938468636}
+  - {fileID: 2900759078280117074}
   - {fileID: 24958119162809100}
   patternIndex: -1
   currentPattern: {fileID: 0}
@@ -443,6 +450,7 @@ MonoBehaviour:
   animationStateName: Boss_magic_in
   preDelaySeconds: 1
   postDelaySeconds: 0
+  withOpposite: 1
   pumpkinPrefab: {fileID: 8263120087888483618, guid: 91d5201ea6e0c8a438d684aeecc88c6b, type: 3}
   pumpkinShadowPrefab: {fileID: 8263120087888483618, guid: 2021ebfa717f82343b84f8ba07b046d9, type: 3}
   pumpkinOffsetY: 10
@@ -599,10 +607,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   main: {fileID: 0}
   animationStateName: Boss_run_dash
-  preDelaySeconds: 1
+  preDelaySeconds: 0.5
   postDelaySeconds: 1
-  dashForce: 10
-  rigid: {fileID: 2900759077862012848}
+  dashForce: 15
 --- !u!1 &2900759078318824510
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,7 +707,7 @@ MonoBehaviour:
   main: {fileID: 0}
   animationStateName: Boss_magic_in
   preDelaySeconds: 0
-  postDelaySeconds: 6
+  postDelaySeconds: 7
   potatoPrefab: {fileID: 3594427172382117781, guid: 2143f3afcddd0354aaeaceb286ad7a50, type: 3}
   potatoCount: 20
   potatoSpeed: 6
@@ -752,8 +759,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   main: {fileID: 0}
   animationStateName: Boss_run_dash
-  preDelaySeconds: 1
-  postDelaySeconds: 3
+  preDelaySeconds: 0.5
+  postDelaySeconds: 0
   honeyPrefab: {fileID: 7372263424199001342, guid: d962358dbf6c2ad4fa019fd74e5faed7, type: 3}
   honeyBarragePrefab: {fileID: 3657929078897670333, guid: d16f787498f331143b25e16289c083d6, type: 3}
-  barrageSpeed: 2
+  barrageSpeed: 0.5

@@ -12,9 +12,11 @@ public abstract class Boss : MonoBehaviour, IDamageable
 
 	#region PrivateVariables
 	protected Animator anim;
+	protected Rigidbody2D rigid;
 	private GameObject rend;
 	private Sequence hitSeq;
 	protected bool isDeal;
+	protected bool canAttackPlayer;
 	private bool isWeak;
 	public Collider2D bossCollider;
 	protected SpriteRenderer spriteRenderer;
@@ -75,6 +77,7 @@ public abstract class Boss : MonoBehaviour, IDamageable
 		yield return new WaitForSeconds(comeOutDelay);
 		
 		isDeal = true;
+		canAttackPlayer = true;
 		spriteRenderer.color = new Color(1f, 0.5f, 0.5f);
 		patternIndex = 0;
 		
@@ -103,7 +106,10 @@ public abstract class Boss : MonoBehaviour, IDamageable
 
 	public void ShutdownAction()
 	{
-		currentPattern.ShutdownAction();
+		if (currentPattern != null)
+		{
+			currentPattern.ShutdownAction();
+		}
 	}
 	#endregion
 
@@ -113,9 +119,10 @@ public abstract class Boss : MonoBehaviour, IDamageable
 		//rend = transform.Find("renderer").gameObject;
 		//transform.Find("renderer").TryGetComponent(out anim);
 		anim =GetComponent<Animator>();
-		spriteRenderer = GetComponent<SpriteRenderer>();
-	}
-	protected virtual void OnEnable()
+        spriteRenderer = GetComponent<SpriteRenderer>();
+		rigid = GetComponent<Rigidbody2D>();
+    }
+    protected virtual void OnEnable()
 	{
 		transform.position = respawnPoint;
 	}
@@ -165,6 +172,12 @@ public abstract class Boss : MonoBehaviour, IDamageable
 		}
 		return result;
 	}
-
+	protected void ResetStatusOnNextPhase()
+    {
+		isDeal = false;
+		canAttackPlayer = false;
+		rigid.velocity = Vector2.zero;
+		spriteRenderer.color = Color.white;
+	}
     #endregion
 }
