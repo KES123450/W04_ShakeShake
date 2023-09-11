@@ -45,6 +45,10 @@ public class PlayerAction : MonoBehaviour
         if (!IsActioning) { return; }
         currentAction.OnEndAction();
     }
+    public void OnDeath()
+    {
+        currentAction.OnDeath();
+    }
     void SetActionDirection()
     {
         currentAction.SetAimDirection(player.AimDirection);
