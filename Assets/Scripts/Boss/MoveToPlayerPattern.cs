@@ -43,6 +43,7 @@ public class MoveToPlayerPattern : BossPattern
             }
             else
             {
+                rigid.velocity = Vector2.zero;
                 timer = 0;
                 isAct = false;
             }
