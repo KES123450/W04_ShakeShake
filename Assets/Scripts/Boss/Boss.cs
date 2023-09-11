@@ -16,7 +16,7 @@ public abstract class Boss : MonoBehaviour, IDamageable
 	private Sequence hitSeq;
 	protected bool isDeal;
 	private bool isWeak;
-	private Collider2D bossCollider;
+	public Collider2D bossCollider;
 
 	[SerializeField] private Vector2 respawnPoint;
 	[SerializeField] protected int hpCurrent;
@@ -64,7 +64,7 @@ public abstract class Boss : MonoBehaviour, IDamageable
 		yield return new WaitForSeconds(angryDelay);
 		anim.Play("Boss_come_out");
 		yield return new WaitForSeconds(comeOutDelay);
-		bossCollider.enabled = true;
+		
 		isDeal = true;
 		patternIndex = 0;
 		

@@ -29,6 +29,7 @@ public abstract class BossPattern : MonoBehaviour
 		PreProcessing();
 		PlayAnimation();
 		yield return waitpreDelay;
+		main.GetComponent<Collider2D>().enabled = true;
 		ActionContext();
 		yield return waitpostDelay;
 		PostProcessing();

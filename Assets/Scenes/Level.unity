@@ -326,6 +326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 6056426082286253230}
   boss: {fileID: 3094788853988399941}
+  endingSceneName: EndingScene
 --- !u!4 &947479324
 Transform:
   m_ObjectHideFlags: 0
@@ -1043,6 +1044,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossPhase0
       objectReference: {fileID: 0}
+    - target: {fileID: 2395538288181153485, guid: 63120323710f2cf4484275eda36c0ec2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63120323710f2cf4484275eda36c0ec2, type: 3}
 --- !u!114 &1087133809262463832 stripped
@@ -1277,6 +1282,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossPhase4
       objectReference: {fileID: 0}
+    - target: {fileID: 4100709485790107838, guid: cb2b2105ba539c147919702baf07f3cf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9107477923029564325, guid: cb2b2105ba539c147919702baf07f3cf, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -1438,6 +1447,10 @@ PrefabInstance:
     - target: {fileID: 6056426080643611662, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571707551307828146, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
