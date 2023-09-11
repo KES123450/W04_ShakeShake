@@ -68,6 +68,6 @@ public class Honey : MonoBehaviour,IDamageable
 
     public void OnDamage(int damage = 1)
     {
-        nowduration -= damage;
+        nowduration -= this.damage;
     }
 }
