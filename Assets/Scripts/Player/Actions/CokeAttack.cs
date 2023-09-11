@@ -59,6 +59,7 @@ public class CokeAttack : ActionInfo
     {
         base.Start();
         geyser.SetActive(false);
+        ui.gameObject.SetActive(true);
         geyserStartGauge = -1;
         CurrentGauge = 0;
     }
@@ -109,6 +110,10 @@ public class CokeAttack : ActionInfo
         base.OnEndAction();
         isSuper = false;
         geyser.EndGeyser();
+    }
+    public override void OnDeath()
+    {
+        ui.gameObject.SetActive(false);
     }
 
 }

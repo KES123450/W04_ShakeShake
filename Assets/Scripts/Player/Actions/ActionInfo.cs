@@ -55,4 +55,8 @@ public abstract class ActionInfo : MonoBehaviour
     {
         IsActionEnded = false;
     }
+    public virtual void OnDeath()
+    {
+        OnEndAction();
+    }
 }

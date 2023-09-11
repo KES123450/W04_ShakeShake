@@ -1089,42 +1089,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 194630136524795135, guid: eb8e2defffd059c4681a001e9c8d84d4, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 194630136524795135, guid: eb8e2defffd059c4681a001e9c8d84d4, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 194630136524795135, guid: eb8e2defffd059c4681a001e9c8d84d4, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2900759078059491467, guid: eb8e2defffd059c4681a001e9c8d84d4, type: 3}
-      propertyPath: moveTime
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7444104072246965180, guid: eb8e2defffd059c4681a001e9c8d84d4, type: 3}
-      propertyPath: delay
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7444104072246965180, guid: eb8e2defffd059c4681a001e9c8d84d4, type: 3}
-      propertyPath: nowBossHP
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7444104072246965180, guid: eb8e2defffd059c4681a001e9c8d84d4, type: 3}
-      propertyPath: animationName
-      value: Boss_surprise
-      objectReference: {fileID: 0}
     - target: {fileID: 7444104072246965180, guid: eb8e2defffd059c4681a001e9c8d84d4, type: 3}
       propertyPath: nextBossPhase
       value: 
       objectReference: {fileID: 8590507057498553226}
-    - target: {fileID: 7444104072246965180, guid: eb8e2defffd059c4681a001e9c8d84d4, type: 3}
-      propertyPath: moveToCenterSpeed
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb8e2defffd059c4681a001e9c8d84d4, type: 3}
 --- !u!1 &3094788853988399941 stripped
