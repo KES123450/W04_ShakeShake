@@ -210,6 +210,9 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
     }
     void OnDeath()
     {
+        if (CurrentState == PlayerState.Roll) playerMove.EndRoll();
+        if (CurrentState == PlayerState.Action) playerAction.EndAction();
+
         CurrentState = PlayerState.Death;
         playerMove.OnDeath();
     }
