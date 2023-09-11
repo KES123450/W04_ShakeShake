@@ -264,7 +264,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   targetLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
 --- !u!1001 &1217394453644408950
 PrefabInstance:
   m_ObjectHideFlags: 0

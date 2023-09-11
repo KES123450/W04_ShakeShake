@@ -229,7 +229,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 2021019016, guid: 8e9cfeeaea52c19428587e4908dff7d1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -320,7 +320,7 @@ MonoBehaviour:
   actionColor: {r: 0, g: 0, b: 1, a: 1}
   deathColor: {r: 0, g: 0, b: 0, a: 0.5019608}
   invunerableColor: {r: 1, g: 1, b: 1, a: 0.2509804}
-  invunerableBlinkNum: 2
+  invunerableBlinkNum: 10
   invunerableBlinkEaseFunction: 4
 --- !u!58 &6056426082286253244
 CircleCollider2D:
