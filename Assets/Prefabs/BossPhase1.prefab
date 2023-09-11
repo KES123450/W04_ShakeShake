@@ -70,7 +70,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &194630136524795132
 Transform:
   m_ObjectHideFlags: 0
@@ -220,6 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossName: 
+  bossCollider: {fileID: 0}
   respawnPoint: {x: 0, y: 0}
   hpCurrent: 0
   hpMax: 0
@@ -232,7 +233,7 @@ MonoBehaviour:
   - {fileID: 2900759077224372502}
   - {fileID: 2900759077224372502}
   - {fileID: 2900759078318824508}
-  - {fileID: 1861233704}
+  - {fileID: 2900759077922948225}
   dealTimePatternList:
   - {fileID: 2900759078220440493}
   - {fileID: 2900759078059491467}
@@ -651,6 +652,7 @@ MonoBehaviour:
   preDelaySeconds: 0
   postDelaySeconds: 0
   pepperPrefab: {fileID: 5275283874063579994, guid: 9ce63b157b81cff448cbdef8c2f4e911, type: 3}
+  rotate: 0
 --- !u!1 &2900759078379335398
 GameObject:
   m_ObjectHideFlags: 0

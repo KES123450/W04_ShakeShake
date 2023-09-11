@@ -26,4 +26,12 @@ public class Walnut : MonoBehaviour
         var direction = Vector2.right * Mathf.Sin(radian) + Vector2.up * Mathf.Cos(radian);
         transform.position = origin + direction * traceRadius;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.TryGetComponent(out PlayerHealth playerHealth))
+        {
+            playerHealth.OnDamage();
+        }
+    }
 }

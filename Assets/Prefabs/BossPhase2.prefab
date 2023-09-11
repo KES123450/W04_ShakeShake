@@ -1,5 +1,105 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &829727055
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 829727057}
+  - component: {fileID: 829727056}
+  m_Layer: 7
+  m_Name: 'CabbagePatternEnd '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &829727057
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829727055}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1712627277710285896}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &829727056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829727055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8747e63b505800f409365b6bf6c9acf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  main: {fileID: 0}
+  animationStateName: Boss_magic_half
+  preDelaySeconds: 1
+  postDelaySeconds: 1
+  spawnDistance: 1.5
+  cabbagePrefab: {fileID: 4518503157364571349, guid: 6bbd805db83ed134d958f023a708f5ff, type: 3}
+--- !u!1 &1439431568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1439431569}
+  - component: {fileID: 1439431570}
+  m_Layer: 7
+  m_Name: PepperPatternOposite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1439431569
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439431568}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1712627277710285896}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1439431570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439431568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc0743af5f30e57489f012c3e5cd5e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  main: {fileID: 0}
+  animationStateName: Boss_magic_half
+  preDelaySeconds: 0
+  postDelaySeconds: 0
+  pepperPrefab: {fileID: 5275283874063579994, guid: 9ce63b157b81cff448cbdef8c2f4e911, type: 3}
+  rotate: 2
 --- !u!1 &1712627277710285900
 GameObject:
   m_ObjectHideFlags: 0
@@ -20,7 +120,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1712627277710285896
 Transform:
   m_ObjectHideFlags: 0
@@ -42,6 +142,8 @@ Transform:
   - {fileID: 4410888256538022680}
   - {fileID: 4410888256432598155}
   - {fileID: 4410888255386905005}
+  - {fileID: 1439431569}
+  - {fileID: 829727057}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -152,8 +254,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.069542155, y: -0.1556391}
-  m_Size: {x: 2.4909248, y: 1.4897854}
+  m_Offset: {x: 0.1, y: -0.125}
+  m_Size: {x: 2.25, y: 1}
   m_Direction: 1
 --- !u!114 &9021917313334123267
 MonoBehaviour:
@@ -168,14 +270,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossName: 
+  bossCollider: {fileID: 0}
   respawnPoint: {x: 0, y: 0}
   hpCurrent: 0
   hpMax: 0
-  startPattern: {fileID: 4410888255753679925}
+  startPattern: {fileID: 4410888256432598152}
   patternList:
+  - {fileID: 1439431570}
+  - {fileID: 4410888256919982504}
   - {fileID: 4410888255753679925}
+  - {fileID: 4410888256919982504}
+  - {fileID: 4410888255753679925}
+  - {fileID: 4410888256919982504}
   - {fileID: 4410888255753679925}
   - {fileID: 4410888255386904994}
+  - {fileID: 4410888255386904994}
+  - {fileID: 829727056}
+  - {fileID: 4410888256432598152}
   dealTimePatternList:
   - {fileID: 4410888256511904742}
   - {fileID: 4410888255617921087}
@@ -286,7 +397,7 @@ MonoBehaviour:
   main: {fileID: 0}
   animationStateName: Boss_magic_half
   preDelaySeconds: 1
-  postDelaySeconds: 3
+  postDelaySeconds: 0.5
   spawnDistance: 1.5
   cabbagePrefab: {fileID: 4518503157364571349, guid: 6bbd805db83ed134d958f023a708f5ff, type: 3}
 --- !u!1 &4410888255617921081
@@ -446,6 +557,7 @@ MonoBehaviour:
   potatoCount: 20
   potatoSpeed: 10
   delayTime: 3
+  forcedDirection: -1
 --- !u!1 &4410888256432598154
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,9 +604,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   main: {fileID: 0}
   animationStateName: Boss_magic_half
-  preDelaySeconds: 1
-  postDelaySeconds: 3
+  preDelaySeconds: 0
+  postDelaySeconds: 0
   pepperPrefab: {fileID: 5275283874063579994, guid: 9ce63b157b81cff448cbdef8c2f4e911, type: 3}
+  rotate: 0
 --- !u!1 &4410888256511904736
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,9 +756,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   main: {fileID: 0}
-  animationStateName: Boss_run_dash
-  preDelaySeconds: 1
-  postDelaySeconds: 3
+  animationStateName: Boss_magic_in
+  preDelaySeconds: 0
+  postDelaySeconds: 0
   honeyPrefab: {fileID: 7372263424199001342, guid: d962358dbf6c2ad4fa019fd74e5faed7, type: 3}
   honeyBarragePrefab: {fileID: 3657929078897670333, guid: d16f787498f331143b25e16289c083d6, type: 3}
   barrageSpeed: 2

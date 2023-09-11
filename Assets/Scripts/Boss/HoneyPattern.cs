@@ -20,7 +20,7 @@ public class HoneyPattern : BossPattern
         var honeyBarrage = Instantiate(honeyBarragePrefab, transform.position, Quaternion.identity).transform;
         honeyBarrage.gameObject.SetActive(true);
         honeyBarrage.position = transform.position;
-        honeyBarrage.DOMove(playerPos, barrageSpeed)
+        honeyBarrage.DOMove(playerPos, barrageSpeed).SetEase(Ease.OutQuint)
             .OnComplete(() =>
             {
                 Instantiate(honeyPrefab, playerPos, Quaternion.identity);
