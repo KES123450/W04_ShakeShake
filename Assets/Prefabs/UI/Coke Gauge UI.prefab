@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 6757779827832442508}
   - component: {fileID: 7106099012209401961}
   - component: {fileID: 9191696552203248259}
+  - component: {fileID: 1679999798348845152}
   m_Layer: 5
   m_Name: Coke Gauge UI
   m_TagString: Untagged
@@ -178,6 +179,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1679999798348845152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4975067186921959631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6141cc46e4025f44b13f775a9f2ce33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gaugeBar: {fileID: 1479993625067828183}
 --- !u!1 &6628973921114351284
 GameObject:
   m_ObjectHideFlags: 0

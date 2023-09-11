@@ -21,6 +21,7 @@ public class CokeAttack : ActionInfo
     [SerializeField] LayerMask targetLayer;
 
     CokeGeyser geyser;
+    CokeGaugeUI ui;
 
     float _currentGauge;
     float geyserDuration;
@@ -31,19 +32,20 @@ public class CokeAttack : ActionInfo
     float CurrentGauge
     {
         get { return _currentGauge; }
-        set { _currentGauge = Mathf.Clamp(value, 0, maxGauge); }
+        set { 
+            var newValue = Mathf.Clamp(value, 0, maxGauge);
+            _currentGauge = newValue;
+            ui.SetGaugeValue(newValue / maxGauge);
+        }
     }
 
-    void OnGUI()
-    {
-        GUI.Box(new Rect(0, 0, Screen.width * (CurrentGauge / maxGauge), Screen.height / 10), "");
-    }
     bool IsRolling => player.CurrentState == PlayerState.Roll;
 
     protected override void Awake()
     {
         base.Awake();
         geyser = GetComponentInChildren<CokeGeyser>();
+        ui = GetComponentInChildren<CokeGaugeUI>();
     }
     protected override void Start()
     {
