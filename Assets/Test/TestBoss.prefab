@@ -151,7 +151,7 @@ MonoBehaviour:
   preDelaySeconds: 1
   postDelaySeconds: 1
   pumpkinPrefab: {fileID: 8263120087888483618, guid: 91d5201ea6e0c8a438d684aeecc88c6b, type: 3}
-  pumpkinShadowPrefab: {fileID: 7337524906094783226, guid: e455ce6855799cc478e58acb148326bd, type: 3}
+  pumpkinShadowPrefab: {fileID: 8263120087888483618, guid: 2021ebfa717f82343b84f8ba07b046d9, type: 3}
   pumpkinOffsetY: 10
   dropDuration: 0.3
   delayAttackTime: 1
@@ -586,6 +586,10 @@ MonoBehaviour:
   patternIndex: 0
   currentPattern: {fileID: 0}
   nextBossPhase: {fileID: 0}
+  nowBossHP: 0
+  moveToCenterSpeed: 0
+  animationName: 
+  delay: 0
 --- !u!50 &648634174
 Rigidbody2D:
   serializedVersion: 4
