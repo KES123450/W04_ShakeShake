@@ -101,6 +101,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -113,7 +125,7 @@ TextureImporter:
         width: 263
         height: 225
       alignment: 9
-      pivot: {x: 0.38888714, y: 0.29435897}
+      pivot: {x: 0.37962773, y: 0.31961313}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,7 +146,7 @@ TextureImporter:
         width: 230
         height: 222
       alignment: 9
-      pivot: {x: 0.46117765, y: 0.29523644}
+      pivot: {x: 0.45058993, y: 0.32448834}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,7 +167,7 @@ TextureImporter:
         width: 246
         height: 220
       alignment: 9
-      pivot: {x: 0.5593957, y: 0.3118237}
+      pivot: {x: 0.54949653, y: 0.32658264}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -176,7 +188,7 @@ TextureImporter:
         width: 264
         height: 219
       alignment: 9
-      pivot: {x: 0.59531844, y: 0.30725783}
+      pivot: {x: 0.58609426, y: 0.32208416}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
