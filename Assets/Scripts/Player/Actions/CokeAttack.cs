@@ -19,10 +19,16 @@ public class CokeAttack : ActionInfo
     [SerializeField] AnimationCurve geyserDurationCurve;
     [SerializeField] AnimationCurve geyserLaunchCurve;
     [SerializeField] LayerMask targetLayer;
+    [Header("Super Coke")]
+    [SerializeField] float superDurationMultiplier;
+    [SerializeField] float superLengthMultipleir;
+    [SerializeField] float superWidthMultiplier;
+    [SerializeField] float superAngularSpeedMultiplier;
 
     CokeGeyser geyser;
     CokeGaugeUI ui;
 
+    bool isSuper;
     float _currentGauge;
     float geyserDuration;
     float geyserStartGauge;
@@ -35,11 +41,13 @@ public class CokeAttack : ActionInfo
         set { 
             var newValue = Mathf.Clamp(value, 0, maxGauge);
             _currentGauge = newValue;
-            ui.SetGaugeValue(newValue / maxGauge);
+            ui.SetGaugeValue(newValue / maxGauge, isSuper || CanSuper, CanAction || IsShooting);
         }
     }
 
     bool IsRolling => player.CurrentState == PlayerState.Roll;
+    bool CanSuper => CurrentGauge == maxGauge;
+    bool IsShooting => player.CurrentState == PlayerState.Action;
 
     protected override void Awake()
     {
@@ -51,14 +59,24 @@ public class CokeAttack : ActionInfo
     {
         base.Start();
         geyser.SetActive(false);
+        geyserStartGauge = -1;
         CurrentGauge = 0;
     }
     public override void OnStartAction()
     {
         base.OnStartAction();
+
+        if (CanSuper)
+        {
+            isSuper = true;
+        }
+        var angularSpeed = (isSuper ? superAngularSpeedMultiplier : 1) * maxAngularSpeed;
+        var width = (isSuper ? superWidthMultiplier : 1) * geyserWidth;
+        var duration = (isSuper ? superDurationMultiplier : 1) * geyserDuartionMultiplier;
+
         geyserStartGauge = CurrentGauge;
-        geyserDuration = geyserDurationCurve.Evaluate(CurrentGauge / maxGauge);
-        geyser.StartGeyser(targetLayer, transform.position, aimDirection, maxAngularSpeed, geyserWidth);
+        geyserDuration = duration * geyserDurationCurve.Evaluate(CurrentGauge / maxGauge);
+        geyser.StartGeyser(targetLayer, transform.position, aimDirection, angularSpeed, width);
     }
     public override void OnUpdateAction()
     {
@@ -66,7 +84,7 @@ public class CokeAttack : ActionInfo
         {
             CurrentGauge -= (geyserStartGauge / geyserDuration) * Time.deltaTime;
             var gaugeT = (geyserStartGauge - CurrentGauge) / geyserStartGauge;
-            var length = geyserLaunchCurve.Evaluate(gaugeT) * maxLength * geyserStartGauge / maxGauge;
+            var length = (isSuper ? superLengthMultipleir : 1) * geyserLaunchCurve.Evaluate(gaugeT) * maxLength * geyserStartGauge / maxGauge;
             geyser.UpdatePoint(transform.position, aimDirection * length);
         }
         if (CurrentGauge == 0)
@@ -89,6 +107,7 @@ public class CokeAttack : ActionInfo
     public override void OnEndAction()
     {
         base.OnEndAction();
+        isSuper = false;
         geyser.EndGeyser();
     }
 

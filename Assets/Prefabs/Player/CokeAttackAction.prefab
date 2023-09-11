@@ -195,16 +195,16 @@ MonoBehaviour:
   moveSpeedMultiplier: 0
   canRollCancelAction: 0
   canActionCancelRoll: 0
-  gaugeRegen: 10
+  gaugeRegen: 5
   gaugeLossOnStop: -1
   regenRollMuliplier: 0.25
   gaugeCostPerSecond: 15
   maxGauge: 10
   minimumGaugeToShoot: 1
   geyserWidth: 2
-  maxLength: 20
-  maxAngularSpeed: 90
-  geyserDuartionMultiplier: 1
+  maxLength: 15
+  maxAngularSpeed: 45
+  geyserDuartionMultiplier: 0.5
   geyserDurationCurve:
     serializedVersion: 2
     m_Curve:
@@ -235,17 +235,26 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 9
-      outSlope: 9
+      inSlope: 0
+      outSlope: 0
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
+      time: 0.095
+      value: 0
+      inSlope: -0
+      outSlope: 11.459665
+      tangentMode: 5
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
       time: 0.1
       value: 0.9
-      inSlope: 0.4000001
-      outSlope: 0.4000001
+      inSlope: 0.44198906
+      outSlope: 0.44198906
       tangentMode: 136
       weightedMode: 0
       inWeight: 0.33333334
@@ -265,6 +274,10 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 192
+  superDurationMultiplier: 2
+  superLengthMultipleir: 2
+  superWidthMultiplier: 2
+  superAngularSpeedMultiplier: 2
 --- !u!1001 &1217394453644408950
 PrefabInstance:
   m_ObjectHideFlags: 0
