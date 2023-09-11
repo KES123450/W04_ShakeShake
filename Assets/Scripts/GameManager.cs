@@ -20,4 +20,14 @@ public class GameManager : MonoBehaviour
     public GameObject GetPlayer() => player;
 
     public GameObject GetBoss() => boss;
+
+    public void SetBoss(GameObject bossObject)
+    {
+        boss = bossObject;
+    }
+
+    public void GameOver()
+    {
+        UIManager.Instance.EnableGameOverUI();
+    }
 }

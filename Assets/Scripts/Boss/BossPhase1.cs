@@ -5,7 +5,8 @@ using DG.Tweening;
 
 public class BossPhase1 : Boss
 {
-    public Boss nextBossPhase;
+    [SerializeField] private Boss nextBossPhase;
+    [SerializeField] private int nowBossHP;
     [SerializeField] private float moveToCenterSpeed;
     [SerializeField] private string animationName;
     [SerializeField] private float delay;
@@ -18,6 +19,8 @@ public class BossPhase1 : Boss
     {
         if (isDeal)
         {
+            UIManager.Instance.SetBossHP(nowBossHP);
+            GameManager.instance.SetBoss(nextBossPhase.gameObject);
             ShutdownAction();
             anim.Play(animationName);
             yield return new WaitForSeconds(delay);

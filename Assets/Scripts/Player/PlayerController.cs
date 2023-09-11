@@ -76,7 +76,10 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
         playerHealth = GetComponent<PlayerHealth>();
         aimIndicator = GetComponentInChildren<AimIndicator>();
     }
-
+    void OnDisable()
+    {
+        inputs.Disable();
+    }
     void Start()
     {
         playerMove.CanMove = true;
@@ -212,5 +215,7 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
     {
         CurrentState = PlayerState.Death;
         playerMove.OnDeath();
+        GameManager.instance.GetBoss().GetComponent<Boss>().ShutdownAction();
+        UIManager.Instance.EnableGameOverUI();
     }
 }
