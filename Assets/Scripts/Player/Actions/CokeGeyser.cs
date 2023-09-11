@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class CokeGeyser : MonoBehaviour
 {
-    new BoxCollider2D collider;
+    [Header("Coke Can Object")]
+    [SerializeField] GameObject cokeObject;
 
+    new BoxCollider2D collider;
     LayerMask targetLayer;
     List<IDamageable> damaged;
     Vector3 currentDirection;
@@ -24,6 +26,7 @@ public class CokeGeyser : MonoBehaviour
     public void SetActive(bool value)
     {
         gameObject.SetActive(value);
+        cokeObject.SetActive(value);
     }
     public void StartGeyser(LayerMask targetLayer, Vector2 startPoint, Vector2 aimDirection, float angularSpeed, float width)
     {
@@ -48,6 +51,7 @@ public class CokeGeyser : MonoBehaviour
         transform.position = startPoint + (Vector2)currentDirection * length / 2;
         transform.rotation = CurrentRotation;
         transform.localScale = Vector2.right * length / defaultColliderSize.x + Vector2.up * width / defaultColliderSize.y;
+        cokeObject.transform.rotation = CurrentRotation;
 
         var filter = new ContactFilter2D();
         filter.useTriggers = true;

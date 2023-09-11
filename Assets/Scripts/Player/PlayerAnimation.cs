@@ -5,8 +5,6 @@ using DG.Tweening;
 
 public class PlayerAnimation : MonoBehaviour
 {
-    [SerializeField] Color rollColor;
-    [SerializeField] Color actionColor;
     [SerializeField] Color deathColor;
     [Header("Invunerable Color")]
     [SerializeField] Color invunerableColor;
@@ -14,6 +12,7 @@ public class PlayerAnimation : MonoBehaviour
     [SerializeField] Ease invunerableBlinkEaseFunction;
 
     PlayerController player;
+    PlayerMove playerMove;
     SpriteRenderer spriteRenderer;
     Animator animator;
 
@@ -23,11 +22,15 @@ public class PlayerAnimation : MonoBehaviour
     bool isInvunerable;
     float invunerableDuration;
     float invunerableTimer;
+    bool wasMoving;
+
+    bool IsMoving => playerMove.IsMoving;
 
 
     void Awake()
     {
         player = GetComponent<PlayerController>();
+        playerMove = GetComponent<PlayerMove>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
@@ -51,6 +54,7 @@ public class PlayerAnimation : MonoBehaviour
         {
             UpdateInvunerableColor();
         }
+        wasMoving = IsMoving;
     }
 
 
@@ -59,9 +63,16 @@ public class PlayerAnimation : MonoBehaviour
         if (previousState != PlayerState.Idle)
         {
             previousState = PlayerState.Idle;
+            animator.Play(IsMoving ? "Run" : "Idle");
+        }
 
-            //temp code
-            spriteRenderer.color = defaultColor;
+        if (IsMoving && !wasMoving)
+        {
+            animator.Play("Run");
+        }
+        else if (!IsMoving && wasMoving)
+        {
+            animator.Play("Idle");
         }
     }
     void UpdateRoll()
@@ -70,9 +81,7 @@ public class PlayerAnimation : MonoBehaviour
         {
             previousState = PlayerState.Roll;
 
-            //temp code
-            spriteRenderer.color = rollColor;
-
+            animator.Play("Dash_coke");
         }
     }
     void UpdateAction()
@@ -81,8 +90,7 @@ public class PlayerAnimation : MonoBehaviour
         {
             previousState = PlayerState.Action;
 
-            //temp code
-            spriteRenderer.color = actionColor;
+            animator.Play("attack_coke");
         }
     }
     void UpdateDeath()

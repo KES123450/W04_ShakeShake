@@ -316,8 +316,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86051d5b1ea67a946a28db87e1ad98f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rollColor: {r: 1, g: 0, b: 0, a: 1}
-  actionColor: {r: 0, g: 0, b: 1, a: 1}
   deathColor: {r: 0, g: 0, b: 0, a: 0.5019608}
   invunerableColor: {r: 1, g: 1, b: 1, a: 0.2509804}
   invunerableBlinkNum: 10
