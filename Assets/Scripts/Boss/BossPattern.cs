@@ -39,7 +39,7 @@ public abstract class BossPattern : MonoBehaviour
 	{
 		main.PatternNext();
 	}
-	public void ShutdownAction()
+	public virtual void ShutdownAction()
 	{
 		StopCoroutine(nameof(Act));
 	}

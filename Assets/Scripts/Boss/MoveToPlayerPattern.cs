@@ -32,7 +32,7 @@ public class MoveToPlayerPattern : BossPattern
                 Vector3 playerDirection = (playerPos-transform.position).normalized;
                 if (rigid.velocity.magnitude <= maxSpeed)
                 {
-                    rigid.velocity += (Vector2)playerDirection * moveSpeed;
+                    rigid.velocity += (Vector2)playerDirection * moveSpeed * Time.deltaTime;
                 }
                 else
                 {
@@ -53,5 +53,10 @@ public class MoveToPlayerPattern : BossPattern
     private void Update()
     {
         MoveToPlayer();
+    }
+    public override void ShutdownAction()
+    {
+        base.ShutdownAction();
+        isAct = false;
     }
 }
