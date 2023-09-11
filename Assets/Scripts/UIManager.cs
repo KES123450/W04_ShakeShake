@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -15,6 +16,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] Sprite bossHpLoss;
     [SerializeField] float playerHpAlertDuration;
     [SerializeField] Color alertColor;
+    [SerializeField] GameObject gameOverUI;
 
     bool isAlert;
     float playerHpAlertTimer;
@@ -75,5 +77,15 @@ public class UIManager : MonoBehaviour
         {
             Debug.LogError($"UIManager : 보스 체력 UI보다 많은 값을 설정함!");
         }
+    }
+
+    public void EnableGameOverUI()
+    {
+        gameOverUI.SetActive(true);
+    }
+
+    public void RestartButton()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
