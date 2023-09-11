@@ -58,5 +58,6 @@ public class MoveToPlayerPattern : BossPattern
     {
         base.ShutdownAction();
         isAct = false;
+        rigid.velocity = Vector2.zero;
     }
 }
