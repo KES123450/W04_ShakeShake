@@ -47,26 +47,41 @@ public class CokeGeyser : MonoBehaviour
         var direction = targetVector.normalized;
         var length = targetVector.magnitude;
 
-        currentDirection = Vector3.RotateTowards(currentDirection, direction, maxAngularSpeed * Mathf.Deg2Rad * Time.deltaTime, 0) ;
+        currentDirection = Vector3.RotateTowards(currentDirection, direction, maxAngularSpeed * Mathf.Deg2Rad * Time.deltaTime, 0);
 
-        transform.position = startPoint + (Vector2)currentDirection * length / 2;
-        transform.rotation = CurrentRotation;
-        transform.localScale = Vector2.right * length / defaultColliderSize.x + Vector2.up * width / defaultColliderSize.y;
-        cokeObject.transform.rotation = CurrentRotation;
+        SetGeyser(startPoint, length);
 
         var filter = new ContactFilter2D();
-        filter.useTriggers = true;
+        filter.useTriggers = false;
         filter.SetLayerMask(targetLayer);
+
+        var raycastResult = new List<RaycastHit2D>();
+        if (Physics2D.Raycast(startPoint, currentDirection, filter, raycastResult, length) > 0)
+        {
+            length = raycastResult.Select(r => Vector2.Distance(startPoint, r.point)).Min();
+        }
+
+        filter.useTriggers = true;
         var overlapResult = new List<Collider2D>();
-        collider.OverlapCollider(filter, overlapResult); 
+        collider.OverlapCollider(filter, overlapResult);
 
         overlapResult.
             Select(c => c.GetComponent<IDamageable>()).
             Where(d => d != null && !damaged.Contains(d)).
-            ForEach((d) => 
+            ForEach((d) =>
         {
             d.OnDamage();
             damaged.Add(d);
         });
+
+        SetGeyser(startPoint, length);
+    }
+
+    void SetGeyser(Vector2 startPoint, float length)
+    {
+        transform.position = startPoint + (Vector2)currentDirection * length / 2;
+        transform.rotation = CurrentRotation;
+        transform.localScale = Vector2.right * length / defaultColliderSize.x + Vector2.up * width / defaultColliderSize.y;
+        cokeObject.transform.rotation = CurrentRotation;
     }
 }
