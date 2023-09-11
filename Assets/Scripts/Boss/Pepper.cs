@@ -51,7 +51,7 @@ public class Pepper : MonoBehaviour
 		Debug.Log(bossCollider);
         if (bossCollider != null)
         {
-			bossCollider.GetComponent<Boss>().OnWeak(gameObject);
+			bossCollider.GetComponent<Boss>().StartOnWeak();
         }
 
 
