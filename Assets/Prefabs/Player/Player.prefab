@@ -288,8 +288,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb65fafe5876ff84b8758c6bf0517012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7.5
-  rollDistance: 7.5
+  speed: 9
+  rollDistance: 9
   rollDuration: 0.5
 --- !u!114 &-3991210371293857054
 MonoBehaviour:
