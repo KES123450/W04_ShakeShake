@@ -1066,6 +1066,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossPhase2
       objectReference: {fileID: 0}
+    - target: {fileID: 1712627277710285900, guid: 71f9f4dca3b9de34d9d9db0d69c65568, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71f9f4dca3b9de34d9d9db0d69c65568, type: 3}
 --- !u!1001 &2900759077862012861
