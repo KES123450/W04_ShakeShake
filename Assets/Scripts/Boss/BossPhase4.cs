@@ -18,6 +18,7 @@ public class BossPhase4 : Boss
             UIManager.Instance.SetBossHP(nowBossHP);
             ShutdownAction();
             anim.Play(deadAnimationName);
+            GameManager.instance.StartEnding();
             Debug.Log("Game Clear");
         }
     }
