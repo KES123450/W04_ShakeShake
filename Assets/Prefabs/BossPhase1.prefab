@@ -20,7 +20,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &194630136524795132
 Transform:
   m_ObjectHideFlags: 0
@@ -173,17 +173,21 @@ MonoBehaviour:
   hpCurrent: 0
   hpMax: 0
   startPattern: {fileID: 2900759077922948225}
-  patternList: []
+  patternList:
+  - {fileID: 2900759077922948225}
+  - {fileID: 2900759078379335396}
+  - {fileID: 2900759077224372502}
   dealTimePatternList:
   - {fileID: 2900759078220440493}
   - {fileID: 2900759078059491467}
   - {fileID: 24958119162809100}
   patternIndex: -1
   currentPattern: {fileID: 0}
+  angryAnimationName: Boss_magic_half_angry
   angryDelay: 2
   comeOutDelay: 3
   nextBossPhase: {fileID: 0}
-  nowBossHP: 4
+  nowBossHP: 3
   moveToCenterSpeed: 1
   animationName: Boss_surprise
   delay: 2

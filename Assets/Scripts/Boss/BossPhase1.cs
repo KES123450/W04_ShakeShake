@@ -32,7 +32,7 @@ public class BossPhase1 : Boss
                     nextBossPhase.transform.position = transform.position;
                     nextBossPhase.gameObject.SetActive(true);
                     gameObject.SetActive(false);
-                    nextBossPhase.Initialize();
+                    //nextBossPhase.Initialize();
                 });
         }
     }
