@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public const float MapSize = 40;
+    public const float MapSize = 36;
 
     public static GameManager instance;
     [SerializeField] GameObject player;
