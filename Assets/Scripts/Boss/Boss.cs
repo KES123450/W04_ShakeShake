@@ -16,6 +16,7 @@ public abstract class Boss : MonoBehaviour, IDamageable
 	private Sequence hitSeq;
 	protected bool isDeal;
 	private bool isWeak;
+	private Collider2D bossCollider;
 
 	[SerializeField] private Vector2 respawnPoint;
 	[SerializeField] protected int hpCurrent;
@@ -27,6 +28,7 @@ public abstract class Boss : MonoBehaviour, IDamageable
 	[SerializeField] protected int patternIndex;
 	[SerializeField] protected BossPattern currentPattern;
 
+	[SerializeField] private string angryAnimationName;
 	[SerializeField] private float angryDelay;
 	[SerializeField] private float comeOutDelay;
 	#endregion
@@ -56,12 +58,13 @@ public abstract class Boss : MonoBehaviour, IDamageable
     }
 	public IEnumerator OnWeak()
     {
+		bossCollider.enabled = false;
 		ShutdownAction();
-		anim.Play("Boss_magic_half_angry");
+		anim.Play(angryAnimationName);
 		yield return new WaitForSeconds(angryDelay);
 		anim.Play("Boss_come_out");
 		yield return new WaitForSeconds(comeOutDelay);
-
+		bossCollider.enabled = true;
 		isDeal = true;
 		patternIndex = 0;
 		
@@ -112,6 +115,7 @@ public abstract class Boss : MonoBehaviour, IDamageable
 			.Append(rend.transform.DOShakePosition(0.1f, 0.2f))
 			.Pause();*/
 		Initialize();
+		bossCollider = GetComponent<Collider2D>();
 	}
 	private int GetNextPatternIndex(int _currentIndex)
 	{
