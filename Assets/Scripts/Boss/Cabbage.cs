@@ -5,13 +5,13 @@ using UnityEngine;
 public class Cabbage : MonoBehaviour, IDamageable
 {
     [SerializeField] float speed;
-    Rigidbody2D rigidbody;
+    new Rigidbody2D rigidbody;
+    new CircleCollider2D collider;
     float colliderRadius;
     bool canAttackBoss;
 
     public void OnDamage(int damage = 1)
     {
-        Debug.Log("Cabbage.OnDamage");
         var currentPosition = transform.position;
 
         var inDirection = rigidbody.velocity.normalized;
@@ -24,8 +24,10 @@ public class Cabbage : MonoBehaviour, IDamageable
     void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
-        colliderRadius = GetComponent<CircleCollider2D>().radius;
+        collider = GetComponent<CircleCollider2D>();
+        colliderRadius = collider.radius;
         canAttackBoss = false;
+        collider.enabled = false;
     }
     void Update()
     {
@@ -36,9 +38,10 @@ public class Cabbage : MonoBehaviour, IDamageable
     public void Shoot(Vector2 direction)
     {
         rigidbody.velocity = direction * speed;
+        collider.enabled = true;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent<PlayerHealth>(out var player))
         {
@@ -47,6 +50,7 @@ public class Cabbage : MonoBehaviour, IDamageable
         if (canAttackBoss && collision.gameObject.TryGetComponent<Boss>(out var boss))
         {
             boss.StartOnWeak();
+            canAttackBoss = false;
         }
 
     }

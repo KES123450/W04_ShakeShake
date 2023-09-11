@@ -5,6 +5,10 @@ using DG.Tweening;
 
 public class Pumpkin : MonoBehaviour,IDamageable
 {
+    [SerializeField] private float maxHP;
+    private float nowHP;
+    [SerializeField] private Sprite crackPumpkin;
+    [SerializeField] private Sprite pumpkin;
     [SerializeField] private float radius;
     [SerializeField] private LayerMask playerLayer;
     private Collider2D collider;
@@ -13,14 +17,27 @@ public class Pumpkin : MonoBehaviour,IDamageable
     {
         collider = GetComponent<Collider2D>();
         collider.enabled = false;
+        nowHP = maxHP;
     }
     public void OnDamage(int damage = 1)
     {
         if (collider.enabled)
         {
-            gameObject.SetActive(false);
-            DOTween.Complete(transform);
-            Destroy(gameObject);
+            nowHP -= 1;
+            if (nowHP == 1)
+            {
+                GetComponent<SpriteRenderer>().sprite = crackPumpkin;
+                return;
+            }
+
+            if (nowHP == 0)
+            {
+                gameObject.SetActive(false);
+                DOTween.Complete(transform);
+                Destroy(gameObject);
+            }
+
+            
         }
     }
 
@@ -32,7 +49,6 @@ public class Pumpkin : MonoBehaviour,IDamageable
         filter.SetLayerMask(playerLayer);
 
         collider.OverlapCollider(filter, result);
-        Debug.Log(result.Count);
         result.ForEach(c =>
         {
             if (c.gameObject.TryGetComponent<IDamageable>(out var player))

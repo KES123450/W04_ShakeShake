@@ -16,7 +16,8 @@ public abstract class Boss : MonoBehaviour, IDamageable
 	private Sequence hitSeq;
 	protected bool isDeal;
 	private bool isWeak;
-	private Collider2D bossCollider;
+	public Collider2D bossCollider;
+	protected SpriteRenderer spriteRenderer;
 
 	[SerializeField] private Vector2 respawnPoint;
 	[SerializeField] protected int hpCurrent;
@@ -61,11 +62,20 @@ public abstract class Boss : MonoBehaviour, IDamageable
 		bossCollider.enabled = false;
 		ShutdownAction();
 		anim.Play(angryAnimationName);
-		yield return new WaitForSeconds(angryDelay);
+
+		spriteRenderer.DOColor(Color.red, angryDelay / 4);
+		yield return new WaitForSeconds(angryDelay / 4);
+		spriteRenderer.DOColor(Color.white, angryDelay / 4);
+		yield return new WaitForSeconds(angryDelay / 4);
+		spriteRenderer.DOColor(Color.red, angryDelay / 4);
+		yield return new WaitForSeconds(angryDelay / 4);
+		spriteRenderer.DOColor(Color.white, angryDelay / 4);
+		yield return new WaitForSeconds(angryDelay / 4);
 		anim.Play("Boss_come_out");
 		yield return new WaitForSeconds(comeOutDelay);
-		bossCollider.enabled = true;
+		
 		isDeal = true;
+		spriteRenderer.color = new Color(1f, 0.5f, 0.5f);
 		patternIndex = 0;
 		
 
@@ -85,8 +95,8 @@ public abstract class Boss : MonoBehaviour, IDamageable
 	}
 	public void PatternNext()
 	{
-		var targetList = isDeal ? dealTimePatternList : patternList;
 		patternIndex = isDeal? GetNextDealPatternIndex(patternIndex) : GetNextPatternIndex(patternIndex);
+		var targetList = isDeal ? dealTimePatternList : patternList;
 		currentPattern = targetList[patternIndex];
 		currentPattern.StartAct();
 	}
@@ -103,6 +113,7 @@ public abstract class Boss : MonoBehaviour, IDamageable
 		//rend = transform.Find("renderer").gameObject;
 		//transform.Find("renderer").TryGetComponent(out anim);
 		anim =GetComponent<Animator>();
+		spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 	protected virtual void OnEnable()
 	{
@@ -117,7 +128,14 @@ public abstract class Boss : MonoBehaviour, IDamageable
 		Initialize();
 		bossCollider = GetComponent<Collider2D>();
 	}
-	private int GetNextPatternIndex(int _currentIndex)
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (isDeal && collision.TryGetComponent<PlayerHealth>(out var playerHealth))
+        {
+			playerHealth.OnDamage();
+        }
+    }
+    private int GetNextPatternIndex(int _currentIndex)
 	{
 		int result = _currentIndex;
 		if (result >= patternList.Count - 1)
@@ -137,9 +155,9 @@ public abstract class Boss : MonoBehaviour, IDamageable
 		if (result >= dealTimePatternList.Count - 1)
 		{
 			isDeal = false;
-			patternIndex = 0;
+			spriteRenderer.color = Color.white;
 			ShutdownAction();
-			PatternNext();
+			return 0;
 		}
 		else
 		{
@@ -147,14 +165,6 @@ public abstract class Boss : MonoBehaviour, IDamageable
 		}
 		return result;
 	}
-	void OnGUI()
-	{
-		var style = new GUIStyle();
-		style.fontSize = 100;
-		style.normal.textColor = Color.white;
-		GUI.Label(new Rect(Screen.width / 2, Screen.height / 10, Screen.width, 2 * Screen.height / 10), $"Boss : {hpCurrent} / {hpMax}", style);
-	}
-
 
     #endregion
 }

@@ -84,23 +84,6 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
     {
         playerMove.CanMove = true;
         CurrentState = PlayerState.Idle;
-
-
-    //    InputSystem.onActionChange +=
-    //(obj, change) =>
-    //{
-    //    // obj can be either an InputAction or an InputActionMap
-    //    // depending on the specific change.
-    //    switch (change)
-    //    {
-    //        case InputActionChange.ActionStarted:
-    //        case InputActionChange.ActionPerformed:
-    //        case InputActionChange.ActionCanceled:
-    //            Debug.Log($"{((InputAction)obj).name} {change}");
-    //            break;
-    //    }
-    //};
-
     }
 
     void Update()
@@ -219,7 +202,8 @@ public class PlayerController : MonoBehaviour, PlayerInputActions.IPlayerActions
         CurrentState = PlayerState.Death;
         playerMove.OnDeath();
         playerAction.OnDeath();
-        GameManager.instance.GetBoss().GetComponent<Boss>().ShutdownAction();
         UIManager.Instance.EnableGameOverUI();
+        GameManager.instance.GetBoss().GetComponent<Boss>().ShutdownAction();
+        
     }
 }

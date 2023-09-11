@@ -27,7 +27,7 @@ public class DropPumpkinPattern : BossPattern
         GameObject pumpkin = Instantiate(pumpkinPrefab, pumpkinDefaultPos, Quaternion.identity);
         Pumpkin pumpkinComponent = pumpkin.GetComponent<Pumpkin>();
 
-        pumpkin.transform.DOMoveY(playerPos.y, dropDuration)
+        pumpkin.transform.DOMoveY(playerPos.y, dropDuration).SetEase(Ease.OutExpo)
             .OnComplete(() =>
             {
                 pumpkinComponent.EnableCollider();

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1771781978177378133}
   - component: {fileID: -6786756827729376141}
   m_Layer: 6
-  m_Name: Pumpkin
+  m_Name: CrackPumpkin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 6ed7f1626ce6ca34f9e7db2ddf585ef5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7617704ca0718ca488e3e572fd9e29b4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 414846e6c6ff6fc4c90ca00b0a85bb93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 2
+  maxHP: 1
   crackPumpkin: {fileID: 21300000, guid: 7617704ca0718ca488e3e572fd9e29b4, type: 3}
   pumpkin: {fileID: 21300000, guid: 6ed7f1626ce6ca34f9e7db2ddf585ef5, type: 3}
   radius: 1

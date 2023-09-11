@@ -29,6 +29,7 @@ public abstract class BossPattern : MonoBehaviour
 		PreProcessing();
 		PlayAnimation();
 		yield return waitpreDelay;
+		main.GetComponent<Collider2D>().enabled = true;
 		ActionContext();
 		yield return waitpostDelay;
 		PostProcessing();
@@ -39,7 +40,7 @@ public abstract class BossPattern : MonoBehaviour
 	{
 		main.PatternNext();
 	}
-	public void ShutdownAction()
+	public virtual void ShutdownAction()
 	{
 		StopCoroutine(nameof(Act));
 	}

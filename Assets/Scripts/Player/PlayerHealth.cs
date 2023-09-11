@@ -25,14 +25,6 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     public bool IsAlive => _currentHealth > 0;
     public bool IsInvunerable => invunerableTimer > 0;
     
-    void OnGUI()
-    {
-        var style = new GUIStyle();
-        style.fontSize = 100;
-        style.normal.textColor = Color.white;
-        GUI.Label(new Rect(0, Screen.height / 10, Screen.width / 2, 2 * Screen.height / 10), $"Player : {CurrentHealth} / {maxHealth}", style);
-    }
-
     void Awake()
     {
         player = GetComponent<PlayerController>();

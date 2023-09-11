@@ -8,7 +8,8 @@ public class CokeGeyser : MonoBehaviour
     [Header("Coke Can Object")]
     [SerializeField] GameObject cokeObject;
 
-    new BoxCollider2D collider;
+    new BoxCollider2D boxCollider;
+    new PolygonCollider2D polygonCollider;
     LayerMask targetLayer;
     List<IDamageable> damaged;
     Vector3 currentDirection;
@@ -19,8 +20,10 @@ public class CokeGeyser : MonoBehaviour
     public Quaternion CurrentRotation => Quaternion.FromToRotation(Vector2.right, currentDirection);
     private void Awake()
     {
-        collider = GetComponent<BoxCollider2D>();
-        defaultColliderSize = collider.size;
+        boxCollider = GetComponent<BoxCollider2D>();
+        polygonCollider = GetComponent<PolygonCollider2D>();
+        defaultColliderSize = boxCollider.size;
+        boxCollider.enabled = false;
         damaged = new();
     }
     public void SetActive(bool value)
@@ -49,7 +52,6 @@ public class CokeGeyser : MonoBehaviour
 
         currentDirection = Vector3.RotateTowards(currentDirection, direction, maxAngularSpeed * Mathf.Deg2Rad * Time.deltaTime, 0);
 
-        SetGeyser(startPoint, length);
 
         var filter = new ContactFilter2D();
         filter.useTriggers = false;
@@ -63,7 +65,9 @@ public class CokeGeyser : MonoBehaviour
 
         filter.useTriggers = true;
         var overlapResult = new List<Collider2D>();
-        collider.OverlapCollider(filter, overlapResult);
+        polygonCollider.OverlapCollider(filter, overlapResult);
+
+        SetGeyser(startPoint, length);
 
         overlapResult.
             Select(c => c.GetComponent<IDamageable>()).

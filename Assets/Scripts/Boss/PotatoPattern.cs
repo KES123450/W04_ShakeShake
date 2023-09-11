@@ -8,6 +8,7 @@ public class PotatoPattern : BossPattern
     [SerializeField] private float potatoCount;
     [SerializeField] private float potatoSpeed;
     [SerializeField] private float delayTime;
+    [SerializeField] private int forcedDirection = -1;
     private Camera mainCamera;
 
     private void Start()
@@ -22,7 +23,7 @@ public class PotatoPattern : BossPattern
     private IEnumerator SpawnPotato()
     {
         float mapSize = GameManager.MapSize;
-        int rand = Random.Range(0, 4);
+        int rand = forcedDirection == -1 ? Random.Range(0, 4) : forcedDirection;
         Vector2 potatoDirection = Vector2.zero;
         Vector3 potatoStartPos = Vector3.zero;
         Vector3 space = Vector3.zero;
