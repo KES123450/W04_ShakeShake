@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 816004364}
   - component: {fileID: 816004363}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Start Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -571,7 +571,7 @@ GameObject:
   - component: {fileID: 1623856132}
   - component: {fileID: 1623856131}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Exit Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
