@@ -95,8 +95,8 @@ public abstract class Boss : MonoBehaviour, IDamageable
 	}
 	public void PatternNext()
 	{
-		var targetList = isDeal ? dealTimePatternList : patternList;
 		patternIndex = isDeal? GetNextDealPatternIndex(patternIndex) : GetNextPatternIndex(patternIndex);
+		var targetList = isDeal ? dealTimePatternList : patternList;
 		currentPattern = targetList[patternIndex];
 		currentPattern.StartAct();
 	}
@@ -155,9 +155,9 @@ public abstract class Boss : MonoBehaviour, IDamageable
 		if (result >= dealTimePatternList.Count - 1)
 		{
 			isDeal = false;
-			patternIndex = 0;
+			spriteRenderer.color = Color.white;
 			ShutdownAction();
-			PatternNext();
+			return 0;
 		}
 		else
 		{

@@ -24,4 +24,13 @@ public class CabbagePattern : BossPattern
         playerDirection = (GameManager.instance.GetPlayer().transform.position - transform.position).normalized;
         cabbage = Instantiate(cabbagePrefab, transform.position + playerDirection * spawnDistance, Quaternion.identity).GetComponent<Cabbage>();
     }
+
+    public override void ShutdownAction()
+    {
+        base.ShutdownAction();
+        if (cabbage)
+        {
+            Destroy(cabbage.gameObject);
+        }
+    }
 }

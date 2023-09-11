@@ -49,7 +49,6 @@ public class Pumpkin : MonoBehaviour,IDamageable
         filter.SetLayerMask(playerLayer);
 
         collider.OverlapCollider(filter, result);
-        Debug.Log(result.Count);
         result.ForEach(c =>
         {
             if (c.gameObject.TryGetComponent<IDamageable>(out var player))

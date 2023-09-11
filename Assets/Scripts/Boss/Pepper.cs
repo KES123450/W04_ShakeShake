@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
-public class Pepper : MonoBehaviour
+public class Pepper : MonoBehaviour, IDamageable
 {
 	[SerializeField] private GameObject firePrefab;
     [SerializeField] private float activeTime;
 	[SerializeField] private float rotateSpeed;
 	[SerializeField] private float guideSpeed;
 	[SerializeField] private float radius;
+	[SerializeField] private float explodeDuration;
 	[SerializeField] private LayerMask bossLayer;
 	[SerializeField] private LayerMask playerLayer;
 	private Rigidbody2D rigid;
 	private float timer;
+	bool isExploding;
 
     private void Start()
     {
@@ -20,12 +23,14 @@ public class Pepper : MonoBehaviour
     }
     private void FollowToPlayer()
     {
+		if (isExploding) { return; }
+
 		if (timer <= activeTime)
 		{
 			if(Physics2D.OverlapCircle(transform.position, radius, playerLayer) != null)
-            {
-				ExplosionPepper();
-            }
+			{
+				StartCoroutine(ExplosionPepper());
+			}
 			Vector2 dir = transform.right;
 			Vector2 targetDir = GameManager.instance.GetPlayer().transform.position - transform.position;
 			Vector3 crossVec = Vector3.Cross(dir, targetDir);
@@ -41,14 +46,19 @@ public class Pepper : MonoBehaviour
 		}
 		else
 		{
-			ExplosionPepper();
+			StartCoroutine(ExplosionPepper());
 		}
 	}
 
-	private void ExplosionPepper()
+	private IEnumerator ExplosionPepper()
     {
+		isExploding = true;
+		rigid.velocity = Vector2.zero;
+		var renderer = GetComponentInChildren<SpriteRenderer>();
+		renderer.DOColor(Color.black, explodeDuration);
+		yield return new WaitForSeconds(explodeDuration);
+
 		Collider2D bossCollider = Physics2D.OverlapCircle(transform.position, radius, bossLayer);
-		Debug.Log(bossCollider);
         if (bossCollider != null)
         {
 			bossCollider.GetComponent<Boss>().StartOnWeak();
@@ -56,13 +66,17 @@ public class Pepper : MonoBehaviour
 
 
 		Instantiate(firePrefab, transform.position, Quaternion.identity);
+		DOTween.Complete(renderer);
 		Destroy(gameObject);
     }
-
     private void Update()
     {
 		FollowToPlayer();
     }
 
+	public void OnDamage(int damage = 1)
+	{
+		Destroy(gameObject);
+	}
 
 }
