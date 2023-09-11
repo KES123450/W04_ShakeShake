@@ -23,7 +23,10 @@ public class Pepper : MonoBehaviour, IDamageable
     }
     private void FollowToPlayer()
     {
-		if (isExploding) { return; }
+		if (isExploding)
+		{
+			return; 
+		}
 
 		if (timer <= activeTime)
 		{
@@ -56,6 +59,7 @@ public class Pepper : MonoBehaviour, IDamageable
 		rigid.velocity = Vector2.zero;
 		var renderer = GetComponentInChildren<SpriteRenderer>();
 		renderer?.DOColor(Color.black, explodeDuration);
+		transform.DOScale(2 * Vector3.one, explodeDuration);
 		yield return new WaitForSeconds(explodeDuration);
 
 		Collider2D bossCollider = Physics2D.OverlapCircle(transform.position, radius, bossLayer);
@@ -64,9 +68,12 @@ public class Pepper : MonoBehaviour, IDamageable
 			bossCollider.GetComponent<Boss>().StartOnWeak();
         }
 
-
 		Instantiate(firePrefab, transform.position, Quaternion.identity);
-		if (renderer != null) DOTween.Complete(renderer);
+		if (renderer != null)
+		{
+			DOTween.Complete(renderer);
+		}
+		DOTween.Complete(transform);
 		Destroy(gameObject);
     }
     private void Update()
@@ -75,7 +82,7 @@ public class Pepper : MonoBehaviour, IDamageable
     }
 	public void OnDamage(int damage = 1)
 	{
+		DOTween.CompleteAll();
 		Destroy(gameObject);
 	}
-
 }

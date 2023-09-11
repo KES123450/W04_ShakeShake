@@ -169,7 +169,7 @@ MonoBehaviour:
   firePrefab: {fileID: 2702050608365179428, guid: b5767e5b1ef2dfc4ab5eb2ce6644de50, type: 3}
   activeTime: 10
   rotateSpeed: 1
-  guideSpeed: 8
+  guideSpeed: 7.2
   radius: 1
   explodeDuration: 0.25
   bossLayer:

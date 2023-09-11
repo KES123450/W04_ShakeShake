@@ -43,6 +43,5 @@ public class DashToPlayerPattern : BossPattern
     {
         Vector3 playerDirection = (GameManager.instance.GetPlayer().transform.position - transform.position).normalized;
         rigid.velocity = playerDirection * dashForce;
-        Debug.Log($"Dash");
     }
 }

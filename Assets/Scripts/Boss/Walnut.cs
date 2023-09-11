@@ -27,9 +27,9 @@ public class Walnut : MonoBehaviour
         transform.position = origin + direction * traceRadius;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.TryGetComponent(out PlayerHealth playerHealth))
+        if (collision.gameObject.TryGetComponent(out PlayerHealth playerHealth))
         {
             playerHealth.OnDamage();
         }

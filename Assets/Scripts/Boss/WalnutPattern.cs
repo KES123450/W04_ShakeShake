@@ -11,19 +11,58 @@ public class WalnutPattern : BossPattern
     [SerializeField] GameObject shadowPrefab;
     [SerializeField] GameObject walnutPrefab;
 
+    Rigidbody2D rigid;
+
+    float maxSpeed = 9;
+    float moveSpeed = 9f;
+    float moveTimer = -1;
+
+
     float currentAngle;
+    float currentAngularSpeed;
+    float angularAccel = 60;
     GameObject shadow;
     List<Walnut> spawnedWalnuts = new();
 
+    protected override void Awake()
+    {
+        base.Awake();
+        rigid = main.GetComponent<Rigidbody2D>();
+    }
     private void Update()
     {
         if (spawnedWalnuts.Count > 0)
         {
-            currentAngle += walnutAngularSpeed * Time.deltaTime;
+            currentAngularSpeed -= angularAccel * Time.deltaTime;
+            currentAngle += currentAngularSpeed * Time.deltaTime;
             ForeachWalnut((index, radian) =>
             {
                 spawnedWalnuts[index].UpdateRotate(transform.position, radian + currentAngle * Mathf.Deg2Rad);
             });
+        }
+        
+        if (moveTimer > 0)
+        {
+            moveTimer -= Time.deltaTime;
+            if (moveTimer < postDelaySeconds - 1)
+            {
+
+                Vector3 playerPos = GameManager.instance.GetPlayer().transform.position;
+                Vector3 playerDirection = (playerPos - transform.position).normalized;
+                if (rigid.velocity.magnitude <= maxSpeed)
+                {
+                    rigid.velocity += (Vector2)playerDirection * moveSpeed * Time.deltaTime;
+                }
+                else
+                {
+                    rigid.velocity = playerDirection * maxSpeed;
+                }
+            }
+        }
+        else
+        {
+            rigid.velocity = Vector2.zero;
+            moveTimer = -1;
         }
     }
 
@@ -31,11 +70,13 @@ public class WalnutPattern : BossPattern
     {
         spawnedWalnuts.Clear();
         base.PreProcessing();
+        currentAngularSpeed = walnutAngularSpeed;
         CastShadow();
     }
     protected override void ActionContext()
     {
         SpawnWalnuts();
+        moveTimer = postDelaySeconds;
     }
     protected override void PostProcessing()
     {
@@ -66,8 +107,19 @@ public class WalnutPattern : BossPattern
     {
         for (int i = 0; i < walnutNum; i++)
         {
-            var radian = (2 * Mathf.PI * i) / walnutNum;
+            var radian = (2 * Mathf.PI * i) / (walnutNum + 1);
             action?.Invoke(i, radian);
         }
+    }
+    public override void ShutdownAction()
+    {
+        base.ShutdownAction();
+        foreach (var w in spawnedWalnuts.ToList())
+        {
+            spawnedWalnuts.Remove(w);
+            w.EndRotate();
+        }
+        rigid.velocity = Vector2.zero;
+        moveTimer = -1;
     }
 }
