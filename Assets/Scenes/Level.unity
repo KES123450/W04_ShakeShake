@@ -1206,18 +1206,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4554772113128657472, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
-      propertyPath: invunerableBlinkNum
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566536934003158558, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
-      propertyPath: geyserDuration
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566536934003158558, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
-      propertyPath: targetLayer.m_Bits
-      value: 192
-      objectReference: {fileID: 0}
     - target: {fileID: 6056426080643611653, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1262,17 +1250,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6056426080643611658, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
-      propertyPath: m_SortingOrder
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 6056426080643611662, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6056426080643611662, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}

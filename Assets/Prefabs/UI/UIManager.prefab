@@ -394,6 +394,7 @@ GameObject:
   - component: {fileID: 5280355360511445897}
   - component: {fileID: 604457360495828715}
   - component: {fileID: 4265742595278676902}
+  - component: {fileID: 6072818580695872499}
   m_Layer: 5
   m_Name: UIManager
   m_TagString: Untagged
@@ -484,6 +485,34 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &6072818580695872499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8037955630131057025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd3b009bc95e50742949c6c9ab0d5a96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHpUI: {fileID: 1262368992547897016}
+  bossHpUIs:
+  - {fileID: 528230832144002840}
+  - {fileID: 3714988948744366890}
+  - {fileID: 2685774273708393898}
+  - {fileID: 1874890787327612293}
+  - {fileID: 7101977121931936246}
+  playerHpSprites:
+  - {fileID: 21300000, guid: 393c8cfd3d269de4fb79bac2dcf34e9f, type: 3}
+  - {fileID: 21300000, guid: ff81bde49b8b9c343a7e0f167b082b9a, type: 3}
+  - {fileID: 21300000, guid: 79f457ef4c3f6fb478d8ce26f211996d, type: 3}
+  - {fileID: 21300000, guid: 67999faf0e44ca64786a0dae0620dabf, type: 3}
+  playerHpLoss: {fileID: 21300000, guid: b3083f500880cf744a3162f71ec88f2a, type: 3}
+  bossHpLoss: {fileID: 21300000, guid: b42e2e087f51f664b9b5cc9579e3f907, type: 3}
+  playerHpAlertDuration: 0.2
+  alertColor: {r: 1, g: 0.5, b: 0.5, a: 1}
 --- !u!1 &8320207156766852918
 GameObject:
   m_ObjectHideFlags: 0

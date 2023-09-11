@@ -16,7 +16,11 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     public int CurrentHealth
     {
         get { return _currentHealth; }
-        set { _currentHealth = Mathf.Clamp(value, 0, maxHealth); }
+        set { 
+            var newValue = Mathf.Clamp(value, 0, maxHealth);
+            _currentHealth = newValue;
+            UIManager.Instance.SetPlayerHp(newValue);
+        }
     }
     public bool IsAlive => _currentHealth > 0;
     public bool IsInvunerable => invunerableTimer > 0;
