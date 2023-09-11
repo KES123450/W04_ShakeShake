@@ -50,8 +50,11 @@ public abstract class Boss : MonoBehaviour, IDamageable
         
 	}
 
-
-	public IEnumerator OnWeak(GameObject source)
+	public void StartOnWeak()
+    {
+		StartCoroutine(nameof(OnWeak));
+    }
+	public IEnumerator OnWeak()
     {
 		ShutdownAction();
 		anim.Play("Boss_magic_half_angry");
@@ -124,7 +127,7 @@ public abstract class Boss : MonoBehaviour, IDamageable
 		return result;
 	}
 
-	private int GetNextDealPatternIndex(int _currentIndex)
+	protected virtual int GetNextDealPatternIndex(int _currentIndex)
 	{
 		int result = _currentIndex;
 		if (result >= dealTimePatternList.Count - 1)
