@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e37596d727f252c41ac33f6f9b57c82d
+guid: 410458916750aa74fbdf3f83945571a1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -101,101 +101,68 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: boss_1_surprise_0
+      name: boss_1_sleep_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 5
-        width: 263
-        height: 225
-      alignment: 9
-      pivot: {x: 0.3950601, y: 0.34486732}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 29be595dfdb444c47b9c0c024ea9a9c5
-      internalID: -1627305302
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: boss_1_surprise_1
-      rect:
-        serializedVersion: 2
-        x: 419
         y: 0
-        width: 230
-        height: 222
+        width: 211
+        height: 164
       alignment: 9
-      pivot: {x: 0.48941198, y: 0.3610533}
+      pivot: {x: 0.49999997, y: 0.4696831}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4fa3d76c7ccbbc8478ce75bec3f98738
-      internalID: 1140513916
+      spriteID: c25d48c87f20c3948a412daedb4fb16a
+      internalID: -1186912250
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_1_surprise_2
+      name: boss_1_sleep_5
       rect:
         serializedVersion: 2
-        x: 805
-        y: 3
-        width: 246
-        height: 220
+        x: 308
+        y: 0
+        width: 210
+        height: 177
       alignment: 9
-      pivot: {x: 0.59239334, y: 0.35979024}
+      pivot: {x: 0.50236756, y: 0.43258336}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a11dbe4a06169f4daedecca234f0234
-      internalID: -831149848
+      spriteID: c1fcb2ae1b99620409cd8d76a7926199
+      internalID: -1596345873
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_1_surprise_3
+      name: boss_1_sleep_7
       rect:
         serializedVersion: 2
-        x: 1127
-        y: 3
-        width: 264
-        height: 219
+        x: 623
+        y: 0
+        width: 229
+        height: 189
       alignment: 9
-      pivot: {x: 0.6260658, y: 0.37026975}
+      pivot: {x: 0.4630892, y: 0.41055733}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ccdd99174cf766f468784efe8b9b291e
-      internalID: -760054882
+      spriteID: 507a8d505f470d646a15776df4307818
+      internalID: 604640597
       vertices: []
       indices: 
       edges: []
@@ -211,10 +178,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      boss_1_surprise_0: -1627305302
-      boss_1_surprise_1: 1140513916
-      boss_1_surprise_2: -831149848
-      boss_1_surprise_3: -760054882
+      boss_1_sleep_0: 973306333
+      boss_1_sleep_1: 1290343595
+      boss_1_sleep_2: -220648036
+      boss_1_sleep_3: -1186912250
+      boss_1_sleep_4: -1254432094
+      boss_1_sleep_5: -1596345873
+      boss_1_sleep_6: 450625488
+      boss_1_sleep_7: 604640597
+      boss_1_sleep_8: -1610844614
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

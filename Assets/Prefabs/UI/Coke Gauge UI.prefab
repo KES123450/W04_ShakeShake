@@ -192,6 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gaugeBar: {fileID: 1479993625067828183}
+  fullSprite: {fileID: 21300000, guid: d03b4f97d384a8940aa2ce96ef493ad3, type: 3}
 --- !u!1 &6628973921114351284
 GameObject:
   m_ObjectHideFlags: 0

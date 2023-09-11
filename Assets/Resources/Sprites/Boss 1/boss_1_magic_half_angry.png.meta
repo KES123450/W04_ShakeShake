@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e37596d727f252c41ac33f6f9b57c82d
+guid: 444e365cb6d34134e80b46b26a4924eb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -101,101 +101,89 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: boss_1_surprise_0
+      name: boss_1_magic_half_angry_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 5
-        width: 263
-        height: 225
+        y: 0
+        width: 264
+        height: 196
       alignment: 9
-      pivot: {x: 0.3950601, y: 0.34486732}
+      pivot: {x: 0.39230537, y: 0.20159484}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29be595dfdb444c47b9c0c024ea9a9c5
-      internalID: -1627305302
+      spriteID: 743b6677aa6baa24688c2df3bc0056fd
+      internalID: 337179380
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_1_surprise_1
+      name: boss_1_magic_half_angry_1
       rect:
         serializedVersion: 2
-        x: 419
+        x: 420
         y: 0
         width: 230
-        height: 222
+        height: 193
       alignment: 9
-      pivot: {x: 0.48941198, y: 0.3610533}
+      pivot: {x: 0.45408592, y: 0.20116533}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4fa3d76c7ccbbc8478ce75bec3f98738
-      internalID: 1140513916
+      spriteID: af232b6dc12e3cf4d9e77380c7c9f3dd
+      internalID: -499747277
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_1_surprise_2
+      name: boss_1_magic_half_angry_2
       rect:
         serializedVersion: 2
-        x: 805
-        y: 3
-        width: 246
-        height: 220
+        x: 806
+        y: 0
+        width: 247
+        height: 189
       alignment: 9
-      pivot: {x: 0.59239334, y: 0.35979024}
+      pivot: {x: 0.55262023, y: 0.20343696}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a11dbe4a06169f4daedecca234f0234
-      internalID: -831149848
+      spriteID: b6fc0fc9b41d5a14992a6c544abc3f99
+      internalID: -1318911667
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss_1_surprise_3
+      name: boss_1_magic_half_angry_3
       rect:
         serializedVersion: 2
-        x: 1127
-        y: 3
+        x: 1128
+        y: 0
         width: 264
-        height: 219
+        height: 188
       alignment: 9
-      pivot: {x: 0.6260658, y: 0.37026975}
+      pivot: {x: 0.6169253, y: 0.2018594}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ccdd99174cf766f468784efe8b9b291e
-      internalID: -760054882
+      spriteID: 309a8d98afb084046bdbae17badbb59e
+      internalID: -1400978072
       vertices: []
       indices: 
       edges: []
@@ -211,10 +199,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      boss_1_surprise_0: -1627305302
-      boss_1_surprise_1: 1140513916
-      boss_1_surprise_2: -831149848
-      boss_1_surprise_3: -760054882
+      boss_1_magic_half_angry_0: 337179380
+      boss_1_magic_half_angry_1: -499747277
+      boss_1_magic_half_angry_2: -1318911667
+      boss_1_magic_half_angry_3: -1400978072
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
