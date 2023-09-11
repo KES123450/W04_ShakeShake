@@ -49,10 +49,16 @@ public class GameManager : MonoBehaviour
     }
     private IEnumerator Ending()
     {
+        bossSprite = boss.GetComponent<SpriteRenderer>();
+        player.GetComponent<PlayerController>().enabled = false;
+        for(int i = 0; i < player.transform.childCount; i++)
+        {
+            player.transform.GetChild(i).gameObject.SetActive(false);
+        }
         yield return new WaitForSeconds(2f);
         playerAni.Play("Dance");
         bossSprite.DOFade(0f, 3f);
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         SceneManager.LoadScene(endingSceneName);
 
     }

@@ -570,56 +570,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e7e14a386f05ea4fbe39f0c5150cb95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1861233703
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1861233705}
-  - component: {fileID: 1861233704}
-  m_Layer: 7
-  m_Name: CabbagePatternEnd
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1861233704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1861233703}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8747e63b505800f409365b6bf6c9acf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  main: {fileID: 0}
-  animationStateName: Boss_magic_half
-  preDelaySeconds: 1
-  postDelaySeconds: 1
-  spawnDistance: 1.5
-  cabbagePrefab: {fileID: 4518503157364571349, guid: 6bbd805db83ed134d958f023a708f5ff, type: 3}
---- !u!4 &1861233705
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1861233703}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3094788853988399947}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1910558914
 GameObject:
   m_ObjectHideFlags: 0
@@ -1359,7 +1309,7 @@ PrefabInstance:
     - target: {fileID: 7444104072246965180, guid: eb8e2defffd059c4681a001e9c8d84d4, type: 3}
       propertyPath: patternList.Array.data[7]
       value: 
-      objectReference: {fileID: 1861233704}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb8e2defffd059c4681a001e9c8d84d4, type: 3}
 --- !u!114 &2900759077862012862 stripped
@@ -1400,11 +1350,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05b7bcacebe69454099268bd35f8dab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &3094788853988399947 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 194630136524795132, guid: eb8e2defffd059c4681a001e9c8d84d4, type: 3}
-  m_PrefabInstance: {fileID: 2900759077862012861}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3788604019378650204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1476,6 +1421,10 @@ PrefabInstance:
     - target: {fileID: 4100709485790107838, guid: cb2b2105ba539c147919702baf07f3cf, type: 3}
       propertyPath: m_Name
       value: BossPhase4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100709485790107838, guid: cb2b2105ba539c147919702baf07f3cf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9107477923029564325, guid: cb2b2105ba539c147919702baf07f3cf, type: 3}
       propertyPath: m_RootOrder
@@ -1638,6 +1587,10 @@ PrefabInstance:
     - target: {fileID: 6056426080643611662, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571707551307828146, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d9e5bc9620d7e743b020661d091b9e3, type: 3}

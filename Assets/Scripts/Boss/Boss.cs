@@ -16,7 +16,7 @@ public abstract class Boss : MonoBehaviour, IDamageable
 	private Sequence hitSeq;
 	protected bool isDeal;
 	private bool isWeak;
-	private Collider2D bossCollider;
+	public Collider2D bossCollider;
 	protected SpriteRenderer spriteRenderer;
 
 	[SerializeField] private Vector2 respawnPoint;
@@ -73,7 +73,7 @@ public abstract class Boss : MonoBehaviour, IDamageable
 		yield return new WaitForSeconds(angryDelay / 4);
 		anim.Play("Boss_come_out");
 		yield return new WaitForSeconds(comeOutDelay);
-		bossCollider.enabled = true;
+		
 		isDeal = true;
 		spriteRenderer.color = new Color(1f, 0.5f, 0.5f);
 		patternIndex = 0;
