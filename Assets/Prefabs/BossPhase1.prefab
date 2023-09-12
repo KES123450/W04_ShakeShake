@@ -70,7 +70,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &194630136524795132
 Transform:
   m_ObjectHideFlags: 0
@@ -135,8 +135,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1856319881
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 1097873801, guid: 02ae8cd046546fa4587f8d5467e1ab3f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -237,21 +237,20 @@ MonoBehaviour:
   - {fileID: 2900759077922948225}
   dealTimePatternList:
   - {fileID: 2900759078280117074}
+  - {fileID: 2900759078938468636}
+  - {fileID: 2900759078059491467}
+  - {fileID: 2900759078280117074}
   - {fileID: 2900759078280117074}
   - {fileID: 2900759078938468636}
-  - {fileID: 2900759078280117074}
-  - {fileID: 2900759078280117074}
-  - {fileID: 2900759078280117074}
-  - {fileID: 2900759078938468636}
-  - {fileID: 2900759078280117074}
   - {fileID: 24958119162809100}
+  - {fileID: 2900759078280117074}
   patternIndex: -1
   currentPattern: {fileID: 0}
   angryAnimationName: Boss_magic_half_angry
   angryDelay: 2
   comeOutDelay: 3
   nextBossPhase: {fileID: 0}
-  nowBossHP: 3
+  nowBossHP: 1
   moveToCenterSpeed: 1
   animationName: Boss_surprise
   delay: 2
@@ -504,9 +503,9 @@ MonoBehaviour:
   animationStateName: Boss_run_dash
   preDelaySeconds: 1
   postDelaySeconds: 4
-  moveSpeed: 0.005
+  moveSpeed: 9
   moveTime: 5
-  maxSpeed: 3
+  maxSpeed: 9
   isAct: 0
 --- !u!1 &2900759078220440495
 GameObject:

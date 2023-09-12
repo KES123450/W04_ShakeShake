@@ -41,3 +41,24 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Honey
+    uniqueID: 533860729
+    locked: 0
+  - name: Boss
+    uniqueID: 2438647415
+    locked: 0
+  - name: Object
+    uniqueID: 1670225701
+    locked: 0
+  - name: Player
+    uniqueID: 941914351
+    locked: 0
+  - name: Effect
+    uniqueID: 4239621445
+    locked: 0
+  - name: Coke
+    uniqueID: 3801063213
+    locked: 0
+  - name: UI
+    uniqueID: 2566280871
+    locked: 0

@@ -489,6 +489,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coke Gauge UI
       objectReference: {fileID: 0}
+    - target: {fileID: 6757779827832442508, guid: 075527eb09dbfe24a819d790ac6aa0c1, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1728686425
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 075527eb09dbfe24a819d790ac6aa0c1, type: 3}
 --- !u!224 &5948842591024374601 stripped
