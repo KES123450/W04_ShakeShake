@@ -1019,7 +1019,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1712627277710285900, guid: 71f9f4dca3b9de34d9d9db0d69c65568, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4410888256538022681, guid: 71f9f4dca3b9de34d9d9db0d69c65568, type: 3}
       propertyPath: walnutNum
@@ -1316,7 +1316,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossName: 
-  isDeal: 0
   bossCollider: {fileID: 0}
   respawnPoint: {x: 0, y: 0}
   hpCurrent: 0
@@ -1833,7 +1832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2395538288181153485, guid: 63120323710f2cf4484275eda36c0ec2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63120323710f2cf4484275eda36c0ec2, type: 3}
@@ -1850,7 +1849,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossName: 
-  isDeal: 0
   bossCollider: {fileID: 0}
   respawnPoint: {x: 0, y: 0}
   hpCurrent: 0
