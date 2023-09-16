@@ -228,7 +228,7 @@ MonoBehaviour:
   canRollCancelAction: 0
   canActionCancelRoll: 0
   gaugeRegen: 5
-  gaugeLossOnStop: -1
+  gaugeLossOnStop: -0.75
   regenRollMuliplier: 0.25
   gaugeCostPerSecond: 15
   maxGauge: 10
@@ -306,10 +306,10 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 192
-  superDurationMultiplier: 2
+  superDurationMultiplier: 1.6
   superLengthMultipleir: 2
   superWidthMultiplier: 2
-  superAngularSpeedMultiplier: 2
+  superAngularSpeedMultiplier: 2.5
 --- !u!1 &7302588470078946956
 GameObject:
   m_ObjectHideFlags: 0
